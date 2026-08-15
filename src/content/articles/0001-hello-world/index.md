@@ -1,7 +1,7 @@
 ---
 title: Hello World
 description: First article — sanity check for the publishing setup.
-draft: false
+draft: true
 version: 1
 published: 2026-08-15
 updated: 2026-08-15
