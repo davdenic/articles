@@ -9,6 +9,5 @@ node_modules/
 .env.production
 # macOS
 .DS_Store
-# Obsidian workspace (keep vault content, ignore local UI state)
-.obsidian/workspace*
-.obsidian/cache
+# Obsidian vault config (local editor state + plugins, never committed)
+.obsidian/
