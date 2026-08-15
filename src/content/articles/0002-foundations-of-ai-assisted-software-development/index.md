@@ -6,7 +6,7 @@ version: 1
 published: 2026-08-16
 changelog:
   - "2026-08-16: first publish"
-modified: 2026-08-16T01:51:50+02:00
+modified: 2026-08-16T01:54:01+02:00
 ---
 
 How many times have you been told to use AI to boost your productivity? It writes code 10× faster. You just need to give it a prompt and let it work.
@@ -170,7 +170,7 @@ Once your tasks meet a clear Definition of Ready — and your specs, context, an
 - [GitHub Blog — Spec-driven development with AI (Spec Kit)](https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/) — why prompts are insufficient; specify → plan → tasks → implement.
 - [OpenSpec (Fission-AI)](https://github.com/Fission-AI/OpenSpec) · [openspec.pro](https://openspec.pro/) — the spec loop `explore → propose → apply → archive`; root `specs/` (baseline source of truth) vs per-change folder (`proposal.md` / `specs/` scenarios / `design.md` / `tasks.md`); plain Markdown, MIT, works with Claude Code.
 - [Nexapp — ADRs in practice: aligning teams and AI agents](https://www.nexapp.ca/en/blog/architecture-decision-records-adr) · [Actual AI — Agent-optimized ADRs](https://www.actual.ai/blog/agent-optimized-adrs) — decision records as agent context.
-- Andreas Wolf’s T3DD26 talk _”Before You Let AI Touch Your Code”_ ([slides]([https://a-w.io/talks-public/events/2026-t3dd/ai-harness/](https://a-w.io/talks-public/events/2026-t3dd/ai-harness/)))
+- Andreas Wolf’s T3DD26 talk _”Before You Let AI Touch Your Code”_ ([slides](https://a-w.io/talks-public/events/2026-t3dd/ai-harness/))
 
 > “AI can make mistakes.”
 >
