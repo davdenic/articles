@@ -17,6 +17,10 @@ The project version lives in `package.json` (`version`); each release below matc
 
 - Sample article `0001-hello-world`: image example shown as inline code instead of a live embed (no missing asset).
 
+### Fixed
+
+- Navigation links now derive from `import.meta.env.BASE_URL` instead of a hardcoded `/articles` prefix, so the article back-link and index links stay correct under the site `base` (previously the back-link pointed at the domain root).
+
 ## [0.1.0] - 2026-08-15
 
 ### Added

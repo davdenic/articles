@@ -16,6 +16,9 @@ export async function getStaticPaths() {
 const { article } = Astro.props;
 const { Content } = await render(article);
 const d = article.data;
+
+// Site base with a single trailing slash → the articles index URL.
+const home = import.meta.env.BASE_URL.replace(/\/$/, '') + '/';
 ---
 
 <Base title={d.title} description={d.description}>
@@ -34,5 +37,5 @@ const d = article.data;
       </section>
     )}
   </article>
-  <p class="narrow"><a href="/">← all articles</a></p>
+  <p class="narrow"><a href={home}>← all articles</a></p>
 </Base>

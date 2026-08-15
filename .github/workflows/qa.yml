@@ -38,10 +38,12 @@ jobs:
         run: npm run qa:images
 
       # Internal links resolved against the built site. Blocking.
+      # --root-dir lets lychee resolve root-relative links (e.g. "/",
+      # "/articles/…") to files under dist.
       - name: Link check (internal)
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --offline --include-fragments dist
+          args: --offline --include-fragments --root-dir "${{ github.workspace }}/dist" dist
           fail: true
 
       # External links are network-dependent and flaky — report only.
@@ -49,5 +51,5 @@ jobs:
         uses: lycheeverse/lychee-action@v2
         continue-on-error: true
         with:
-          args: --scheme https --scheme http dist
+          args: --scheme https --scheme http --root-dir "${{ github.workspace }}/dist" dist
           fail: true
