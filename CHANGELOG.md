@@ -7,6 +7,10 @@ The project version lives in `package.json` (`version`); each release below matc
 
 ## [Unreleased]
 
+### Changed
+
+- Published article `0002` (foundations of AI-assisted development) — `draft: false`, `published: 2026-08-16`. Unpublished the `0001-hello-world` sample (back to `draft: true`).
+
 ## [0.4.0] - 2026-08-16
 
 ### Added
