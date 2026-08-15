@@ -6,6 +6,21 @@
   font-display: swap;
   src: url('./fonts/oswald-latin-wght-normal.woff2') format('woff2');
 }
+/* Body reading serif — elongated, with a true italic. */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 200 600;
+  font-display: swap;
+  src: url('./fonts/newsreader-latin-wght-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Newsreader';
+  font-style: italic;
+  font-weight: 200 600;
+  font-display: swap;
+  src: url('./fonts/newsreader-latin-wght-italic.woff2') format('woff2');
+}
 
 :root {
   --measure: 46rem;   /* readable text column (widened for the larger body size) */
@@ -15,8 +30,8 @@
   --muted: #6b6b6b;
   --accent: #7a1f1f;
   --rule: #e2e2dc;
-  --serif: Georgia, 'Iowan Old Style', 'Palatino Linotype', Palatino, 'Times New Roman', serif;
-  --heading: 'Oswald', 'Arial Narrow', system-ui, sans-serif;
+  --serif: 'Newsreader', Georgia, 'Iowan Old Style', 'Palatino Linotype', Palatino, 'Times New Roman', serif;
+  --heading: 'Newsreader', Georgia, 'Times New Roman', serif;
 
   /*
     Fluid type scale, golden-ratio-anchored (~1.618) but following an
@@ -31,7 +46,9 @@
   --fs-h1: clamp(2.40rem, 1.90rem + 2.60vw, 3.90rem);
 
   /* Hand-drawn curved underline for h1/h2 (colored via mask + --accent). */
-  --underline: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'%3E%3Cpath d='M3 8 C 45 2 75 11 118 6 S 185 3 197 7' fill='none' stroke='black' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
+  --underline: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'%3E%3Cpath d='M3 8 C 45 2 75 11 118 6 S 185 3 197 7' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  /* Straighter hand-drawn line for the section separator. */
+  --separator: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'%3E%3Cpath d='M2 6.5 C 45 5.4 80 7.2 120 6.2 S 180 6 198 6.6' fill='none' stroke='black' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E");
 }
 
 /* Dark palette. Applied when the reader explicitly picks dark… */
@@ -90,7 +107,7 @@ h1, h2, h3 {
   letter-spacing: 0;
 }
 h1 { font-size: var(--fs-h1); margin: 0 0 0.5rem; }
-h2 { font-size: var(--fs-h2); margin: 2.5rem 0 0.75rem; }
+h2 { font-size: var(--fs-h2); font-weight: 400; margin: 2.5rem 0 0.75rem; }
 h3 { font-size: var(--fs-h3); margin: 2rem 0 0.6rem; }
 
 /* Hand-drawn curved underline under h1 only; width hugs the text. */
@@ -99,7 +116,7 @@ h1::after {
   content: '';
   display: block;
   width: 100%;
-  height: 0.4em;
+  height: 0.3em;
   margin-top: 0.06em;
   background-color: var(--accent);
   -webkit-mask: var(--underline) no-repeat left top / 100% 100%;
@@ -107,6 +124,7 @@ h1::after {
 }
 
 p, ul, ol { margin: 0 0 1.2rem; }
+li { margin: 0.4em 0; }
 
 a { color: var(--accent); text-underline-offset: 2px; }
 
@@ -118,13 +136,17 @@ small, .meta { color: var(--muted); font-size: var(--fs-sm); }
 hr {
   border: 0;
   margin: 2.75rem 0;
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
+/* A single, straighter hand-drawn line, centered. */
 hr::before {
-  content: '\00B7 \00B7 \00B7';
-  color: var(--muted);
-  font-size: 1.4rem;
-  letter-spacing: 0.5em;
+  content: '';
+  width: 10rem;
+  height: 0.45em;
+  background-color: var(--accent);
+  -webkit-mask: var(--separator) no-repeat center / 100% 100%;
+  mask: var(--separator) no-repeat center / 100% 100%;
 }
 
 blockquote {
@@ -166,6 +188,13 @@ pre code { background: none; padding: 0; }
 }
 .prose > * {
   grid-column: 2; /* default: narrow text column */
+}
+/* The article title breaks out into the wider track (wider than the body column), centered. */
+.prose > h1:first-of-type {
+  grid-column: 1 / -1;
+  width: 100%;       /* fill the column so the underline spans its full width */
+  max-width: none;
+  text-align: center;
 }
 
 /* Lone images (Markdown `![]()` renders as <p><img></p>) and figures go wide. */

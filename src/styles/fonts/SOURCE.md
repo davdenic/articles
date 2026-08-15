@@ -1,13 +1,13 @@
 # Fonts
 
-## Oswald (headings)
+## Newsreader (headings + body)
 
-- File: `oswald-latin-wght-normal.woff2` (variable, weight 200–700, latin subset)
-- Designer: Vernon Adams, Kalapi Gajjar, Cyreal
+- Files: `newsreader-latin-wght-normal.woff2`, `newsreader-latin-wght-italic.woff2`
+  (variable, weight 200–800, latin subset, with a true italic)
+- Designer: Production Type
 - License: SIL Open Font License 1.1 (OFL) — free to bundle and self-host
-- Source: the `@fontsource-variable/oswald` package, downloaded from jsDelivr
-  (`https://cdn.jsdelivr.net/npm/@fontsource-variable/oswald/files/oswald-latin-wght-normal.woff2`)
+- Source: the `@fontsource-variable/newsreader` package, downloaded from jsDelivr
+  (`https://cdn.jsdelivr.net/npm/@fontsource-variable/newsreader/files/`)
 
-An elongated, condensed sans used only for headings, set at a light weight (300).
-Self-hosted on purpose: no external CDN/Google Fonts request at runtime. The body
-reading font stays Georgia (system serif) — see `--serif` in `global.css`.
+An elongated, literary serif used for both headings (light weight) and body text.
+Self-hosted on purpose: no external CDN/Google Fonts request at runtime.

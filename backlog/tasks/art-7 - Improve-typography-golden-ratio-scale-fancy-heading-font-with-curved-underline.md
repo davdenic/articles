@@ -6,7 +6,7 @@ title: >-
 status: Done
 assignee: []
 created_date: '2026-08-15 21:51'
-updated_date: '2026-08-15 22:53'
+updated_date: '2026-08-15 23:11'
 labels:
   - frontend
   - design
@@ -37,5 +37,5 @@ ordinal: 7000
 ## Final Summary
 
 <!-- SECTION:FINAL_SUMMARY:BEGIN -->
-Implemented in PR #7: Oswald (light, elongated condensed sans) headings self-hosted; golden-ratio fluid clamp scale on an accelerating curve with larger reading text + widened column; hand-drawn curved underline on h1; three-dot hr separator; body stays Georgia; all theme-aware.
+Implemented in PR #7: Newsreader serif (self-hosted, roman+italic) for headings (light) and body; golden-ratio fluid clamp scale on an accelerating curve with larger reading text + widened column; article title breaks out wider than the body column, centered, with a thin hand-drawn curved underline; hand-drawn line section separator; roomier list spacing; all theme-aware.
 <!-- SECTION:FINAL_SUMMARY:END -->
