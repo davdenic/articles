@@ -8,6 +8,8 @@ const articles = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string().optional(),
+    // Sole author of the site; override per-article only if ever needed.
+    author: z.string().default('David Denicolo'),
     // Publishing status: draft = hidden, absent/false = live.
     draft: z.boolean().default(false),
     // Metadata
