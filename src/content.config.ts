@@ -9,7 +9,7 @@ const articles = defineCollection({
     title: z.string(),
     description: z.string().optional(),
     // Sole author of the site; override per-article only if ever needed.
-    author: z.string().default('David Denicolo'),
+    author: z.string().default('David Denicolò'),
     // Publishing status: draft = hidden, absent/false = live.
     draft: z.boolean().default(false),
     // Metadata

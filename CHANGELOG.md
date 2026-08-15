@@ -7,6 +7,17 @@ The project version lives in `package.json` (`version`); each release below matc
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-08-16
+
+### Added
+
+- "About the author" footer on every article (ART-3): a single reusable `AuthorFooter` component (edit once, appears everywhere) with a rounded portrait, short bio, and a LinkedIn link, set off by a hand-drawn curved divider.
+
+### Changed
+
+- Author name renders with its accent — **David Denicolò**.
+- Removed the "← all articles" back-link from article pages.
+
 ## [0.3.0] - 2026-08-16
 
 ### Added
