@@ -30,6 +30,13 @@ Defined in `src/content.config.ts`. Fields: `title` (required), `description`, `
 - Bump `version`, update `updated`, prepend a `changelog` line (`"YYYY-MM-DD: what changed"`).
 - Never rename the folder after publish — the URL is derived from it. Renaming breaks links + canonical.
 
+## Versioning & changelog (always keep current)
+
+- The project version lives in `package.json` (`version`), classic `x.y.z` (semver). It is the single source of truth.
+- `CHANGELOG.md` (root, Keep a Changelog format) must always be up to date. Every meaningful change gets an entry.
+- On any non-trivial change: add a line under `## [Unreleased]`. On release: bump `package.json` `version`, move the Unreleased items into a new `## [x.y.z] - YYYY-MM-DD` section (heading must match `package.json`).
+- Never leave the version or changelog stale — they reflect the current state of the project at all times.
+
 ## Build / deploy
 
 - `npm run dev` — drafts visible. `npm run build` — drafts dropped.
