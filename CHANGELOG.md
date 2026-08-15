@@ -7,9 +7,11 @@ The project version lives in `package.json` (`version`); each release below matc
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-08-16
+
 ### Added
 
-- Typography overhaul (ART-7): self-hosted **Newsreader** serif for both headings (light) and body (OFL, roman + italic, no CDN call); a golden-ratio-anchored **fluid `clamp()` type scale on an accelerating curve** (bigger jumps toward h1, larger reading text, widened reading column); the article title breaks out **wider than the body column, centered**, with a thin hand-drawn **curved underline** (theme-colored via CSS mask); a hand-drawn **line section separator** replacing the `hr` rule; and roomier list-item spacing. All theme-aware (light/dark).
+- Typography overhaul (ART-7): self-hosted **Newsreader** serif for both headings (light) and body (OFL, roman + italic, no CDN call); a golden-ratio-anchored **fluid `clamp()` type scale on an accelerating curve** (bigger jumps toward h1, larger reading text, widened reading column); the article title breaks out **wider than the body column, centered**, with a thin hand-drawn **curved underline** (theme-colored via CSS mask); a hand-drawn **line section separator** replacing the `hr` rule; **blockquotes restyled as hand-drawn info-boxes** (four curved lines, bigger centered text, extra spacing after); and roomier list-item spacing. All theme-aware (light/dark).
 
 ## [0.2.0] - 2026-08-16
 

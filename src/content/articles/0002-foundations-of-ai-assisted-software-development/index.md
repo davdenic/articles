@@ -4,7 +4,7 @@ description: AI doesn't fix your development process — it amplifies it. Why QA
 draft: true
 version: 1
 changelog: []
-modified: 2026-08-16T01:23:23+02:00
+modified: 2026-08-16T01:28:22+02:00
 ---
 
 How many times have you been told to use AI to boost your productivity? It writes code 10× faster. You just need to give it a prompt and let it work.
@@ -24,8 +24,6 @@ The problem is not necessarily the quality of the model. The problem is that the
 AI does not fix a development system, it amplifies the one you already have. So the interesting work is not the AI — But having solid software development Pillars: QA, Team Culture and Specs & Context.
 
 > Based on Andreas Wolf’s T3DD26 talk _“Before You Let AI Touch Your Code”_ ([slides](https://a-w.io/talks-public/events/2026-t3dd/ai-harness/))
-
----
 
 ![Hand-drawn sketch of the house: an AI roof over the Team Culture and Specs walls, resting on a QA foundation](./house-sketch.jpg)
 
@@ -47,11 +45,7 @@ These pillars are not AI-specific infrastructure. They are good engineering prac
 6. **A human is responsible for every merge and deploy.** A model cannot be held accountable — that is the human’s job. ([Osmani](https://addyosmani.com/blog/code-review-ai/))
 7. **Practical order of work:** fix QA first (it is measurable and it pays twice), then the spec/context layer, then let AI amplify.
 
----
-
- _Before adopting AI, build the house that AI can live in._
-
----
+> _Before adopting AI, build the house that AI can live in._
 
 Using the 3 pillars as foundation of our software development the AI can assist us in writing better code, code that respect specs and standards, that does what is supposed to be done, while the human is still responsible and observes the whole loop from a different angle.
 
@@ -175,8 +169,6 @@ Once your tasks meet a clear Definition of Ready — and your specs, context, an
 - [OpenSpec (Fission-AI)](https://github.com/Fission-AI/OpenSpec) · [openspec.pro](https://openspec.pro/) — the spec loop `explore → propose → apply → archive`; root `specs/` (baseline source of truth) vs per-change folder (`proposal.md` / `specs/` scenarios / `design.md` / `tasks.md`); plain Markdown, MIT, works with Claude Code.
 - [Nexapp — ADRs in practice: aligning teams and AI agents](https://www.nexapp.ca/en/blog/architecture-decision-records-adr) · [Actual AI — Agent-optimized ADRs](https://www.actual.ai/blog/agent-optimized-adrs) — decision records as agent context.
 - Andreas Wolf’s T3DD26 talk _”Before You Let AI Touch Your Code”_ ([slides]([https://a-w.io/talks-public/events/2026-t3dd/ai-harness/](https://a-w.io/talks-public/events/2026-t3dd/ai-harness/)))
-
----
 
 > “AI can make mistakes.”
 >

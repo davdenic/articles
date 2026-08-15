@@ -146,7 +146,7 @@ hr::before {
 /* Info-box: text framed by four hand-drawn curved lines. */
 blockquote {
   position: relative;
-  margin: 1.5rem 0;
+  margin: 1.5rem 0 2.75rem;
   padding: 1.4rem 1.6rem;
   font-size: 1.15em;
   text-align: center;
