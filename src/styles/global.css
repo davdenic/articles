@@ -16,7 +16,7 @@
   --accent: #7a1f1f;
   --rule: #e2e2dc;
   --serif: Georgia, 'Iowan Old Style', 'Palatino Linotype', Palatino, 'Times New Roman', serif;
-  --heading: 'Caveat', 'Segoe Script', 'Bradley Hand', cursive;
+  --heading: 'Caveat', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
   /*
     Fluid type scale, golden-ratio-anchored (~1.618) but following an
