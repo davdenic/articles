@@ -1,9 +1,10 @@
 ---
 id: ART-1
 title: 'Port article: About the foundations of AI assisted software development'
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-08-15 19:42'
+updated_date: '2026-08-15 20:41'
 labels:
   - content
 dependencies: []
@@ -24,3 +25,9 @@ Bring David's existing article "About the foundations of AI assisted software de
 - [ ] #4 Starts as draft: true
 - [ ] #5 npm run qa passes (lint, spell, images) and npm run build succeeds
 <!-- AC:END -->
+
+## Implementation Plan
+
+<!-- SECTION:PLAN:BEGIN -->
+1. Branch art-1-foundations-article off main. 2. Create folder 0002-foundations-of-ai-assisted-software-development with index.md (frontmatter, draft:true). 3. David pastes body + drops images in the folder via Obsidian. 4. Fill description; on publish set published/updated + changelog and flip draft:false. 5. npm run qa && npm run build; open PR.
+<!-- SECTION:PLAN:END -->

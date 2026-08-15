@@ -2,6 +2,8 @@
 dist/
 # generated types
 .astro/
+# link-check staging (CI)
+_linkcheck/
 # deps
 node_modules/
 # env
@@ -9,6 +11,5 @@ node_modules/
 .env.production
 # macOS
 .DS_Store
-# Obsidian workspace (keep vault content, ignore local UI state)
-.obsidian/workspace*
-.obsidian/cache
+# Obsidian vault config (local editor state + plugins, never committed)
+.obsidian/

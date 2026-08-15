@@ -1,6 +1,6 @@
 ---
 import { getCollection, render } from 'astro:content';
-import Base from '../../layouts/Base.astro';
+import Base from '../layouts/Base.astro';
 
 export async function getStaticPaths() {
   const isDev = import.meta.env.DEV;
@@ -25,9 +25,8 @@ const home = import.meta.env.BASE_URL.replace(/\/$/, '') + '/';
   <article class="prose">
     <h1>{d.title}</h1>
     <p class="meta">
-      v{d.version}
-      {d.published && <> · published {d.published.toISOString().slice(0, 10)}</>}
-      {d.updated && <> · updated {d.updated.toISOString().slice(0, 10)}</>}
+      Written by {d.author}
+      {d.published && <> on {d.published.toISOString().slice(0, 10)}</>}
     </p>
     <Content />
     {d.changelog.length > 0 && (

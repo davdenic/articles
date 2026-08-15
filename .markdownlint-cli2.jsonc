@@ -9,6 +9,8 @@
     "MD033": false,
     // First line need not be a heading — title lives in frontmatter.
     "MD041": false,
+    // Bold lead-in lines are an intentional style (callouts, slogans).
+    "MD036": false,
     // Duplicate headings allowed across sections (e.g. "Status").
     "MD024": { "siblings_only": true }
   },
