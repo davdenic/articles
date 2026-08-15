@@ -93,9 +93,9 @@ h1 { font-size: var(--fs-h1); margin: 0 0 0.5rem; }
 h2 { font-size: var(--fs-h2); margin: 2.5rem 0 0.75rem; }
 h3 { font-size: var(--fs-h3); font-weight: 600; margin: 2rem 0 0.6rem; }
 
-/* Hand-drawn curved underline under h1/h2 only; width hugs the text. */
-h1, h2 { width: fit-content; max-width: 100%; }
-h1::after, h2::after {
+/* Hand-drawn curved underline under h1 only; width hugs the text. */
+h1 { width: fit-content; max-width: 100%; }
+h1::after {
   content: '';
   display: block;
   width: 100%;
