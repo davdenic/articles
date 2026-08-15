@@ -25,8 +25,8 @@ const home = import.meta.env.BASE_URL.replace(/\/$/, '') + '/';
   <article class="prose">
     <h1>{d.title}</h1>
     <p class="meta">
-      {d.published && <>published {d.published.toISOString().slice(0, 10)} · </>}
-      {d.author}
+      Written by {d.author}
+      {d.published && <> on {d.published.toISOString().slice(0, 10)}</>}
     </p>
     <Content />
     {d.changelog.length > 0 && (
