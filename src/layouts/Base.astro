@@ -14,10 +14,68 @@ const { title, description } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
+    {/* Apply the saved theme before paint to avoid a flash of the wrong theme. */}
+    <script is:inline>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
+    <div class="topbar">
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark theme">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"></circle>
+          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+        </svg>
+      </button>
+    </div>
     <main>
       <slot />
     </main>
+
+    <script>
+      const btn = document.getElementById('theme-toggle');
+      const mql = window.matchMedia('(prefers-color-scheme: dark)');
+
+      // The theme actually in effect: explicit choice, else the OS preference.
+      function effective() {
+        const t = document.documentElement.dataset.theme;
+        return t === 'dark' || t === 'light' ? t : mql.matches ? 'dark' : 'light';
+      }
+
+      function sync() {
+        const eff = effective();
+        btn?.setAttribute('data-eff', eff);
+        btn?.setAttribute(
+          'aria-label',
+          eff === 'dark' ? 'Switch to light theme' : 'Switch to dark theme',
+        );
+      }
+
+      btn?.addEventListener('click', () => {
+        const next = effective() === 'dark' ? 'light' : 'dark';
+        document.documentElement.dataset.theme = next;
+        try {
+          localStorage.setItem('theme', next);
+        } catch (e) {}
+        sync();
+      });
+
+      // Keep the icon correct if the OS flips while no explicit choice is stored.
+      mql.addEventListener('change', () => {
+        if (!document.documentElement.dataset.theme) sync();
+      });
+
+      sync();
+    </script>
   </body>
 </html>

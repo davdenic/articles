@@ -1,10 +1,10 @@
 ---
 id: ART-2
 title: Add dark/light mode switch
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-08-15 21:34'
-updated_date: '2026-08-15 21:40'
+updated_date: '2026-08-15 22:03'
 labels:
   - frontend
 dependencies: []
@@ -27,3 +27,15 @@ ordinal: 2000
 - [ ] #4 Both themes styled coherently (text, links, images, meta line) in global.css
 - [ ] #5 npm run qa and npm run build pass
 <!-- AC:END -->
+
+## Implementation Plan
+
+<!-- SECTION:PLAN:BEGIN -->
+Inline top-right icon toggle. CSS: light defaults on :root; dark vars on :root[data-theme=dark] AND @media(prefers-color-scheme:dark) :root:not([data-theme=light]) so unset=OS, set=obey. No-flash inline head script reads localStorage.theme. Toggle button (sun/moon SVG) in Base.astro top bar, right-aligned; click flips + persists + updates icon.
+<!-- SECTION:PLAN:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Implemented in PR #6: top-right icon toggle, OS default via prefers-color-scheme, override persisted in localStorage, no-flash inline head script. Shipped with the 0.2.0 release cut.
+<!-- SECTION:FINAL_SUMMARY:END -->
