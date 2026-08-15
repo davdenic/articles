@@ -6,7 +6,7 @@ title: >-
 status: In Progress
 assignee: []
 created_date: '2026-08-15 21:51'
-updated_date: '2026-08-15 22:12'
+updated_date: '2026-08-15 22:28'
 labels:
   - frontend
   - design
@@ -28,8 +28,8 @@ ordinal: 7000
 - [ ] #2 Heading font replaced with a distinctive display font (preferably non-serif, optionally a handwriting/script face); body reading font kept legible
 - [ ] #3 Thematic break (`<hr>`) restyled as a fancy-but-subtle separator (e.g. three spaced dots / small ornament), gentle not a strong line; the plain rule is hidden
 - [ ] #4 Fonts are self-hosted (no external CDN/Google Fonts request) to avoid third-party calls; document the source/license
-- [ ] #5 Typography respects the existing dark/light theme system (colours via the theme CSS variables; headings, underline and separator legible and correct in BOTH themes and when toggled)
-- [ ] #6 Type scale is responsive (scales down on mobile) and headings stay readable/accessible
-- [ ] #7 npm run qa and npm run build pass
-- [ ] #8 The h1 has a decorative curved/hand-drawn underline (CSS mask + --accent); h2/h3 do not
+- [ ] #5 Type scale is responsive (scales down on mobile) and headings stay readable/accessible
+- [ ] #6 npm run qa and npm run build pass
+- [ ] #7 The h1 has a decorative curved/hand-drawn underline (CSS mask + --accent); h2/h3 do not
+- [ ] #8 Heading font is self-hosted via @font-face (no external CDN/Google Fonts request); document the source/license
 <!-- AC:END -->
