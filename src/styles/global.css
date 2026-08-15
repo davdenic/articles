@@ -24,11 +24,11 @@
     bigger jumps toward h1. clamp(min, preferred+vw, max) makes it fluid
     with no breakpoints.
   */
-  --fs-sm: clamp(0.78rem, 0.76rem + 0.10vw, 0.85rem);
-  --fs-base: clamp(1rem, 0.97rem + 0.16vw, 1.10rem);
-  --fs-h3: clamp(1.22rem, 1.12rem + 0.45vw, 1.48rem);
-  --fs-h2: clamp(1.55rem, 1.34rem + 1.05vw, 2.12rem);
-  --fs-h1: clamp(2.05rem, 1.60rem + 2.25vw, 3.30rem);
+  --fs-sm: clamp(0.85rem, 0.82rem + 0.15vw, 0.95rem);
+  --fs-base: clamp(1.12rem, 1.05rem + 0.35vw, 1.30rem);
+  --fs-h3: clamp(1.42rem, 1.28rem + 0.60vw, 1.75rem);
+  --fs-h2: clamp(1.80rem, 1.50rem + 1.30vw, 2.55rem);
+  --fs-h1: clamp(2.40rem, 1.90rem + 2.60vw, 3.90rem);
 
   /* Hand-drawn curved underline for h1/h2 (colored via mask + --accent). */
   --underline: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'%3E%3Cpath d='M3 8 C 45 2 75 11 118 6 S 185 3 197 7' fill='none' stroke='black' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
