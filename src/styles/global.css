@@ -8,8 +8,8 @@
 }
 
 :root {
-  --measure: 40rem;   /* readable text column */
-  --wide: 62rem;      /* max image width on large screens */
+  --measure: 46rem;   /* readable text column (widened for the larger body size) */
+  --wide: 66rem;      /* max image width on large screens */
   --fg: #1a1a1a;
   --bg: #fdfdfb;
   --muted: #6b6b6b;
