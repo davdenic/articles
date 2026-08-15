@@ -1,0 +1,53 @@
+name: QA
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Hard gate: frontmatter schema, content collection, Astro build errors.
+      - name: Build (schema + build gate)
+        run: npm run build
+
+      - name: Markdown lint
+        run: npm run qa:lint
+
+      - name: Spell check
+        run: npm run qa:spell
+
+      - name: Image / asset check
+        run: npm run qa:images
+
+      # Internal links resolved against the built site. Blocking.
+      - name: Link check (internal)
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --offline --include-fragments dist
+          fail: true
+
+      # External links are network-dependent and flaky — report only.
+      - name: Link check (external)
+        uses: lycheeverse/lychee-action@v2
+        continue-on-error: true
+        with:
+          args: --scheme https --scheme http dist
+          fail: true

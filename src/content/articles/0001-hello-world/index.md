@@ -13,9 +13,8 @@ This is the first article. Edit this folder in Obsidian.
 
 ## Images
 
-Put images in this same folder and reference them relatively:
-
-![Alt text](./example.png)
+Put images in this same folder and reference them relatively, e.g.
+`![Alt text](./example.png)`.
 
 Astro optimizes co-located images automatically.
 

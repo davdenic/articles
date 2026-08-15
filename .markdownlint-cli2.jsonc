@@ -1,0 +1,17 @@
+{
+  // Markdown lint rules for article bodies.
+  // Docs: https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
+  "config": {
+    "default": true,
+    // Prose line length is not meaningful for Obsidian-authored articles.
+    "MD013": false,
+    // Allow inline HTML (Astro components, occasional raw markup).
+    "MD033": false,
+    // First line need not be a heading — title lives in frontmatter.
+    "MD041": false,
+    // Duplicate headings allowed across sections (e.g. "Status").
+    "MD024": { "siblings_only": true }
+  },
+  "globs": ["src/content/articles/**/*.md"],
+  "ignores": ["node_modules", "dist", ".astro"]
+}

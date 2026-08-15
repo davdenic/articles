@@ -7,6 +7,16 @@ The project version lives in `package.json` (`version`); each release below matc
 
 ## [Unreleased]
 
+### Added
+
+- QA pipeline (`.github/workflows/qa.yml`) on pull requests to `main`: build/schema gate, markdown lint, spell check, image/asset check, and internal link check (external links reported only).
+- `markdownlint-cli2` + `cspell` dev dependencies with configs; `scripts/check-images.mjs`; `npm run qa` to run all checks locally.
+- Committed `package-lock.json` for reproducible CI installs.
+
+### Changed
+
+- Sample article `0001-hello-world`: image example shown as inline code instead of a live embed (no missing asset).
+
 ## [0.1.0] - 2026-08-15
 
 ### Added

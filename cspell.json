@@ -1,0 +1,22 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "// dictionaries": "Extend `words` when a legit term is flagged. Do not lower the bar by disabling checks.",
+  "words": [
+    "Astro",
+    "davdenic",
+    "Denicolo",
+    "frontmatter",
+    "Obsidian",
+    "TYPO3",
+    "changelog"
+  ],
+  "ignorePaths": [
+    "node_modules/**",
+    "dist/**",
+    ".astro/**",
+    "CHANGELOG.md",
+    "**/*.png",
+    "**/*.jpg"
+  ]
+}
