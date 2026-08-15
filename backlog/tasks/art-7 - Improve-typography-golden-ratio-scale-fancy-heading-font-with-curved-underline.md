@@ -3,10 +3,10 @@ id: ART-7
 title: >-
   Improve typography: golden-ratio scale + fancy heading font with curved
   underline
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-08-15 21:51'
-updated_date: '2026-08-15 21:54'
+updated_date: '2026-08-15 22:05'
 labels:
   - frontend
   - design
@@ -29,6 +29,7 @@ ordinal: 7000
 - [ ] #3 h1 and h2 have a decorative curved/hand-drawn underline (CSS or inline SVG), not a plain border
 - [ ] #4 Thematic break (`<hr>`) restyled as a fancy-but-subtle separator (e.g. three spaced dots / small ornament), gentle not a strong line; the plain rule is hidden
 - [ ] #5 Fonts are self-hosted (no external CDN/Google Fonts request) to avoid third-party calls; document the source/license
-- [ ] #6 Headings, underline and separator stay readable/accessible and responsive in both light and dark themes
-- [ ] #7 npm run qa and npm run build pass
+- [ ] #6 Typography respects the existing dark/light theme system (colours via the theme CSS variables; headings, underline and separator legible and correct in BOTH themes and when toggled)
+- [ ] #7 Type scale is responsive (scales down on mobile) and headings stay readable/accessible
+- [ ] #8 npm run qa and npm run build pass
 <!-- AC:END -->

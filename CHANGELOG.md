@@ -7,6 +7,10 @@ The project version lives in `package.json` (`version`); each release below matc
 
 ## [Unreleased]
 
+### Added
+
+- Typography overhaul (ART-7): self-hosted **Space Grotesk** heading font (OFL, no CDN call), a golden-ratio-anchored **fluid `clamp()` type scale on an accelerating curve** (bigger jumps toward h1), a hand-drawn **curved underline** under h1/h2 (theme-colored via CSS mask), and a subtle **three-dot section separator** replacing the `hr` rule. Body stays Georgia serif. All theme-aware (light/dark).
+
 ## [0.2.0] - 2026-08-16
 
 ### Added
