@@ -76,6 +76,10 @@ Common commands:
 
 Do not hand-edit files under `backlog/` — always go through the CLI so metadata and history stay consistent. Run `backlog <command> --help` for options.
 
+**Backlog `auto_commit` is disabled** (`backlog/config.yml`). CLI commands only edit the markdown; they do not commit. Commit backlog changes yourself on a branch through a PR, like all other changes — never let task edits land directly on `main`.
+
+**Task structure — always What / Why / AC.** Every task's description leads with a `**What:**` line and a `**Why:**` line; acceptance criteria go in the task's acceptance-criteria field (`--ac`). Create/edit accordingly, e.g. `backlog task create "Title" -d "**What:** …\n\n**Why:** …" --ac "…" --ac "…"`.
+
 <!-- BACKLOG.MD GUIDELINES START -->
 <!-- backlog.md-instructions-version: 1.48.0 -->
 <CRITICAL_INSTRUCTION>
