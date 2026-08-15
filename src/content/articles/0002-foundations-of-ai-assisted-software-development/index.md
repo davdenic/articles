@@ -4,7 +4,7 @@ description: AI doesn't fix your development process — it amplifies it. Why QA
 draft: true
 version: 1
 changelog: []
-modified: 2026-08-15T23:15:53+02:00
+modified: 2026-08-16T01:23:23+02:00
 ---
 
 How many times have you been told to use AI to boost your productivity? It writes code 10× faster. You just need to give it a prompt and let it work.
@@ -49,7 +49,7 @@ These pillars are not AI-specific infrastructure. They are good engineering prac
 
 ---
 
-**Slogan:** _Before adopting AI, build the house that AI can live in._
+ _Before adopting AI, build the house that AI can live in._
 
 ---
 
