@@ -255,3 +255,52 @@ pre code { background: none; padding: 0; }
 .theme-toggle .sun { display: none; }
 .theme-toggle[data-eff='dark'] .moon { display: none; }
 .theme-toggle[data-eff='dark'] .sun { display: block; }
+
+/* "About the author" footer at the end of each article. */
+.author-box {
+  position: relative;
+  margin-top: 3.5rem;
+  padding-top: 1.9rem;
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+/* Hand-drawn curved line above the author box (same ink as the separator). */
+.author-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0.6em;
+  background-color: var(--accent);
+  -webkit-mask: var(--underline) no-repeat center / 100% 100%;
+  mask: var(--underline) no-repeat center / 100% 100%;
+}
+.author-photo {
+  flex: 0 0 auto;
+  width: 92px;
+  height: 148px; /* taller than the photo's ratio → crops the sides, enabling the horizontal shift */
+  border-radius: 18px; /* very rounded corners */
+  object-fit: cover;
+  object-position: 48% 12%; /* center the crop on the face (upper-centre) */
+}
+.author-text { min-width: 0; }
+.author-eyebrow {
+  font-family: var(--heading);
+  font-size: var(--fs-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 0.2rem;
+}
+.author-name {
+  font-family: var(--heading);
+  font-weight: 500;
+  font-size: var(--fs-h3);
+  margin: 0 0 0.4rem;
+}
+.author-bio {
+  color: var(--muted);
+  margin: 0;
+}

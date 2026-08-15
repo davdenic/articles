@@ -4,7 +4,7 @@ description: AI doesn't fix your development process — it amplifies it. Why QA
 draft: true
 version: 1
 changelog: []
-modified: 2026-08-16T01:28:22+02:00
+modified: 2026-08-16T01:31:15+02:00
 ---
 
 How many times have you been told to use AI to boost your productivity? It writes code 10× faster. You just need to give it a prompt and let it work.

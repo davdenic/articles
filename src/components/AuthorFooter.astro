@@ -1,0 +1,25 @@
+---
+// Reusable "About the author" footer shown at the end of every article.
+// Single source of truth — edit the bio/links/photo here and it updates everywhere.
+import { Image } from 'astro:assets';
+import authorPhoto from '../assets/author.jpg';
+interface Props {
+  author: string;
+}
+const { author } = Astro.props;
+---
+
+<footer class="author-box narrow">
+  <Image src={authorPhoto} alt={author} width={420} class="author-photo" />
+  <div class="author-text">
+    <p class="author-eyebrow">About the author</p>
+    <p class="author-name">{author}</p>
+    <p class="author-bio">
+      Software engineer with 25+ years on web development, PHP, Python and CI/CD,
+      exploring how to make AI a reliable engineering teammate.
+      <a href="https://www.linkedin.com/in/daviddenicolo/" rel="me noopener" target="_blank"
+        >Reach me on LinkedIn</a
+      >.
+    </p>
+  </div>
+</footer>

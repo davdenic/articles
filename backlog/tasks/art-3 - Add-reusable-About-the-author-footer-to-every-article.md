@@ -1,10 +1,10 @@
 ---
 id: ART-3
 title: Add reusable 'About the author' footer to every article
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-08-15 21:35'
-updated_date: '2026-08-15 21:48'
+updated_date: '2026-08-15 23:48'
 labels:
   - frontend
 dependencies:
@@ -28,3 +28,15 @@ ordinal: 3000
 - [ ] #4 Styled coherently with the reading layout in both light and dark themes
 - [ ] #5 npm run qa and npm run build pass
 <!-- AC:END -->
+
+## Implementation Plan
+
+<!-- SECTION:PLAN:BEGIN -->
+Create src/components/AuthorFooter.astro (single source of truth), include it at the end of the article layout ([...slug].astro) so every article gets it. Show author name (from frontmatter) + short bio + optional links. Remove the '← all articles' back-link. Style theme-aware.
+<!-- SECTION:PLAN:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Implemented in PR: reusable AuthorFooter.astro (single source of truth) at the end of every article — rounded portrait, bio, LinkedIn link, hand-drawn curved divider; author name from frontmatter (David Denicolò). Removed the '← all articles' back-link.
+<!-- SECTION:FINAL_SUMMARY:END -->
