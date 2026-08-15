@@ -9,6 +9,8 @@ The project version lives in `package.json` (`version`); each release below matc
 
 ### Added
 
+- Dark/light theme toggle (top-right icon): defaults to the OS `prefers-color-scheme`, lets the reader override, and persists the choice in `localStorage` with no flash of the wrong theme on load.
+
 - QA pipeline (`.github/workflows/qa.yml`) on pull requests to `main`: build/schema gate, markdown lint, spell check, image/asset check, and internal link check (external links reported only).
 - `markdownlint-cli2` + `cspell` dev dependencies with configs; `scripts/check-images.mjs`; `npm run qa` to run all checks locally.
 - Committed `package-lock.json` for reproducible CI installs.
