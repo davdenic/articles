@@ -19,6 +19,7 @@ The project version lives in `package.json` (`version`); each release below matc
 
 ### Fixed
 
+- Article detail pages were unreachable: the route lived at `src/pages/articles/[...slug].astro`, which combined with the site `base` (`/articles`) produced a doubled `/articles/articles/<slug>` URL, so every home-page link 404'd. Moved the route to `src/pages/[...slug].astro` so the public URL is `/articles/<slug>`.
 - Navigation links now derive from `import.meta.env.BASE_URL` instead of a hardcoded `/articles` prefix, so the article back-link and index links stay correct under the site `base` (previously the back-link pointed at the domain root).
 
 ## [0.1.0] - 2026-08-15
