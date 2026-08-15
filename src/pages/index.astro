@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+
+// Only live articles (draft !== true). In dev, drafts stay visible for preview.
+const isDev = import.meta.env.DEV;
+const articles = (await getCollection('articles'))
+  .filter((a) => isDev || !a.data.draft)
+  .sort((a, b) => (b.data.published?.valueOf() ?? 0) - (a.data.published?.valueOf() ?? 0));
+
+// Strip the leading NNNN- from the folder id to get the public slug.
+const publicSlug = (id: string) => id.replace(/^\d+-/, '');
+---
+
+<Base title="Articles">
+  <div class="narrow">
+  <h1>Articles</h1>
+  <ul class="article-list">
+    {articles.map((a) => (
+      <li>
+        <a href={`/articles/${publicSlug(a.id)}/`}>{a.data.title}</a>
+        {a.data.draft && <small> (draft)</small>}
+      </li>
+    ))}
+  </ul>
+  </div>
+</Base>
