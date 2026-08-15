@@ -1,0 +1,123 @@
+:root {
+  --measure: 40rem;   /* readable text column */
+  --wide: 62rem;      /* max image width on large screens */
+  --fg: #1a1a1a;
+  --bg: #fdfdfb;
+  --muted: #6b6b6b;
+  --accent: #7a1f1f;
+  --rule: #e2e2dc;
+  --serif: Georgia, 'Iowan Old Style', 'Palatino Linotype', Palatino, 'Times New Roman', serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fg: #e8e6e1;
+    --bg: #16161a;
+    --muted: #a0a0a0;
+    --accent: #e0a0a0;
+    --rule: #2c2c30;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { font-size: 112%; }
+@media (min-width: 48rem) { html { font-size: 118%; } }
+
+body {
+  font-family: var(--serif);
+  color: var(--fg);
+  background: var(--bg);
+  line-height: 1.65;
+  margin: 0;
+  padding: 2rem 1rem 5rem;
+}
+@media (min-width: 48rem) {
+  body { padding: 3rem 1.25rem 6rem; }
+}
+
+/* Mobile-first: single centered column, capped at the wide track. */
+main {
+  max-width: var(--wide);
+  margin: 0 auto;
+}
+
+/* Narrow wrapper for text-only pages (e.g. the index list). */
+.narrow {
+  max-width: var(--measure);
+  margin: 0 auto;
+}
+
+h1, h2, h3 { line-height: 1.25; font-weight: 700; }
+h1 { font-size: 2rem; margin: 0 0 0.5rem; }
+h2 { font-size: 1.4rem; margin: 2.5rem 0 0.75rem; }
+h3 { font-size: 1.15rem; }
+
+p, ul, ol { margin: 0 0 1.2rem; }
+
+a { color: var(--accent); text-underline-offset: 2px; }
+
+img { max-width: 100%; height: auto; border-radius: 4px; }
+
+small, .meta { color: var(--muted); font-size: 0.85rem; }
+
+hr { border: 0; border-top: 1px solid var(--rule); margin: 3rem 0; }
+
+blockquote {
+  margin: 0 0 1.2rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--rule);
+  color: var(--muted);
+  font-style: italic;
+}
+
+code {
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  background: var(--rule);
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+}
+
+pre {
+  overflow-x: auto;
+  padding: 1rem;
+  background: var(--rule);
+  border-radius: 6px;
+}
+pre code { background: none; padding: 0; }
+
+/*
+  Article layout: a 3-track grid.
+  Text sits in the centered narrow track; images span the full wide track.
+  Mobile-first — on small screens both tracks collapse to the viewport width,
+  so it's naturally a single column.
+*/
+.prose {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    min(var(--measure), 100%)
+    minmax(0, 1fr);
+}
+.prose > * {
+  grid-column: 2; /* default: narrow text column */
+}
+
+/* Lone images (Markdown `![]()` renders as <p><img></p>) and figures go wide. */
+.prose > figure,
+.prose > p:has(> img:only-child) {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: 100%;
+  max-width: var(--wide);
+  margin: 1.5rem 0;
+}
+.prose > figure img,
+.prose > p:has(> img:only-child) img {
+  width: 100%;
+}
+
+.changelog { border-top: 1px solid var(--rule); margin-top: 3rem; padding-top: 1rem; }
+.article-list { list-style: none; padding: 0; }
+.article-list li { margin: 0 0 0.6rem; }

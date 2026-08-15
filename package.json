@@ -1,0 +1,23 @@
+{
+  "name": "articles",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "qa:lint": "markdownlint-cli2 \"src/content/articles/**/*.md\"",
+    "qa:spell": "cspell --no-progress \"src/content/articles/**/*.md\"",
+    "qa:images": "node scripts/check-images.mjs",
+    "qa": "npm run qa:lint && npm run qa:spell && npm run qa:images"
+  },
+  "dependencies": {
+    "astro": "^5.0.0"
+  },
+  "devDependencies": {
+    "cspell": "^9.0.0",
+    "markdownlint-cli2": "^0.18.0"
+  }
+}
