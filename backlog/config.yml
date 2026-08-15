@@ -1,0 +1,17 @@
+project_name: "David Articles"
+default_status: "To Do"
+statuses: ["To Do", "In Progress", "Done"]
+labels: []
+definition_of_done: []
+date_format: yyyy-mm-dd
+max_column_width: 20
+default_editor: "nano"
+auto_open_browser: true
+default_port: 6427
+remote_operations: false
+auto_commit: true
+filesystem_only: false
+bypass_git_hooks: true
+check_active_branches: false
+active_branch_days: 30
+task_prefix: "ART"
