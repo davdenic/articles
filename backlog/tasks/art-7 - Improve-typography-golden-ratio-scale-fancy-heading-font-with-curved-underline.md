@@ -3,10 +3,10 @@ id: ART-7
 title: >-
   Improve typography: golden-ratio scale + fancy heading font with curved
   underline
-status: In Progress
+status: Done
 assignee: []
 created_date: '2026-08-15 21:51'
-updated_date: '2026-08-15 22:28'
+updated_date: '2026-08-15 22:53'
 labels:
   - frontend
   - design
@@ -33,3 +33,9 @@ ordinal: 7000
 - [ ] #7 The h1 has a decorative curved/hand-drawn underline (CSS mask + --accent); h2/h3 do not
 - [ ] #8 Heading font is self-hosted via @font-face (no external CDN/Google Fonts request); document the source/license
 <!-- AC:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Implemented in PR #7: Oswald (light, elongated condensed sans) headings self-hosted; golden-ratio fluid clamp scale on an accelerating curve with larger reading text + widened column; hand-drawn curved underline on h1; three-dot hr separator; body stays Georgia; all theme-aware.
+<!-- SECTION:FINAL_SUMMARY:END -->
