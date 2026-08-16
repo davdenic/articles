@@ -1,6 +1,6 @@
 ---
 title: Prevent and detect — E2E tests and observability for web projects
-description: Shipping isn't the finish line. Two tools cover the two failure windows: E2E tests catch regressions before deploy, observability catches problems in production — and it needs an owner, not just dashboards.
+description: "Shipping isn't the finish line. Two tools cover the two failure windows: E2E tests catch regressions before deploy, observability catches problems in production — and it needs an owner, not just dashboards."
 draft: true
 version: 1
 changelog: []
