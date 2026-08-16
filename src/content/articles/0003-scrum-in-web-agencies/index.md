@@ -4,9 +4,10 @@ description: Scrum shines on long, complex products — but a typical web agency
 draft: true
 version: 1
 changelog: []
+modified: 2026-08-16T19:13:15+02:00
 ---
 
-Scrum is everywhere. But most of the advice assumes one dedicated team building one long-lived product. A web agency rarely looks like that. So: does Scrum really work in a web agency? This is my take, from years of running it (and adapting it) in one — first shared as a talk at T3CON19.
+Scrum is everywhere. But most of the advice assumes one dedicated team building one long-lived product. A web agency rarely looks like that. So: does Scrum really work in a web agency? This is my take, from years of running it (and adapting it) in one — first shared as a talk at T3CON19. I still don't have a tidy yes/no, and I've come to think that's the honest answer.
 
 ## A step back: Waterfall vs Scrum
 
@@ -41,7 +42,9 @@ For a 7-person team (5 devs, 1 PO, 1 SM):
 - a 2-week sprint ≈ **560h**
 - a 10-sprint build ≈ **5,600h**
 
-Multiply by your average hourly cost. That's the scale Scrum was built for.
+Multiply by your average hourly cost. That's the scale Scrum was built for. If your stomach dropped a little at that number, so did mine — and that reaction is worth sitting with, because it's exactly the scale most agency projects never reach.
+
+Which leaves me with a question I keep turning over: if almost none of my projects hit that scale, am I really doing Scrum, or just holding meetings in its name?
 
 ## The typical web agency
 
@@ -59,6 +62,8 @@ Now the reality most agencies live in:
 ### The Tetris problem
 
 A team in an agency rarely gets to sit on one project. Leads, support and "just a quick fix" keep dropping in, so the two weeks become a game of **Tetris**: you slot in whatever falls next, switching context almost every day. Each switch has a cost — reloading the problem, the code, the client's intent. Real focus needs *consecutive* days on the same thing, and that only happens when things are calm. When they are, protect it: give the team a few days in a row on one project and let it actually concentrate.
+
+I'm not fully sure this is even solvable in a busy agency, though. Maybe the switching is the job, and the honest goal is to make it less painful rather than pretend we can banish it. Ask me again in a year.
 
 ![Two weeks of a web-agency team: every developer keeps switching between projects, support, offers and spec analysis, rarely two days in a row on the same thing.](./context-switching.svg)
 
@@ -141,5 +146,7 @@ A hybrid: Kanban with some Scrum concepts.
 ## So, does it work?
 
 Scrum works in a web agency — but rarely by the book. Pick the honest version: full Scrum where a project is genuinely complex and a team can commit; a scaled-down Scrum for small senior teams; Scrumban for support and quick features. The failure mode isn't choosing one of these — it's pretending you're doing Scrum while quietly dropping the parts that make it work.
+
+That's my current best guess, not a verdict. I might be wrong about where the line sits between "adapted Scrum" and "not Scrum any more," and I'd genuinely like to hear where others draw it. Ask me again in a year and the answer may have moved.
 
 *Based on my T3CON19 talk, "Scrum for web agencies — does it really work?"*

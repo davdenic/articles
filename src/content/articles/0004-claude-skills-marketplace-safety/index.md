@@ -10,6 +10,8 @@ Claude Agent Skills are great — drop in a folder and the agent suddenly knows 
 
 Short answer: **not safe by default.** Treat it like installing software from an unknown source.
 
+I'll admit I asked this question because I'd already installed a couple of marketplace skills without reading a single line of them. So this is partly me working out how worried I should have been.
+
 ![How exposed you are depends on where a skill runs: Claude API (sandboxed) to Claude Code (full local access).](./skill-surfaces.svg)
 
 ## What a skill actually is
@@ -17,6 +19,8 @@ Short answer: **not safe by default.** Treat it like installing software from an
 A Skill is a folder with a required `SKILL.md` (instructions) and, optionally, bundled `scripts/`, `references/`, and `assets/`. The agent loads the instructions when the skill triggers — and **it executes the bundled code**.
 
 Per Anthropic's own docs, skills run "in a code execution environment where Claude has filesystem access, bash commands, and code execution capabilities." When the instructions reference a script, Claude runs it through bash — and only the *output* comes back into context, not the code. So reading the model's transcript won't show you what a bundled script actually did.
+
+That's the part that changed my mind, honestly. I'd assumed I could just watch the agent work and spot anything dodgy. You can't — the interesting bits happen off-screen.
 
 ## The threat model
 

@@ -68,9 +68,11 @@ I am a developer, not a lawyer — this is what I found, not legal advice, and t
 - **Facebook/Instagram — memorialization + Legacy Contact.** An account can be memorialized (preserved) or removed; a legacy contact can manage the memorialized profile within limits.
 - **Password managers** (1Password, Bitwarden and others) have their own emergency-access / legacy features — often the real key, since they hold everything else.
 
+Four companies, four different mechanisms, none of which know the others exist. As a developer I find that almost impressive — we can federate logins across half the internet, but "who gets my account when I die" is still four separate opt-in checkboxes in four separate settings pages.
+
 The catch: every one of these is **opt-in and must be set up in advance.** Do nothing, and your heirs are left where I was — locked out, asking around.
 
-So the "digital will" isn't just a nice idea; it's the practical fix available today: turn on each platform's legacy feature now, write down who gets access to what, and keep it somewhere your people can actually reach.
+So the "digital will" isn't just a nice idea; it's the practical fix available today: turn on each platform's legacy feature now, write down who gets access to what, and keep it somewhere your people can actually reach. Is that a real fix or just the best of a bad set of options? I lean towards "best available" rather than "good" — but I'd rather do it than leave someone where I ended up.
 
 And here's the knot underneath all of it: most of us in Europe live our digital lives on **US products** — Gmail, iCloud, WhatsApp, Meta. So even where a European law grants an heir a right to the data, the account itself sits under a US company's terms of service and, often, foreign jurisdiction. Which one actually wins — my national inheritance right, or the platform's contract and the law it answers to? I genuinely don't know. It's an open conflict between regional rights and international platforms — and it's the part that unsettles me most.
 

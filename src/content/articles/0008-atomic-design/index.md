@@ -8,7 +8,7 @@ changelog: []
 modified: 2026-08-16T16:02:54+02:00
 ---
 
-Atomic design is one of those ideas everyone nods at and few actually apply. The name comes from Brad Frost: instead of designing whole pages, you build a UI from small, reusable parts that combine into bigger ones. Here's the model — and where it finally clicked for me, in TYPO3 v14.
+Atomic design is one of those ideas everyone nods at and few actually apply. I nodded at it for years without really using it. The name comes from Brad Frost: instead of designing whole pages, you build a UI from small, reusable parts that combine into bigger ones. Here's the model — and where it finally clicked for me, in TYPO3 v14.
 
 ## The five levels
 
@@ -18,13 +18,13 @@ Atomic design is one of those ideas everyone nods at and few actually apply. The
 - **Templates** — page-level layouts that arrange organisms, without real content.
 - **Pages** — templates filled with real content.
 
-The point isn't the taxonomy. It's the direction: **compose upward from small, isolated parts** instead of copy-pasting markup into every page.
+The point isn't the taxonomy. It's the direction: **compose upward from small, isolated parts** instead of copy-pasting markup into every page. The chemistry metaphor is charming, but I've never once needed it to explain the idea to a colleague — the direction does all the work.
 
 ![Atomic design levels: atom, molecule, organism, template, page — composing upward from small parts.](./atomic-levels.svg)
 
 ## Why it fits component-based work
 
-If you've done any modern frontend, this is just **components** with a naming convention. The value is the same:
+If you've done any modern frontend, this is just **components** with a naming convention. Which raises a fair question: if it's the same thing React and Vue have had for years, is the atomic-design vocabulary earning its keep, or is it a diagram we draw to feel organised? I lean towards "earning its keep, barely" — the value is real, even if the labels are optional:
 
 - **One source of truth** — the `Image` atom is the only place an `<img>` tag is built. Add lazy-loading or responsive sizes once, and every image benefits.
 - **Isolation** — a component owns its markup, styles and behaviour; you can move, copy or delete it without breaking the rest.
@@ -54,7 +54,9 @@ That last point matters. The page template ends up as mostly component calls, al
 
 ## The honest caveat
 
-Don't turn it into a religion. Teams waste real time arguing whether something is a molecule or an organism. It doesn't matter. The levels are a **guide**, not a law. What delivers the value is the underlying discipline: **small, isolated, well-named, reusable parts, composed upward.** Get that, and you can be loose about the labels.
+Don't turn it into a religion. Teams waste real time arguing whether something is a molecule or an organism — I've sat in that meeting, and nobody's UI got better for it. It doesn't matter. The levels are a **guide**, not a law. What delivers the value is the underlying discipline: **small, isolated, well-named, reusable parts, composed upward.** Get that, and you can be loose about the labels.
+
+Where I'm still unsure: how far up the tree this stays worth it. Atoms and molecules pay off obviously; at the "template" and "page" levels the abstraction gets thinner, and I'm not convinced formalising those two earns much. That's a hunch from a handful of projects, not a settled view — I'd want to build a few more before I'd argue it hard.
 
 ## Sources
 

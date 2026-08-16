@@ -28,7 +28,9 @@ Observability watches the **live** site and tells you when something's wrong.
 - A **centralised logging system** (e.g. Grafana Alloy / Loki, and existing tools like Sentry), with **dashboards** for trends and **alerts** when thresholds are crossed.
 - Value: catch production issues early, cut downtime and client impact, and see trends over time.
 
-One trap: set **alert thresholds** carefully, or the noise trains everyone to ignore them.
+One trap: set **alert thresholds** carefully, or the noise trains everyone to ignore them. An alert that fires forty times a day isn't monitoring — it's a very expensive way to teach your team to mute a channel.
+
+Where I'm genuinely unsure: how much of this belongs on every project versus only the ones big enough to warrant it? Full observability on a small brochure site might be more ceremony than value. I don't have a clean line for that yet.
 
 ## Two halves of one story
 
@@ -64,9 +66,13 @@ A natural next step (a hypothesis I'm exploring): feed the logs — Sentry runti
 
 The human owner still decides — but starts from a triaged, de-duplicated list instead of a wall of raw alerts.
 
+I want to be careful here, because I haven't built this yet. Does an AI layer actually cut the noise, or does it just add a confident-sounding wrong guess to triage? The clustering I'd trust sooner than the root-cause suggestions. I'd rather ship it small and measure than promise it works.
+
 ## Takeaway
 
 E2E tests and observability are the two halves of production QA: prevent before deploy, detect after. Buy tools if you like — but the value comes from **defining what matters with the client**, keeping alerts quiet enough to trust, and giving observability a real **owner**. That's what earns the confidence, on your side and the client's, that a deployed site is actually fine.
+
+That's my current read, from the framework work we've done so far. The owner-not-tools part I'm fairly confident about; the AI-triage part is still a hypothesis I'd want to prove before selling it. Ask me again once we've run it in anger.
 
 ## Sources
 

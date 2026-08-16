@@ -7,6 +7,10 @@ The project version lives in `package.json` (`version`); each release below matc
 
 ## [Unreleased]
 
+### Changed
+
+- Editorial pass on all 16 draft articles (0003–0018): applied the writing-style spec — curious/questioning voice (real open questions, admitted doubt, positions framed as current best guesses) and 1–2 light asides each to break the rhythm. Facts, figures, sources, tables, images and frontmatter left unchanged; published `0001`/`0002` untouched. Added British spellings `organised`/`formalising`/`customise` to the cspell dictionary.
+
 ## [1.1.0] - 2026-08-16
 
 ### Added
