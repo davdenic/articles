@@ -8,7 +8,7 @@ updated: 2026-08-16
 changelog:
   - "2026-08-16: add personal intro"
   - "2026-08-15: first publish"
-modified: 2026-08-16T12:52:46+02:00
+modified: 2026-08-16T13:11:17+02:00
 ---
 
 ### Hello World, I'm David — a full-stack web developer in Switzerland, working with TYPO3 for over two decades
