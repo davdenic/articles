@@ -1,9 +1,10 @@
 ---
 id: ART-20
 title: Write an article about atomic design
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-08-16 13:43'
+updated_date: '2026-08-16 13:49'
 labels:
   - content
 dependencies: []

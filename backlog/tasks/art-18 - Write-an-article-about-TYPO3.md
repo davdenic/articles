@@ -1,10 +1,10 @@
 ---
 id: ART-18
 title: 'Write an article: what''s new in TYPO3 v14'
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-08-16 13:37'
-updated_date: '2026-08-16 13:42'
+updated_date: '2026-08-16 13:49'
 labels:
   - content
 dependencies: []

@@ -4,6 +4,7 @@ description: A personal reflection on digital inheritance — emails, messages, 
 draft: true
 version: 1
 changelog: []
+modified: 2026-08-16T15:49:37+02:00
 ---
 
 A self-reflection on what happens to our digital lives when we die
@@ -45,6 +46,8 @@ Death already leaves enough behind. Technology shouldn’t make it harder for th
 ## What I found when I looked into it
 
 A little digging confirmed the mess — but also turned up a few concrete things worth knowing.
+
+![Europe is a patchwork: Germany, France, Italy, Spain and Belgium each have some national provision; Switzerland offers no data-protection route.](./europe-patchwork.svg)
 
 GDPR really does stop at death. Recital 27 says the regulation "does not apply to the personal data of deceased persons," and leaves the question to each member state. ([Recital 27](https://gdpr-info.eu/recitals/no-27/)) So in Europe there is no single answer — it is a patchwork, and it varies more than I expected:
 

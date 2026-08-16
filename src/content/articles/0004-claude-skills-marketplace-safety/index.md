@@ -10,6 +10,8 @@ Claude Agent Skills are great — drop in a folder and the agent suddenly knows 
 
 Short answer: **not safe by default.** Treat it like installing software from an unknown source.
 
+![How exposed you are depends on where a skill runs: Claude API (sandboxed) to Claude Code (full local access).](./skill-surfaces.svg)
+
 ## What a skill actually is
 
 A Skill is a folder with a required `SKILL.md` (instructions) and, optionally, bundled `scripts/`, `references/`, and `assets/`. The agent loads the instructions when the skill triggers — and **it executes the bundled code**.

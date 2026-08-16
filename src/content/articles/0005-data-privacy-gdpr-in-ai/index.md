@@ -21,6 +21,8 @@ Code itself usually isn't personal data. But dev artefacts quietly carry it all 
 
 So the question isn't "can I use AI?" — it's "what's *in* what I'm sending?"
 
+![Consumer chat apps vs API/enterprise tiers: training on your data and retention vs no-training, retention off, and a DPA.](./consumer-vs-api.svg)
+
 ## Who's who: controller, processor, DPA
 
 - **You** (the team or agency) decide why and how data gets fed to the AI — you're the **controller**.
