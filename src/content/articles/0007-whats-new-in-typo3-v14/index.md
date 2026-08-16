@@ -2,9 +2,12 @@
 title: What's new in TYPO3 v14 — a practitioner's tour
 description: The v14 changes that matter day to day — a simpler sitepackage, next-gen Fluid components, Content Blocks with a GUI, and a pile of backend quality-of-life gems.
 draft: true
+image: "hero.png"
 version: 1
 changelog: []
 ---
+
+![TYPO3 v14, honestly — hand-drawn hero](./hero.png)
 
 TYPO3 v14 is a big release — and, unusually, a big one for **integrators**: the people working at the seam between backend and frontend. The keynote features get the headlines, but the day-to-day wins are spread across dozens of smaller changes. Here's my tour of what actually changes how you work, gathered from the T3DD26 talks.
 

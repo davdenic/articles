@@ -2,9 +2,12 @@
 title: Data privacy and GDPR when you code with AI
 description: It's the content, not the tool, that triggers GDPR. What a dev team needs to know before pasting code, logs, or client data into an AI assistant.
 draft: true
+image: "hero.png"
 version: 1
 changelog: []
 ---
+
+![GDPR while you code — hand-drawn hero](./hero.png)
 
 Using an AI assistant while you build is normal now. But the moment you paste code, a log, a ticket, or a client's content into a prompt, you might be processing **personal data** — and GDPR has opinions about that. This is a practical orientation for developers and agencies, not legal advice. (I'm in Switzerland, where the revFADP is broadly analogous to GDPR but a *separate* regime — check your own.)
 

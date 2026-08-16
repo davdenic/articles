@@ -2,10 +2,13 @@
 title: Saying less in the age of AI writing
 description: When AI lets everyone write polished, content-rich text, everything starts to sound the same. Maybe the real skill now is knowing what doesn't need to be said.
 draft: true
+image: "hero.png"
 size: "2x2"
 version: 1
 changelog: []
 ---
+
+![Everyone sounds the same — hand-drawn hero](./hero.png)
 
 A personal reflection on web communication:
 
@@ -20,3 +23,5 @@ Maybe this is also why I'm increasingly drawn to the opposite: saying less, cutt
 In a world where everyone can write more, perhaps the real skill is knowing what doesn't need to be said. Ask me again in a year — I might have changed my mind.
 
 *(AI wrote this. I just gestured wildly🤌)*
+
+![Many different voices go through an AI and come out sounding the same](./sound-the-same.svg)

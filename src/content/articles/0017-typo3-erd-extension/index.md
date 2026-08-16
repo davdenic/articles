@@ -2,13 +2,18 @@
 title: Generate ER diagrams from your TYPO3 extension — the ERD extension
 description: Jumping into an unknown TYPO3 project and hand-drawing entity-relationship diagrams is miserable. So I built an extension that generates them straight from your extension's structure.
 draft: true
+image: "hero.png"
 version: 1
 changelog: []
 ---
 
+![Tables, drawn for you — hand-drawn hero](./hero.png)
+
 You know what sucks? Manually creating ER diagrams — especially when you have to jump into an unknown project or extension and reverse-engineer how everything fits together.
 
 So I built something for it. I'm releasing the **ERD extension**: it lets developers generate entity-relationship diagrams **directly from their extension's structure** — no manual drawing, no drifting-out-of-date diagram in a wiki somewhere. (We all know the one: last edited three years and two data models ago.)
+
+![An extension reads TYPO3 tables and draws an entity-relationship diagram automatically](./erd-auto.svg)
 
 ## Why
 

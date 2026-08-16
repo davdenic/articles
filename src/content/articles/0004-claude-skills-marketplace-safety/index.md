@@ -2,9 +2,12 @@
 title: How safe is it to use Claude skills from a marketplace?
 description: A marketplace skill is code plus instructions your agent will run. Here's the real threat model, how exposed you actually are, and how to use them safely.
 draft: true
+image: "hero.png"
 version: 1
 changelog: []
 ---
+
+![Trust, but read the skill — hand-drawn hero](./hero.png)
 
 Claude Agent Skills are great — drop in a folder and the agent suddenly knows how to do something new. Marketplaces make that a one-click habit. But a skill isn't just a prompt: it's **code plus instructions your agent will run**. So before you install one from a stranger, it's worth asking how safe that really is.
 

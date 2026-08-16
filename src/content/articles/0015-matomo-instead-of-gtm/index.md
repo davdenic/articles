@@ -2,9 +2,12 @@
 title: "Digital sovereignty, concretely: Matomo instead of GTM"
 description: "Digital sovereignty is easy to talk about and harder to act on. One concrete move: swap Google Tag Manager for self-hosted Matomo. On TYPO3 with DDEV it's straightforward."
 draft: true
+image: "hero.png"
 version: 1
 changelog: []
 ---
+
+![Matomo, not GTM — hand-drawn hero](./hero.png)
 
 Digital sovereignty keeps coming up here in Switzerland — and it's one of those topics worth acting on concretely instead of just nodding at. The easiest, most concrete first step I know: **your analytics.**
 

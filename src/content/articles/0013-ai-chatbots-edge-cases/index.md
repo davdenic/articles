@@ -2,9 +2,12 @@
 title: Edge cases all the way down
 description: A chatbot couldn't cancel my order. Neither could email support. Then a real human sorted it in one call. A small lesson in AI, automation, and the human in the loop.
 draft: true
+image: "hero.png"
 version: 1
 changelog: []
 ---
+
+![Where chatbots fall over — hand-drawn hero](./hero.png)
 
 A weird little lesson in AI–human collaboration.
 

@@ -2,9 +2,12 @@
 title: Cloud AI or your own machine? The privacy trade-off
 description: ChatGPT and Claude are the easy default — but for sensitive data, a local LLM keeps everything in-house. When self-hosting actually makes sense, GDPR included.
 draft: true
+image: "hero.png"
 version: 1
 changelog: []
 ---
+
+![Cloud or your own box? — hand-drawn hero](./hero.png)
 
 Reach for ChatGPT or Claude, or run a model on your own hardware? For most tasks the cloud is the obvious default. But the moment you're handling client or regulated data — especially in Europe — the question stops being about capability and becomes about **where your data goes**.
 

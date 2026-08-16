@@ -2,11 +2,14 @@
 title: Atomic design, and where it finally clicks
 description: Atoms, molecules, organisms — Brad Frost's mental model for building UIs from small reusable parts, and how TYPO3 v14's Fluid components make it real.
 draft: true
+image: "hero.png"
 size: "1x2"
 version: 1
 changelog: []
 modified: 2026-08-16T16:02:54+02:00
 ---
+
+![Atoms, all the way up — hand-drawn hero](./hero.png)
 
 Atomic design is one of those ideas everyone nods at and few actually apply. I nodded at it for years without really using it. The name comes from Brad Frost: instead of designing whole pages, you build a UI from small, reusable parts that combine into bigger ones. Here's the model — and where it finally clicked for me, in TYPO3 v14.
 

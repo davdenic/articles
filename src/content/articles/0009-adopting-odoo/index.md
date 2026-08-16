@@ -2,9 +2,12 @@
 title: Adopting Odoo — business logic in modules, integrations over FastAPI
 description: "What I learned moving from a monolithic PHP app to Odoo: put the business logic in custom modules, and let FastAPI handle the integrations Odoo shouldn't."
 draft: true
+image: "hero.png"
 version: 1
 changelog: []
 ---
+
+![We moved to Odoo — hand-drawn hero](./hero.png)
 
 At some point a homegrown app stops being the thing you sell and becomes the thing you maintain. We had a monolithic PHP application carrying years of business processes, and every new requirement meant re-inventing something an ERP already does well. Moving to **Odoo** was less about the framework and more about a decision: stop rebuilding invoicing, contacts, workflows and access control by hand, and put our energy into what's actually specific to us.
 

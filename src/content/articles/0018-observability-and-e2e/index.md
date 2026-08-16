@@ -2,9 +2,12 @@
 title: Prevent and detect — E2E tests and observability for web projects
 description: "Shipping isn't the finish line. Two tools cover the two failure windows: E2E tests catch regressions before deploy, observability catches problems in production — and it needs an owner, not just dashboards."
 draft: true
+image: "hero.png"
 version: 1
 changelog: []
 ---
+
+![Prevent, then detect — hand-drawn hero](./hero.png)
 
 A website can break in two windows: **before** you deploy (a regression you didn't catch) and **after** (something that only shows up in production). Most teams cover one and hope for the other. You need both — and they're two different tools.
 

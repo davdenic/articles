@@ -2,9 +2,12 @@
 title: The EU AI Act, for people who ship software
 description: If you build or deploy AI and touch the EU market, the AI Act applies — wherever you are. What it covers, who's on the hook, and why Swiss teams aren't exempt.
 draft: true
+image: "hero.png"
 version: 1
 changelog: []
 ---
+
+![The EU AI Act, for devs — hand-drawn hero](./hero.png)
 
 You've probably heard there's an EU AI Act. What's easy to miss is that it can apply to **you** — even from outside the EU — the same way GDPR does.
 

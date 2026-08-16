@@ -2,10 +2,13 @@
 title: Does Scrum really work in web agencies?
 description: Scrum shines on long, complex products — but a typical web agency runs many small projects at once. Here's where it breaks, and how to adapt it.
 draft: true
+image: "hero.png"
 version: 1
 changelog: []
 modified: 2026-08-16T19:13:15+02:00
 ---
+
+![Is this even Scrum? — hand-drawn hero](./hero.png)
 
 Scrum is everywhere. But most of the advice assumes one dedicated team building one long-lived product. A web agency rarely looks like that. So: does Scrum really work in a web agency? This is my take, from years of running it (and adapting it) in one — first shared as a talk at T3CON19. I still don't have a tidy yes/no, and I've come to think that's the honest answer.
 

@@ -2,9 +2,12 @@
 title: Automated testing for TYPO3 content elements
 description: Manual click-through doesn't scale. Here's how to test the frontend, backend preview and edit form of every content element — with the plain TYPO3 testing framework and auto-generated assertions.
 draft: true
+image: "hero.png"
 version: 1
 changelog: []
 ---
+
+![Test the content elements — hand-drawn hero](./hero.png)
 
 Content elements break quietly. A TYPO3 update, a moved class, an escaping change, a data processor that touches another one — and suddenly a variation renders wrong. Nobody in QA can click through every element, every toggle, every language and eyeball each reload. So we don't; and things slip.
 
