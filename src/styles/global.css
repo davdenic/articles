@@ -331,19 +331,15 @@ pre code { background: none; padding: 0; }
 }
 .prose th,
 .prose td {
-  padding: 0.5rem 1.25rem;
+  padding: 0.5rem 0;
   text-align: left;
   vertical-align: top;
   border-bottom: 1px solid var(--rule);
 }
-/* Keep the table flush with the text column; spacing lives between columns. */
-.prose th:first-child,
-.prose td:first-child {
-  padding-left: 0;
-}
-.prose th:last-child,
-.prose td:last-child {
-  padding-right: 0;
+/* A real gap between columns (on every cell except the last). */
+.prose th:not(:last-child),
+.prose td:not(:last-child) {
+  padding-right: 2.5rem;
 }
 .prose thead th {
   position: relative;
@@ -355,13 +351,17 @@ pre code { background: none; padding: 0; }
 .prose thead th::after {
   content: '';
   position: absolute;
-  left: 0.2rem;
-  right: 0.2rem;
+  left: 0;
+  right: 0;
   bottom: 0;
   height: 0.4em;
   background-color: var(--accent);
   -webkit-mask: var(--separator) no-repeat center / 100% 100%;
   mask: var(--separator) no-repeat center / 100% 100%;
+}
+/* Stop the underline before the inter-column gap so the curves are separated. */
+.prose thead th:not(:last-child)::after {
+  right: 2.5rem;
 }
 .prose tbody tr:last-child td {
   border-bottom: 0;
