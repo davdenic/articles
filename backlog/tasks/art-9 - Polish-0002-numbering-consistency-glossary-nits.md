@@ -1,9 +1,10 @@
 ---
 id: ART-9
 title: 'Polish 0002: numbering, consistency, glossary nits'
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-08-16 10:55'
+updated_date: '2026-08-16 14:53'
 labels:
   - content
 dependencies: []
