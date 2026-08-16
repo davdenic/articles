@@ -8,6 +8,8 @@ changelog: []
 
 Digital sovereignty keeps coming up here in Switzerland — and it's one of those topics worth acting on concretely instead of just nodding at. The easiest, most concrete first step I know: **your analytics.**
 
+![Google Tag Manager sends visitor data to Google; self-hosted Matomo keeps it on your own server.](./gtm-vs-matomo.svg)
+
 ## The swap
 
 Most sites reach for Google Tag Manager / Google Analytics by reflex. That means shipping your visitors' data to a US provider and taking on the whole transfer-and-consent burden that comes with it.

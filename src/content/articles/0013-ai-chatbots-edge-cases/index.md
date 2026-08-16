@@ -20,6 +20,8 @@ Then — one day after delivery — I got an email from an actual human being. H
 
 Not a single one of the earlier chatbots or emails was ever read or acknowledged. But a human — a real, actual human — got it done in the end.
 
+![The bot handles the happy path; the edge case falls through to a human, who gets it done.](./edge-to-human.svg)
+
 ## The point
 
 Development is full of edge cases. In the era of AI chatbots, it's edge cases all the way down.

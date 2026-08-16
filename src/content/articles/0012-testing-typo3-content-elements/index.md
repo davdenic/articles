@@ -10,6 +10,8 @@ Content elements break quietly. A TYPO3 update, a moved class, an escaping chang
 
 Two T3DD26 talks fixed that for me — one on **testing content elements**, one on **seeding versioned data**. Together they're a practical QA setup.
 
+![A content element is tested on three surfaces — frontend HTML, backend preview, edit form — with generated assertions you review as a diff.](./three-surfaces.svg)
+
 ## Test three surfaces, not one
 
 A content element lives in three places, and all three can break:
