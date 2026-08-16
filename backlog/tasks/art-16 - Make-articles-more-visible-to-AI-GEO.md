@@ -1,9 +1,10 @@
 ---
 id: ART-16
 title: Make articles more visible to AI (GEO)
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-08-16 13:37'
+updated_date: '2026-08-16 16:30'
 labels:
   - seo
   - research

@@ -7,6 +7,12 @@ The project version lives in `package.json` (`version`); each release below matc
 
 ## [Unreleased]
 
+## [0.10.0] - 2026-08-16
+
+### Added
+
+- GEO / AI-visibility (ART-16): `@astrojs/sitemap` integration, `public/robots.txt` allowing named AI crawlers (GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Claude-User, Google-Extended, …) + sitemap reference, an RSS feed (`/rss.xml`), and an `llms.txt` index of live articles. Decision recorded in `backlog/decisions/decision-3`.
+
 ## [0.9.0] - 2026-08-16
 
 ### Added
