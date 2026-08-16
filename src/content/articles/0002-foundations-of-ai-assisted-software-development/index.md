@@ -78,12 +78,14 @@ What stays per project: a live QA pipeline, real tasks (not just titles), the sh
 
 ---
 
-## The model
+## The house, part by part
 
-- **Roof — AI:** the amplifier. Only as good as what carries it.
-- **Left wall — Team Culture:** judgement, ownership, trust. AI changes _how we decide_, not just how we type.
-- **Right wall — Specs & Context:** what an agent cannot guess — the agent has no colleague to ask.
-- **Foundation — QA:** tests, E2E, CI/CD, static analysis, security, monitoring, observability, fast rollback. The one thing that answers: _is what we just built good or bad?_
+Each part predates AI. What changes is the stakes — AI works faster and more autonomously, so every part now has to hold under more pressure. Why each one matters _more_ with AI:
+
+- **Roof — AI:** the amplifier. It multiplies whatever the other three give it — and nothing more.
+- **Left wall — Team Culture:** judgement, ownership, trust. AI changes _how we decide_ and _who is accountable_, not just how fast we type.
+- **Right wall — Specs & Context:** what an agent cannot guess. Unlike a colleague it cannot ask — so the intent has to exist in writing before the work starts.
+- **Foundation — QA:** tests, E2E, CI/CD, static analysis, security, monitoring, fast rollback. The one signal that tells the agent — and you — whether what it just built is good or bad.
 
 Remove one part and it collapses. Individually they underdeliver; connected, they give the multiplier.
 
