@@ -7,6 +7,10 @@ The project version lives in `package.json` (`version`); each release below matc
 
 ## [Unreleased]
 
+### Added
+
+- Site favicon (Purple Tentacle) — 32×32, 512×512, and apple-touch-icon, wired in the layout head (ART-10).
+
 ## [0.5.0] - 2026-08-16
 
 ### Changed

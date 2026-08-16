@@ -1,9 +1,10 @@
 ---
 id: ART-10
 title: Add a site favicon
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-08-16 10:58'
+updated_date: '2026-08-16 11:02'
 labels:
   - frontend
 dependencies: []
@@ -28,3 +29,9 @@ ordinal: 9000
 - [ ] #4 Rights confirmed (or a licensed/original icon used instead)
 - [ ] #5 npm run qa and npm run build pass
 <!-- AC:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Generated favicon sizes (32, 512, apple-touch 180) from evil-tentacle.png into public/, wired <link> tags in Base.astro with base-correct URLs. Rights: David accepted use of the Purple Tentacle image for the personal site.
+<!-- SECTION:FINAL_SUMMARY:END -->
