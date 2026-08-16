@@ -4,6 +4,7 @@ description: Atoms, molecules, organisms — Brad Frost's mental model for build
 draft: true
 version: 1
 changelog: []
+modified: 2026-08-16T16:02:54+02:00
 ---
 
 Atomic design is one of those ideas everyone nods at and few actually apply. The name comes from Brad Frost: instead of designing whole pages, you build a UI from small, reusable parts that combine into bigger ones. Here's the model — and where it finally clicked for me, in TYPO3 v14.
