@@ -13,6 +13,8 @@ Scrum is everywhere. But most of the advice assumes one dedicated team building 
 - **Waterfall** assumes you can plan everything up front and keep it all under control for the whole build.
 - **Scrum** assumes you learn from feedback and mistakes — "adapt and evolve." Sprint after sprint, the product and the team get better and faster.
 
+The real dividing line is **change**. Waterfall bets the requirements will hold still; Scrum assumes they won't. Scrum *embraces* change as part of the process — every sprint is a chance to re-plan on what you just learned, instead of treating a mid-project change as a failure of the plan. So Scrum is most valuable exactly where change is constant: unclear or evolving requirements, new problems surfacing, priorities shifting under you. Where the requirements are truly stable and known up front, its ceremony buys you less.
+
 Scrum is a **framework to develop complex products**. Which raises the real question.
 
 ## What is a "complex product," anyway?
