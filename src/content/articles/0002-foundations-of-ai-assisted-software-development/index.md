@@ -6,7 +6,7 @@ version: 1
 published: 2026-08-16
 changelog:
   - "2026-08-16: first publish"
-modified: 2026-08-16T01:54:01+02:00
+modified: 2026-08-16T10:52:51+02:00
 ---
 
 How many times have you been told to use AI to boost your productivity? It writes code 10× faster. You just need to give it a prompt and let it work.

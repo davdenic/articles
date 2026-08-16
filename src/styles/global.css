@@ -223,7 +223,6 @@ pre code { background: none; padding: 0; }
   width: 100%;
 }
 
-.changelog { border-top: 1px solid var(--rule); margin-top: 3rem; padding-top: 1rem; }
 .article-list { list-style: none; padding: 0; }
 .article-list li { margin: 0 0 0.6rem; }
 

@@ -10,6 +10,11 @@ The project version lives in `package.json` (`version`); each release below matc
 ### Changed
 
 - Published article `0002` (foundations of AI-assisted development) — `draft: false`, `published: 2026-08-16`. Unpublished the `0001-hello-world` sample (back to `draft: true`).
+- `0001-hello-world`: added a first-person intro note (ART-4).
+
+### Removed
+
+- The per-article **Changelog** section is no longer displayed on article pages (ART-8); the `changelog` frontmatter field is still tracked.
 
 ## [0.4.0] - 2026-08-16
 
