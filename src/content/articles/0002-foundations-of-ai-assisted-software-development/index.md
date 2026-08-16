@@ -61,20 +61,24 @@ Using the 3 pillars as foundation of our software development the AI can assist 
 
 This is a shared way of working, not a one-off. Because AI only _amplifies_, **every project must stand on all three pillars.** Miss one and AI amplifies the gap.
 
-Shared assets make the pillars cheap to satisfy per project — you instantiate, you do not rebuild:
+The good news: most of the house is a shared team standard — you instantiate it per project, you do not rebuild it.
 
-- **QA** — shared CI pipelines, already adopted across many projects.
-- **Specs & Context** — shared code guidelines + `claude-skills` for coherent, on-standard output.
-- **Team Culture** — the same review and ownership rules for the whole team.
-
-What stays per project: a live QA pipeline, real tasks (not just titles), the shared guidelines/skills wired in, and a human owning every merge.
+| Pillar | Shared asset we already have | Per project |
+| --- | --- | --- |
+| QA | shared CI pipeline (`typo3-ci`), adopted across many projects | wire in the repo's own test suite |
+| Specs & Context | code guidelines + `claude-skills`, our framework | tasks, specs, ADRs, domain knowledge |
+| Team Culture | same review + ownership rules for the whole team | a human owning every merge |
 
 **Why all three are non-negotiable — what AI does when a pillar is missing:**
 
-- **QA missing** — the AI can't run any check on its own, so it optimises a fake target.
-- **Specs missing (tasks are just titles)** — it can't tell what you meant, so it guesses and derives.
-- **Specs missing (no shared guidelines / skills)** — it generates incoherent, off-standard code.
-- **Team Culture missing (no human supervision)** — it merges broken code and ships bad things to production.
+| Missing | What AI does |
+| --- | --- |
+| QA | can't run any check on its own → optimises a fake target |
+| Specs — tasks are just a title | can't tell what you meant → guesses and derives |
+| Specs — no shared guidelines / skills | generates incoherent, off-standard code |
+| Team Culture — no human supervision | merges broken code → ships bad things to production |
+
+Remove any one → it collapses.
 
 ---
 
