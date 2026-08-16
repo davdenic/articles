@@ -4,7 +4,7 @@ title: Mine LinkedIn posts for article seeds
 status: In Progress
 assignee: []
 created_date: '2026-08-16 13:37'
-updated_date: '2026-08-16 14:41'
+updated_date: '2026-08-16 14:42'
 labels:
   - content
   - research
@@ -30,27 +30,25 @@ ordinal: 18000
 ## Implementation Notes
 
 <!-- SECTION:NOTES:BEGIN -->
-LinkedIn post → article-seed shortlist (David's posts):
+LinkedIn → article-seed shortlist (compact):
 
 STRONG (own article):
-1. Flattening / saying less in the age of AI writing → DONE (0011).
-2. Automated Testing for Content Elements + TYPO3 Seeder for E2E (T3DD26 d3) → TYPO3 QA/testing article; notes available.
-3. Chatbot can't cancel an order, a human fixes it → 'edge cases all the way down' / human-in-the-loop reflection.
-8. EU AI Act (Feb 2026 GPAI transparency; Aug 2026 high-risk; extraterritorial; fines/bans) → timely; pairs with 0005 GDPR.
-10. Digital sovereignty in Switzerland: Matomo instead of GTM, easy on TYPO3+DDEV → privacy-first analytics / sovereignty how-to.
+1 Flattening/saying-less → DONE (0011).
+2 Automated testing for content elements + TYPO3 Seeder E2E (notes avail) → TYPO3 QA article.
+3 Chatbot can't cancel order, human fixes it → edge-cases / human-in-the-loop.
+8 EU AI Act (Feb/Aug 2026, extraterritorial, fines) → timely, pairs w/ 0005.
+10 Matomo vs GTM on TYPO3+DDEV → digital-sovereignty/privacy analytics how-to.
+15 Releasing his own TYPO3 **ERD extension** (generate ER diagrams from extension structure) → announcement/intro article. Link: https://lnkd.in/eupFuJYg
 
-CLUSTER → one experiential article 'Testing local LLMs in real work':
-5. High-memory Mac (256/512GB) to run DeepSeek V4 Pro locally.
-11. Code review local opencode+Gemma-4 vs Claude Code Opus 4.8 — Claude still better, Gemma missed bugs.
-12. Gemma-4 on mobile (Edge Gallery), free + on-device; can't parse 90"=90s (says rest 9 min); LLMs great at language, weak at numbers/units.
-(overlaps/enriches 0010 cloud-vs-self-hosted; could be its companion.)
+CLUSTER → 'Testing local LLMs in real work' (companion to 0010):
+5 high-mem Mac for DeepSeek V4 Pro · 11 opencode+Gemma-4 vs Claude Code (Claude better) · 12 Gemma-4 on mobile, can't parse 90"=90s (LLMs weak at numbers).
 
 MEDIUM:
-4. Replacing gulp with Vite (WIP) → short TYPO3 frontend-build migration piece.
+4 gulp→Vite migration (WIP) → short TYPO3 build piece.
+14 Trying the caveman skill (tired of typing KISS) → Claude Code setup/skills note.
 
 HOOK (not standalone):
-7. 'Don't read sensible data… auto mode on' (humor) → opener for AI-agents-and-secrets.
-9. ChatGPT confidently roleplays a powerlifter persona → opener for AI-hallucination/persona.
+7 'don't read sensible data… auto mode on' · 9 ChatGPT roleplays powerlifter persona · 13 Fable 5 couldn't reach web/DB, switched to Opus 4.8 (sandbox too tight?).
 
-SKIP (social): 6. Friends & cakes at T3DD26.
+SKIP (social): 6 friends & cakes.
 <!-- SECTION:NOTES:END -->
