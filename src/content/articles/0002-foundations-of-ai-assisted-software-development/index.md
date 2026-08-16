@@ -1,5 +1,5 @@
 ---
-title: About the foundations of AI assisted software development
+title: About the foundations of AI-assisted software development
 description: AI doesn't fix your development process — it amplifies it. Why QA, specs & context, and team culture are the foundations of AI-assisted software development.
 draft: false
 version: 1
@@ -51,7 +51,7 @@ These pillars are not AI-specific infrastructure. They are good engineering prac
 
 > _Before adopting AI, build the house that AI can live in._
 
-Using the 3 pillars as foundation of our software development the AI can assist us in writing better code, code that respects specs and standards, that does what is supposed to be done, while the human is still responsible and observes the whole loop from a different angle.
+Using the three pillars as foundation of our software development the AI can assist us in writing better code, code that respects specs and standards, that does what is supposed to be done, while the human is still responsible and observes the whole loop from a different angle.
 
 ![The house model: the AI amplifier resting on the three pillars](./house-three-pillars.png)
 
@@ -61,20 +61,24 @@ Using the 3 pillars as foundation of our software development the AI can assist 
 
 This is a shared way of working, not a one-off. Because AI only _amplifies_, **every project must stand on all three pillars.** Miss one and AI amplifies the gap.
 
-Shared assets make the pillars cheap to satisfy per project — you instantiate, you do not rebuild:
+The good news: most of the house is a shared team standard — you instantiate it per project, you do not rebuild it.
 
-- **QA** — shared CI pipelines, already adopted across many projects.
-- **Specs & Context** — shared code guidelines + `claude-skills` for coherent, on-standard output.
-- **Team Culture** — the same review and ownership rules for the whole team.
-
-What stays per project: a live QA pipeline, real tasks (not just titles), the shared guidelines/skills wired in, and a human owning every merge.
+| Pillar | Shared asset we already have | Per project |
+| --- | --- | --- |
+| QA | shared CI pipelines, adopted across many projects | wire in the repo's own test suite |
+| Specs & Context | code guidelines + Claude skills, our framework | tasks, specs, ADRs, domain knowledge |
+| Team Culture | same review + ownership rules for the whole team | a human owning every merge |
 
 **Why all three are non-negotiable — what AI does when a pillar is missing:**
 
-- **QA missing** — the AI can't run any check on its own, so it optimises a fake target.
-- **Specs missing (tasks are just titles)** — it can't tell what you meant, so it guesses and derives.
-- **Specs missing (no shared guidelines / skills)** — it generates incoherent, off-standard code.
-- **Team Culture missing (no human supervision)** — it merges broken code and ships bad things to production.
+| Missing | What AI does |
+| --- | --- |
+| QA | can't run any check on its own → optimises a fake target |
+| Specs — tasks are just a title | can't tell what you meant → guesses and derives |
+| Specs — no shared guidelines / skills | generates incoherent, off-standard code |
+| Team Culture — no human supervision | merges broken code → ships bad things to production |
+
+Remove any one → it collapses.
 
 ---
 
@@ -126,7 +130,7 @@ A developer is _immersed_ in the company, and soaks up a whole layer the agent n
 What belongs in this pillar:
 
 - **well-written tasks — what / why / definition of done** (the DoD is what the agent can check against QA; a task that is only a title forces the agent to guess)
-- **team knowledge base — framework · guidelines · reusable skills** — our TYPO3 framework, code guidelines and `claude-skills`, folded into one: to an agent they are all reference material it loads, and they are what keep AI output coherent and on-standard. Keep guidelines a concise bullet list, not sprawling prose, or you clog the context window (the limited amount of text the model can consider at once). Includes technical documentation and domain knowledge & examples — the niche knowledge not in training data (TYPO3 best practices sit in private corporate repos).
+- **team knowledge base — framework · guidelines · reusable skills** — our TYPO3 framework, code guidelines and shared Claude skills, folded into one: to an agent they are all reference material it loads, and they are what keep AI output coherent and on-standard. Keep guidelines a concise bullet list, not sprawling prose, or you clog the context window (the limited amount of text the model can consider at once). Includes technical documentation and domain knowledge & examples — the niche knowledge not in training data (TYPO3 best practices sit in private corporate repos).
 - **decisions written down (ADRs — architecture decision records)** — read by both people _and_ agents as context ([Nexapp](https://www.nexapp.ca/en/blog/architecture-decision-records-adr), [Actual AI](https://www.actual.ai/blog/agent-optimized-adrs))
 - **specs stay, reuse as context** — write once; every later prompt inherits the captured intent
 - **the spec loop — explore → propose → apply → archive** — the lifecycle that keeps specs alive. Writing a spec is a point-in-time act; the loop is the operating model. The _archive_ step is the differentiator: a finished spec is not deleted but folded into the durable baseline that later specs (and later agents) read. This is what turns “specs stay, reuse as context” from a slogan into a mechanism. OpenSpec is the concrete tool for it (see Sources); we have not adopted it yet.
@@ -143,14 +147,14 @@ Kept deliberately lean and dev-focused: the diagram drops softer culture lines (
 
 The trust data makes this concrete: near-universal usage, roughly a third trusting the output, and “almost right but not quite” as the top complaint. Teams need a culture where _“I don’t trust this output, let’s verify it”_ is normal engineering, not resistance to AI.
 
-## 4. Sanity check on the hype
+## Sanity check on the hype
 
 Take both directions of the evidence seriously:
 
 - Self-reported productivity is high (80%+ report gains in DORA) but the one randomised trial we have found a 19% slowdown for experienced developers on familiar codebases, with a large perception gap. METR itself cautions against over-generalising (16 developers, 246 tasks, early-2025 tooling).
 - Read together, the honest summary is: **AI reliably increases output volume; whether that becomes value depends on the system around it.** Which is exactly the house.
 
-## 5. What to do next
+## What to do next
 
 1. **Assess where you are** — grade yourself per part of the house; find the weak pillar.
 2. **Fix the objective function first** — QA, in small modular steps. Not “boil the ocean”.

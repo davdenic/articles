@@ -1,10 +1,10 @@
 ---
 id: ART-17
 title: Write an article about Odoo
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-08-16 13:37'
-updated_date: '2026-08-16 13:41'
+updated_date: '2026-08-16 14:06'
 labels:
   - content
 dependencies: []
