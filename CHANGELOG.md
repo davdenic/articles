@@ -11,6 +11,12 @@ The project version lives in `package.json` (`version`); each release below matc
 
 - Writing-style spec: `backlog` doc-2 "Article writing style" plus operative bullets in `CLAUDE.md` — curious/questioning voice (ask real questions, show doubt, open to changing opinion) and 1–2 light humorous asides per article to break the rhythm. Applies to new/edited articles only; published `0001` and `0002` are not retrofitted.
 
+## [0.11.0] - 2026-08-16
+
+### Changed
+
+- Home page is now a **masonry mosaic of article cards** (ART-6): each card shows the article's image (frontmatter `image` → first body image, same resolver as the share image) at its native aspect ratio, with title and date; whole card links to the article. Articles without an image get an accent-tinted title block. CSS-columns layout (1/2/3 columns responsive), no JS. Replaces the plain link list.
+
 ## [0.10.0] - 2026-08-16
 
 ### Added

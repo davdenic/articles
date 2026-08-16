@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { getImage } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 
 // Only live articles (draft !== true). In dev, drafts stay visible for preview.
@@ -13,21 +14,155 @@ const publicSlug = (id: string) => id.replace(/^\d+-/, '');
 
 // Site base without a trailing slash, so link joins are unambiguous.
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+// All co-located article images, so each card image can be resolved here
+// (same source of truth as the share image in [...slug].astro).
+const articleImages = import.meta.glob('/src/content/articles/**/*.{png,jpg,jpeg,webp,avif}');
+
+// For each article, resolve a card image: frontmatter `image` → first body image.
+// Keep the native aspect ratio (width/height) so the masonry columns pack it.
+const cards = await Promise.all(
+  articles.map(async (a) => {
+    let imageFile = a.data.image;
+    if (!imageFile) {
+      const m = a.body?.match(/!\[[^\]]*\]\(\.\/([^)]+)\)/);
+      if (m) imageFile = m[1];
+    }
+    let img = null;
+    if (imageFile) {
+      const loader = articleImages[`/src/content/articles/${a.id}/${imageFile}`];
+      if (loader) {
+        const mod: any = await loader();
+        img = await getImage({ src: mod.default, format: 'webp', width: 720 });
+      }
+    }
+    return {
+      href: `${base}/${publicSlug(a.id)}/`,
+      title: a.data.title,
+      published: a.data.published,
+      draft: a.data.draft,
+      img,
+    };
+  })
+);
+
+const fmtDate = (d?: Date) =>
+  d
+    ? d.toLocaleDateString('en-GB', { year: 'numeric', month: 'short', day: 'numeric' })
+    : '';
 ---
 
 <Base
   title="Articles"
   description="Articles by David Denicolò on AI-assisted software development and the engineering practices behind it."
 >
-  <div class="narrow">
-  <h1>Articles</h1>
-  <ul class="article-list">
-    {articles.map((a) => (
-      <li>
-        <a href={`${base}/${publicSlug(a.id)}/`}>{a.data.title}</a>
-        {a.data.draft && <small> (draft)</small>}
-      </li>
-    ))}
-  </ul>
+  <div class="wide">
+    <h1>Articles</h1>
+    <div class="mosaic">
+      {cards.map((c) => (
+        <a class="card" href={c.href}>
+          {c.img ? (
+            <img
+              src={c.img.src}
+              width={c.img.attributes.width}
+              height={c.img.attributes.height}
+              alt={c.title}
+              loading="lazy"
+              decoding="async"
+            />
+          ) : (
+            <div class="card-fallback" aria-hidden="true"><span>{c.title}</span></div>
+          )}
+          <div class="card-body">
+            <h2 class="card-title">{c.title}</h2>
+            <p class="card-meta">
+              {fmtDate(c.published)}
+              {c.draft && <span class="card-draft"> · draft</span>}
+            </p>
+          </div>
+        </a>
+      ))}
+    </div>
   </div>
 </Base>
+
+<style>
+  /* Wider than the reading column — the mosaic wants room. */
+  .wide {
+    max-width: 62rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+
+  /* CSS-columns masonry: each card keeps its image's native aspect ratio and
+     the columns pack them without gaps. No JS, no forced heights. */
+  .mosaic {
+    columns: 1;
+    column-gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  @media (min-width: 40rem) {
+    .mosaic { columns: 2; }
+  }
+  @media (min-width: 60rem) {
+    .mosaic { columns: 3; }
+  }
+
+  .card {
+    display: block;
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+    border-radius: 14px;
+    overflow: hidden;
+    background: transparent;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  }
+
+  .card img,
+  .card-fallback {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* No-image articles: an accent-tinted block carrying the title. */
+  .card-fallback {
+    aspect-ratio: 16 / 10;
+    display: grid;
+    place-items: center;
+    padding: 1.25rem;
+    background: color-mix(in srgb, var(--accent) 16%, transparent);
+  }
+  .card-fallback span {
+    font-family: var(--font-heading, inherit);
+    font-size: 1.25rem;
+    line-height: 1.2;
+    text-align: center;
+    color: var(--accent);
+  }
+
+  .card-body {
+    padding: 0.85rem 1rem 1.05rem;
+  }
+  .card-title {
+    margin: 0;
+    font-size: 1.15rem;
+    line-height: 1.25;
+  }
+  .card-meta {
+    margin: 0.4rem 0 0;
+    font-size: 0.85rem;
+    opacity: 0.7;
+  }
+  .card-draft {
+    color: var(--accent);
+    opacity: 1;
+  }
+</style>

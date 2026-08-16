@@ -1,9 +1,10 @@
 ---
 id: ART-6
 title: 'Home page: mosaic of article cards (title + OG image)'
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-08-15 21:49'
+updated_date: '2026-08-16 16:33'
 labels:
   - frontend
 dependencies:
