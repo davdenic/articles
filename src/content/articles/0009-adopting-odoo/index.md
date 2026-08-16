@@ -1,6 +1,6 @@
 ---
 title: Adopting Odoo — business logic in modules, integrations over FastAPI
-description: What I learned moving from a monolithic PHP app to Odoo: put the business logic in custom modules, and let FastAPI handle the integrations Odoo shouldn't.
+description: "What I learned moving from a monolithic PHP app to Odoo: put the business logic in custom modules, and let FastAPI handle the integrations Odoo shouldn't."
 draft: true
 version: 1
 changelog: []
