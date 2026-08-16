@@ -1,9 +1,10 @@
 ---
 id: ART-9
 title: 'Polish 0002: numbering, consistency, glossary nits'
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-08-16 10:55'
+updated_date: '2026-08-16 14:55'
 labels:
   - content
 dependencies: []
@@ -26,3 +27,9 @@ ordinal: 9000
 - [ ] #3 `claude-skills` has a brief first-use gloss
 - [ ] #4 npm run qa and npm run build pass
 <!-- AC:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+0002 polish: restored the two house tables; unnumbered the non-pillar sections; 'three pillars'; hyphenated title 'AI-assisted'; replaced code-formatted tool names with plain 'CI pipelines'/'Claude skills'.
+<!-- SECTION:FINAL_SUMMARY:END -->
