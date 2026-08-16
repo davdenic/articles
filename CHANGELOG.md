@@ -7,6 +7,10 @@ The project version lives in `package.json` (`version`); each release below matc
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-08-16
+
+First stable release. The site is feature-complete: masonry home page, per-article SEO (OG/canonical/JSON-LD), GEO surfaces (sitemap, robots.txt, RSS, llms.txt), self-hosted typography with light/dark themes, an about-the-author footer, and a content QA pipeline in CI.
+
 ### Added
 
 - Writing-style spec: `backlog` doc-2 "Article writing style" plus operative bullets in `CLAUDE.md` — curious/questioning voice (ask real questions, show doubt, open to changing opinion) and 1–2 light humorous asides per article to break the rhythm. Applies to new/edited articles only; published `0001` and `0002` are not retrofitted.
