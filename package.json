@@ -15,6 +15,8 @@
     "qa": "npm run qa:lint && npm run qa:spell && npm run qa:images && npm run qa:seo"
   },
   "dependencies": {
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.3",
     "astro": "^5.0.0"
   },
   "devDependencies": {

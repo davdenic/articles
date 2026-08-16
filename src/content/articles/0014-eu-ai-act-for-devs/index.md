@@ -8,6 +8,8 @@ changelog: []
 
 You've probably heard there's an EU AI Act. What's easy to miss is that it can apply to **you** — even from outside the EU — the same way GDPR does.
 
+![The EU AI Act's risk tiers: prohibited, high-risk, general-purpose AI, and limited/minimal.](./risk-tiers.svg)
+
 ## It reaches beyond the EU
 
 The AI Act applies to any **provider, deployer or importer** that puts an AI system on the EU/EEA market, or whose system is used within the EU — **regardless of where they're located**. So a Swiss startup, SaaS vendor, data processor or cloud provider serving EU customers is in scope if its system falls under the regulated categories. Non-compliance can mean **market bans or large fines** (enforced against your EU-facing entity).
