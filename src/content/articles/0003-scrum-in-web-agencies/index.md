@@ -62,6 +62,10 @@ A team in an agency rarely gets to sit on one project. Leads, support and "just 
 
 ![Two weeks of a web-agency team: every developer keeps switching between projects, support, offers and spec analysis, rarely two days in a row on the same thing.](./context-switching.svg)
 
+Now the opposite — what a real Scrum sprint looks like: one team, one product, the whole two weeks. Everyone pulls in the same direction and gets to focus.
+
+![An ideal Scrum sprint: all four developers on Project A for the full two weeks — one team, one product, sustained focus.](./scrum-sprint.svg)
+
 ## Web-agency Scrum vs complex-product Scrum
 
 | Web agency | Complex product |
