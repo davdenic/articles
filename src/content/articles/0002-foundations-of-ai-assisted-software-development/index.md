@@ -31,7 +31,7 @@ AI does not fix a development system, it amplifies the one you already have. So 
 
 ![Hand-drawn sketch of the house: an AI roof over the Team Culture and Specs walls, resting on a QA foundation](./house-sketch.jpg)
 
-I’d been circling this idea for weeks without a way to draw it. Then, during Andreas Wolf’s talk, it clicked — he’d already framed what I was trying to say. The house is my take on it.
+I’d been circling this idea for weeks without a way to draw it. Then, during Andreas Wolf’s talk, it clicked — he’d already framed what I was trying to say. The house is my take on it. Same idea as the harness: everything around the AI that makes its output trustworthy — the house is just the harness drawn.
 
 These pillars are not AI-specific infrastructure. They are good engineering practices even when no AI is involved: clear specifications help humans, QA gives humans fast feedback, and team culture creates ownership and trust.
 
@@ -179,18 +179,6 @@ Once your tasks meet a clear Definition of Ready — and your specs, context, an
 
 ---
 
-## Sources
-
-- [DORA — State of AI-assisted Software Development 2025](https://dora.dev/dora-report-2025/) · [full PDF](https://services.google.com/fh/files/misc/2025_state_of_ai_assisted_software_development.pdf) — AI as amplifier; seven-capability model; throughput vs stability.
-- [Google Cloud — Announcing the 2025 DORA report](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report) — headline findings, ~30% little/no trust, safety-net argument.
-- [METR — Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) · [arXiv 2507.09089](https://arxiv.org/abs/2507.09089) — RCT, 19% slower, perception gap, caveats.
-- [Stack Overflow Developer Survey 2025](https://survey.stackoverflow.co/2025/)–84% use/plan to use AI, 33% trust output, 66% “almost right but not quite” (~49k respondents; figures via [summary](https://tessl.io/blog/what-happened-devs-appear-to-use-ai-more-and-believe-it-less/) — verify against the survey page).
-- [Addy Osmani — Code Review in the Age of AI](https://addyosmani.com/blog/code-review-ai/) — accountability, proof over promises, small batches, the PR contract.
-- [GitHub Blog — Spec-driven development with AI (Spec Kit)](https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/) — why prompts are insufficient; specify → plan → tasks → implement.
-- [OpenSpec (Fission-AI)](https://github.com/Fission-AI/OpenSpec) · [openspec.pro](https://openspec.pro/) — the spec loop `explore → propose → apply → archive`; root `specs/` (baseline source of truth) vs per-change folder (`proposal.md` / `specs/` scenarios / `design.md` / `tasks.md`); plain Markdown, MIT, works with Claude Code.
-- [Nexapp — ADRs in practice: aligning teams and AI agents](https://www.nexapp.ca/en/blog/architecture-decision-records-adr) · [Actual AI — Agent-optimized ADRs](https://www.actual.ai/blog/agent-optimized-adrs) — decision records as agent context.
-- Andreas Wolf’s T3DD26 talk _”Before You Let AI Touch Your Code”_ ([slides](https://a-w.io/talks-public/events/2026-t3dd/ai-harness/))
-
 > “AI can make mistakes.”
 >
 > You bet.
@@ -202,3 +190,17 @@ But perhaps the disclaimer is still too cautious. Just remove “can”:
 So do humans. The difference is that AI can produce them faster, at scale, and with remarkable confidence. That doesn’t make AI useless. It means we need to stop treating its output as a finished product.
 
 Clear specifications, automated tests, code reviews, and human judgment aren’t optional extras around AI-assisted development. They’re what makes it work.
+
+---
+
+## Sources
+
+- [DORA — State of AI-assisted Software Development 2025](https://dora.dev/dora-report-2025/) · [full PDF](https://services.google.com/fh/files/misc/2025_state_of_ai_assisted_software_development.pdf) — AI as amplifier; seven-capability model; throughput vs stability.
+- [Google Cloud — Announcing the 2025 DORA report](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report) — headline findings, ~30% little/no trust, safety-net argument.
+- [METR — Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) · [arXiv 2507.09089](https://arxiv.org/abs/2507.09089) — RCT, 19% slower, perception gap, caveats.
+- [Stack Overflow Developer Survey 2025](https://survey.stackoverflow.co/2025/) — 84% use/plan to use AI, 33% trust output, 66% “almost right but not quite” (~49k respondents; figures via [summary](https://tessl.io/blog/what-happened-devs-appear-to-use-ai-more-and-believe-it-less/)).
+- [Addy Osmani — Code Review in the Age of AI](https://addyosmani.com/blog/code-review-ai/) — accountability, proof over promises, small batches, the PR contract.
+- [GitHub Blog — Spec-driven development with AI (Spec Kit)](https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/) — why prompts are insufficient; specify → plan → tasks → implement.
+- [OpenSpec (Fission-AI)](https://github.com/Fission-AI/OpenSpec) · [openspec.pro](https://openspec.pro/) — the spec loop `explore → propose → apply → archive`; root `specs/` (baseline source of truth) vs per-change folder (`proposal.md` / `specs/` scenarios / `design.md` / `tasks.md`); plain Markdown, MIT, works with Claude Code.
+- [Nexapp — ADRs in practice: aligning teams and AI agents](https://www.nexapp.ca/en/blog/architecture-decision-records-adr) · [Actual AI — Agent-optimized ADRs](https://www.actual.ai/blog/agent-optimized-adrs) — decision records as agent context.
+- Andreas Wolf’s T3DD26 talk _”Before You Let AI Touch Your Code”_ ([slides](https://a-w.io/talks-public/events/2026-t3dd/ai-harness/))
