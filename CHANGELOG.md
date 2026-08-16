@@ -7,6 +7,17 @@ The project version lives in `package.json` (`version`); each release below matc
 
 ## [Unreleased]
 
+## [0.9.0] - 2026-08-16
+
+### Added
+
+- Draft articles (all `draft: true`): 0009 Adopting Odoo · 0010 Cloud vs self-hosted AI · 0011 Saying less in the age of AI · 0012 Automated testing for TYPO3 content elements · 0013 AI chatbot edge cases · 0014 EU AI Act · 0015 Matomo vs GTM · 0016 Testing local LLMs · 0017 TYPO3 ERD extension · 0018 Observability + E2E — most with hand-drawn SVG diagrams.
+- Backlog research/writing tasks ART-21..28 (LinkedIn-seed articles + observability).
+
+### Changed
+
+- 0002 polish (ART-9): restored the two house tables, unnumbered the non-pillar sections, 'three pillars', title 'AI-assisted', plain 'CI pipelines'/'Claude skills'.
+
 ## [0.8.0] - 2026-08-16
 
 ### Added
