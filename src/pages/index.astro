@@ -151,6 +151,9 @@ const fmtDate = (d?: Date) =>
     min-height: 0;
     width: 100%;
     object-fit: cover;
+    /* Heroes are wide with the headline on the left; anchor left so a narrow
+       tile crops the empty right side, not the title. */
+    object-position: left center;
   }
 
   /* No-image articles: an accent-tinted block carrying the title. */
