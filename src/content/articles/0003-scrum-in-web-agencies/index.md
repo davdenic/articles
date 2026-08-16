@@ -56,6 +56,12 @@ Now the reality most agencies live in:
 
 **A root cause of many problems: the PO is always busy.** In an agency the PO juggles several projects, stakeholders, requests and phone calls. They often can't attend Scrum events. Stories end up badly written — more task than story — and the PO decides not just *what* to do but *how*.
 
+### The Tetris problem
+
+A team in an agency rarely gets to sit on one project. Leads, support and "just a quick fix" keep dropping in, so the two weeks become a game of **Tetris**: you slot in whatever falls next, switching context almost every day. Each switch has a cost — reloading the problem, the code, the client's intent. Real focus needs *consecutive* days on the same thing, and that only happens when things are calm. When they are, protect it: give the team a few days in a row on one project and let it actually concentrate.
+
+![Two weeks of a web-agency team: every developer keeps switching between projects, support, offers and spec analysis, rarely two days in a row on the same thing.](./context-switching.svg)
+
 ## Web-agency Scrum vs complex-product Scrum
 
 | Web agency | Complex product |
