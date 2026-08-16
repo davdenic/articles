@@ -7,6 +7,10 @@ The project version lives in `package.json` (`version`); each release below matc
 
 ## [Unreleased]
 
+### Added
+
+- Image-style guidance (`CLAUDE.md` + `backlog` doc-2): diagrams are comic / hand-drawn, white background, any in-image text set in an embedded handwriting font, authored wide (SVG `viewBox` ≥ 1200 / raster ≥ 1200px). Applies to new/edited images; published articles not retrofitted.
+
 ## [1.1.0] - 2026-08-16
 
 ### Added

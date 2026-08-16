@@ -51,6 +51,14 @@ Defined in `src/content.config.ts`. Fields: `title` (required), `description`, `
 - **Humour to break the rhythm.** Drop in 1–2 light, funny asides per article (scale to length) to break the rhythm. Sparing, not a comedy act — a wink, then back to the point.
 - Full spec: `backlog doc` **"Article writing style"**. These apply to *new/edited* articles only — leave published `0001` and `0002` as they are.
 
+## Images & diagrams
+
+- Diagrams are **hand-drawn / comic style**: simple line art, few elements, **white background**, no gradients or 3D.
+- **Any text inside an image uses a handwriting font**, not a system sans/serif. In SVG, embed the handwriting webfont (base64 `@font-face`) so it renders the same for every viewer — page fonts don't reach an `<img>`-embedded SVG.
+- **Wide enough for full width:** author at a wide aspect so they fill the content column — SVG `viewBox` width **≥ 1200** (raster ≥ 1200px wide). Landscape, not portrait.
+- Keep them light and legible in both light/dark themes (white bg reads fine on either); co-locate as `./name.svg`, reference relatively, always add alt text.
+- Full spec: `backlog` doc-2 "Article writing style" → Image style.
+
 ## Don't
 
 - No client data, personal data, or credentials in any article (public repo).

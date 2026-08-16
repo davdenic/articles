@@ -4,6 +4,7 @@ description: "What I learned moving from a monolithic PHP app to Odoo: put the b
 draft: true
 version: 1
 changelog: []
+modified: 2026-08-16T19:20:37+02:00
 ---
 
 At some point a homegrown app stops being the thing you sell and becomes the thing you maintain. We had a monolithic PHP application carrying years of business processes, and every new requirement meant re-inventing something an ERP already does well. Moving to **Odoo** was less about the framework and more about a decision: stop rebuilding invoicing, contacts, workflows and access control by hand, and put our energy into what's actually specific to us.
