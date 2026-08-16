@@ -8,6 +8,8 @@ changelog: []
 
 I keep testing local models against real work — not benchmarks, actual tasks. Here's what I've found, the good and the awkward. It's the practical side of the [cloud-vs-self-hosted question](/articles/cloud-vs-self-hosted-ai/).
 
+![Local models are fluent with language but shaky with numbers and units — like reading 90 seconds as nine minutes.](./language-vs-numbers.svg)
+
 ## The hardware question is now just a budget question
 
 If I could justify a Mac Studio M3 with 256 GB — better, 512 GB — of unified memory, I could run something like DeepSeek V4 Pro **completely locally**. A few years ago that would have sounded unrealistic; today it's mostly a hardware-budget question. And that changes the whole conversation around privacy, cost, latency and digital sovereignty: frontier-ish capability on your own machine.
