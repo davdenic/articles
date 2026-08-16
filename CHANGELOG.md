@@ -9,6 +9,7 @@ The project version lives in `package.json` (`version`); each release below matc
 
 ### Added
 
+- Image-style guidance (`CLAUDE.md` + `backlog` doc-2): diagrams are comic / hand-drawn, white background, any in-image text set in an embedded handwriting font, authored wide (SVG `viewBox` ≥ 1200 / raster ≥ 1200px). Applies to new/edited images; published articles not retrofitted.
 - Hand-drawn **hero image** for every draft article (0003–0018): comic-style line art on a white background with a handwritten headline (Caveat, converted to vector paths so it renders everywhere), authored wide (1200×630 PNG). Wired as each article's first body image and `image` frontmatter, so it drives the article hero, the mosaic tile, and the OG/share image from one file. The two previously imageless drafts (0011, 0017) also gained a topical in-body diagram (`sound-the-same.svg`, `erd-auto.svg`).
 
 ### Changed

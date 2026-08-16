@@ -5,6 +5,7 @@ draft: true
 image: "hero.png"
 version: 1
 changelog: []
+modified: 2026-08-16T19:20:37+02:00
 ---
 
 ![We moved to Odoo — hand-drawn hero](./hero.png)
