@@ -8,6 +8,8 @@ changelog: []
 
 A website can break in two windows: **before** you deploy (a regression you didn't catch) and **after** (something that only shows up in production). Most teams cover one and hope for the other. You need both — and they're two different tools.
 
+![E2E tests prevent problems before deploy; observability detects them on the live site.](./prevent-detect.svg)
+
 ## E2E tests: prevent (proactive)
 
 End-to-end tests verify that the critical things actually work *before* a deploy goes out.
