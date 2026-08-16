@@ -12,6 +12,14 @@ const articles = defineCollection({
     // image. Optional — defaults to the first image in the article, then a
     // site default. See src/pages/[...slug].astro.
     image: z.string().optional(),
+    // Home mosaic tile size as `WxH` grid spans (columns x rows), in 0.5
+    // steps: e.g. "1x1" (default), "2x1" (wide), "1x2" (tall), "2x2" (big),
+    // "1.5x1.5". The grid runs at 2x resolution so halves land on real
+    // tracks. Over-wide spans are clamped to the grid on narrow screens.
+    size: z
+      .string()
+      .regex(/^\d+(\.5)?x\d+(\.5)?$/, 'size must be like "2x1" or "1.5x1.5"')
+      .optional(),
     // Sole author of the site; override per-article only if ever needed.
     author: z.string().default('David Denicolò'),
     // Publishing status: draft = hidden, absent/false = live.

@@ -19,8 +19,19 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 // (same source of truth as the share image in [...slug].astro).
 const articleImages = import.meta.glob('/src/content/articles/**/*.{png,jpg,jpeg,webp,avif}');
 
+// Tile size: `WxH` grid spans in 0.5 steps → fine tracks (grid runs at 2x
+// resolution, so 1 logical unit = 2 tracks and 0.5 lands on a real track).
+const spans = (size?: string): { cx: number; cy: number } => {
+  const [w, h] = (size ?? '1x1').split('x').map(Number);
+  return {
+    cx: Math.max(1, Math.round((w || 1) * 2)),
+    cy: Math.max(1, Math.round((h || 1) * 2)),
+  };
+};
+
 // For each article, resolve a card image: frontmatter `image` → first body image.
-// Keep the native aspect ratio (width/height) so the masonry columns pack it.
+// Cards crop to fill their tile (object-fit: cover), so ask for a width that
+// suits wider tiles.
 const cards = await Promise.all(
   articles.map(async (a) => {
     let imageFile = a.data.image;
@@ -28,12 +39,13 @@ const cards = await Promise.all(
       const m = a.body?.match(/!\[[^\]]*\]\(\.\/([^)]+)\)/);
       if (m) imageFile = m[1];
     }
+    const { cx, cy } = spans(a.data.size);
     let img = null;
     if (imageFile) {
       const loader = articleImages[`/src/content/articles/${a.id}/${imageFile}`];
       if (loader) {
         const mod: any = await loader();
-        img = await getImage({ src: mod.default, format: 'webp', width: 720 });
+        img = await getImage({ src: mod.default, format: 'webp', width: cx > 2 ? 1200 : 720 });
       }
     }
     return {
@@ -42,6 +54,8 @@ const cards = await Promise.all(
       published: a.data.published,
       draft: a.data.draft,
       img,
+      cx,
+      cy,
     };
   })
 );
@@ -60,12 +74,10 @@ const fmtDate = (d?: Date) =>
     <h1>Articles</h1>
     <div class="mosaic">
       {cards.map((c) => (
-        <a class="card" href={c.href}>
+        <a class="card" href={c.href} style={`--cx:${c.cx};--cy:${c.cy}`}>
           {c.img ? (
             <img
               src={c.img.src}
-              width={c.img.attributes.width}
-              height={c.img.attributes.height}
               alt={c.title}
               loading="lazy"
               decoding="async"
@@ -89,29 +101,36 @@ const fmtDate = (d?: Date) =>
 <style>
   /* Wider than the reading column — the mosaic wants room. */
   .wide {
-    max-width: 62rem;
+    max-width: 72rem;
     margin-inline: auto;
     padding-inline: 1rem;
   }
 
-  /* CSS-columns masonry: each card keeps its image's native aspect ratio and
-     the columns pack them without gaps. No JS, no forced heights. */
+  /* CSS-grid masonry at 2x resolution: 2 fine tracks = 1 logical column, and
+     grid-auto-rows is a half-unit, so `size` values in 0.5 steps map to whole
+     tracks. `grid-auto-flow: dense` back-fills the gaps left by big tiles. */
   .mosaic {
-    columns: 1;
-    column-gap: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* = 2 logical columns */
+    grid-auto-rows: 7rem;
+    grid-auto-flow: dense;
+    gap: 1.25rem;
     margin-top: 1.5rem;
   }
-  @media (min-width: 40rem) {
-    .mosaic { columns: 2; }
+  @media (min-width: 44rem) {
+    .mosaic { grid-template-columns: repeat(6, 1fr); } /* 3 logical */
   }
-  @media (min-width: 60rem) {
-    .mosaic { columns: 3; }
+  @media (min-width: 64rem) {
+    .mosaic { grid-template-columns: repeat(8, 1fr); } /* 4 logical */
   }
 
   .card {
-    display: block;
-    break-inside: avoid;
-    margin-bottom: 1.5rem;
+    /* Span W×H logical units → 2× fine tracks each. Over-wide spans are
+       clamped to the available columns by the grid on narrow screens. */
+    grid-column: span var(--cx, 2);
+    grid-row: span var(--cy, 2);
+    display: flex;
+    flex-direction: column;
     text-decoration: none;
     color: inherit;
     border: 1px solid color-mix(in srgb, currentColor 14%, transparent);
@@ -125,16 +144,17 @@ const fmtDate = (d?: Date) =>
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
   }
 
+  /* Image (or fallback) fills the remaining tile height and crops to cover. */
   .card img,
   .card-fallback {
-    display: block;
+    flex: 1 1 auto;
+    min-height: 0;
     width: 100%;
-    height: auto;
+    object-fit: cover;
   }
 
   /* No-image articles: an accent-tinted block carrying the title. */
   .card-fallback {
-    aspect-ratio: 16 / 10;
     display: grid;
     place-items: center;
     padding: 1.25rem;
@@ -149,6 +169,7 @@ const fmtDate = (d?: Date) =>
   }
 
   .card-body {
+    flex: 0 0 auto;
     padding: 0.85rem 1rem 1.05rem;
   }
   .card-title {

@@ -2,6 +2,7 @@
 title: Saying less in the age of AI writing
 description: When AI lets everyone write polished, content-rich text, everything starts to sound the same. Maybe the real skill now is knowing what doesn't need to be said.
 draft: true
+size: "2x2"
 version: 1
 changelog: []
 ---
