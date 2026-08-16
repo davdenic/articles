@@ -303,3 +303,19 @@ pre code { background: none; padding: 0; }
   color: var(--muted);
   margin: 0;
 }
+
+/* A paragraph with several images → an even row (photo strip) in the reading column. */
+.prose > p:has(img + img) {
+  grid-column: 2; /* normal text-column width, not the wide image track */
+  display: flex;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+.prose > p:has(img + img) img {
+  flex: 1 1 0;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 0;
+}
