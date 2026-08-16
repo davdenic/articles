@@ -1,0 +1,28 @@
+---
+id: ART-9
+title: 'Polish 0002: numbering, consistency, glossary nits'
+status: To Do
+assignee: []
+created_date: '2026-08-16 10:55'
+labels:
+  - content
+dependencies: []
+priority: low
+ordinal: 9000
+---
+
+## Description
+
+<!-- SECTION:DESCRIPTION:BEGIN -->
+**What:** Low-priority copy polish on article 0002 — (1) unnumber the non-pillar sections ("Sanity check", "What to do next") so only the three pillars are numbered; (2) make "3 pillars" → "three pillars"; (3) hyphenate the title "AI assisted" → "AI-assisted" to match the body; (4) add a one-line gloss for `claude-skills` on first use.
+
+**Why:** Small consistency/clarity nits flagged in the editorial review — not defects, just tidiness that makes the piece read as carefully finished.
+<!-- SECTION:DESCRIPTION:END -->
+
+## Acceptance Criteria
+<!-- AC:BEGIN -->
+- [ ] #1 Non-pillar sections are no longer numbered as if part of the pillar list
+- [ ] #2 "3 pillars" reads "three pillars"; title uses "AI-assisted"
+- [ ] #3 `claude-skills` has a brief first-use gloss
+- [ ] #4 npm run qa and npm run build pass
+<!-- AC:END -->
