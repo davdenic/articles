@@ -121,6 +121,8 @@ A human developer can ask 15 questions, read your face, and reconstruct what you
 
 A 2–3 line prompt is a lossy compression of everything in your head plus the docs — and models are good at pattern completion, not mind reading. GitHub’s Spec Kit frames the same problem: a vague prompt forces the model to guess thousands of unstated requirements, so the spec becomes “the source of truth your tools and AI agents use to generate, test and validate code”. Its loop is `/specify → /plan → /tasks → /implement`; OpenSpec's is `explore → propose → apply → archive`, where the archive is _kept_ and referenced by later specs. ([GitHub Blog](https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/))
 
+A developer is _immersed_ in the company, and soaks up a whole layer the agent never sees: coding conventions nobody wrote down, how this team names things, which corners of the codebase are fragile, who owns what, the decisions made long ago and the reasons behind them, the product's tone, the unwritten quality bar, the company's values and style. A new hire absorbs this over months — through reviews, conversations, osmosis. An agent starts every session cold: it has none of it and can't pick it up by hanging around. The only way that knowledge enters its world is if someone makes it explicit — in guidelines, ADRs, examples and specs. That is the real job of this pillar: turning ambient, tacit team knowledge into context the agent can actually read.
+
 What belongs in this pillar:
 
 - **well-written tasks — what / why / definition of done** (the DoD is what the agent can check against QA; a task that is only a title forces the agent to guess)
