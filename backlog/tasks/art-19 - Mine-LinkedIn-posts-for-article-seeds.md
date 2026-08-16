@@ -4,7 +4,7 @@ title: Mine LinkedIn posts for article seeds
 status: In Progress
 assignee: []
 created_date: '2026-08-16 13:37'
-updated_date: '2026-08-16 14:40'
+updated_date: '2026-08-16 14:41'
 labels:
   - content
   - research
@@ -34,16 +34,17 @@ LinkedIn post → article-seed assessment (posts David shared):
 
 STRONG (worth a full article):
 1. 'The flattening / saying less in the age of AI writing' → DONE: drafted as 0011.
-2. 'Automated Testing for Content Elements + TYPO3 Seeder for E2E' (T3DD26 day 3) → TYPO3 QA/testing article; notes available (day3-automated-testing-for-content-elements, day2-seeding-data-for-development-and-e2e-testing).
-3. 'A weird little lesson in AI-human collaboration' (chatbot can't cancel an order; a human fixes it; 'edge cases all the way down', human-in-the-loop) → strong standalone reflection on AI chatbots + edge cases + human-in-the-loop.
+2. 'Automated Testing for Content Elements + TYPO3 Seeder for E2E' (T3DD26 day 3) → TYPO3 QA/testing article; notes available.
+3. 'A weird little lesson in AI-human collaboration' (chatbot can't cancel order; human fixes it; edge cases / human-in-the-loop) → standalone reflection.
+8. 'EU AI Act' (Feb 2026 GPAI transparency/docs; Aug 2026 high-risk obligations; extraterritorial — Swiss/anyone targeting the EU must comply; fines/market bans) → strong, timely article for devs/agencies; pairs with 0005 GDPR.
 
 MEDIUM:
-4. 'Replacing gulp with Vite (WIP)' → short technical piece on migrating a TYPO3 frontend build gulp→Vite (David did the fleet migration; T3DD26 Fluid notes cover Vite).
-5. 'High-memory Mac (256/512GB) to run DeepSeek V4 Pro locally' → overlaps heavily with 0010 (cloud vs self-hosted). Best: fold a hardware/‘digital sovereignty’ angle into 0010, or a short companion post.
-
-SKIP (social, not evergreen):
-6. 'Met friends and a lot of cakes at T3DD26.'
+4. 'Replacing gulp with Vite (WIP)' → short piece on migrating a TYPO3 frontend build gulp→Vite.
+5. 'High-memory Mac to run DeepSeek V4 Pro locally' → overlaps 0010; fold a hardware/digital-sovereignty angle into 0010 or a short companion.
 
 HOOK (not standalone):
-7. 'Dear Claude, don't read sensible data… auto mode on' (humor) → opening anecdote for an AI-agents-and-secrets / auto-mode-safety piece (ties to 0004/0005).
+7. 'Dear Claude, don't read sensible data… auto mode on' (humor) → opener for an AI-agents-and-secrets / auto-mode piece.
+9. 'ChatGPT: I learned from watching former powerlifters…' (it confidently roleplays a persona) → opener for an AI-hallucination / persona / 'sounds confident, may be wrong' piece.
+
+SKIP (social): 6. 'Friends and cakes at T3DD26.'
 <!-- SECTION:NOTES:END -->
