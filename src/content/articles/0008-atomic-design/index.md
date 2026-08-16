@@ -2,6 +2,7 @@
 title: Atomic design, and where it finally clicks
 description: Atoms, molecules, organisms — Brad Frost's mental model for building UIs from small reusable parts, and how TYPO3 v14's Fluid components make it real.
 draft: true
+size: "1x2"
 version: 1
 changelog: []
 modified: 2026-08-16T16:02:54+02:00

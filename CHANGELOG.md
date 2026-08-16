@@ -7,6 +7,12 @@ The project version lives in `package.json` (`version`); each release below matc
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-08-16
+
+### Added
+
+- Variable-size mosaic tiles (ART-30): optional `size` frontmatter written as `WxH` grid spans in 0.5 steps — e.g. `2x1` (wide), `1x2` (tall), `2x2` (big), `1.5x1.5`; default `1x1`. The home grid moved from CSS multicolumn to a 2×-resolution CSS grid (`grid-auto-flow: dense`) so halves land on real tracks and over-wide spans clamp on narrow screens; card images now crop to fill (`object-fit: cover`). Starter sizes assigned to a few drafts.
+
 ## [1.0.0] - 2026-08-16
 
 First stable release. The site is feature-complete: masonry home page, per-article SEO (OG/canonical/JSON-LD), GEO surfaces (sitemap, robots.txt, RSS, llms.txt), self-hosted typography with light/dark themes, an about-the-author footer, and a content QA pipeline in CI.

@@ -2,6 +2,7 @@
 title: Testing local LLMs in real work (and at the gym)
 description: I've been running local models against real tasks — code review, a training routine, on a laptop and a phone. Honest notes on where they hold up and where they don't.
 draft: true
+size: "1.5x1.5"
 version: 1
 changelog: []
 ---

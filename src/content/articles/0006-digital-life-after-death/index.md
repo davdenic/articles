@@ -2,6 +2,7 @@
 title: What happens to our digital life when we die?
 description: A personal reflection on digital inheritance — emails, messages, cloud photos, saved passwords — and why what happens to our digital traces after death is still so unclear.
 draft: true
+size: "2x1"
 version: 1
 changelog: []
 modified: 2026-08-16T15:49:37+02:00
