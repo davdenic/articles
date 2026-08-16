@@ -47,6 +47,9 @@ Defined in `src/content.config.ts`. Fields: `title` (required), `description`, `
 - Simple, short sentences. Bullets and tables over paragraphs. Headers to structure.
 - Cross-link between articles by number.
 - Mark uncertainty openly ("not sure", "to research"). Avoid "tbd".
+- **Voice: curious, not authoritative.** Write as someone researching and questioning, not teaching. Pose real questions in the text, admit what's still open, and show willingness to change opinion. The goal is a thoughtful person thinking out loud — never a lecture from someone who has it all figured out.
+- **Humour to break the rhythm.** Drop in 1–2 light, funny asides per article (scale to length) to break the rhythm. Sparing, not a comedy act — a wink, then back to the point.
+- Full spec: `backlog doc` **"Article writing style"**. These apply to *new/edited* articles only — leave published `0001` and `0002` as they are.
 
 ## Don't
 
