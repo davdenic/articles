@@ -1,10 +1,10 @@
 ---
 id: ART-4
-title: Add a personal 'about me' note inside 0001-hello-world
-status: To Do
+title: Rewrite 0001-hello-world content
+status: Done
 assignee: []
 created_date: '2026-08-15 21:37'
-updated_date: '2026-08-15 21:48'
+updated_date: '2026-08-16 09:08'
 labels:
   - content
 dependencies:
@@ -28,3 +28,9 @@ ordinal: 4000
 - [ ] #4 Frontmatter stays valid; bump version + changelog per the editing workflow
 - [ ] #5 npm run qa and npm run build pass
 <!-- AC:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Added a first-person intro note to 0001-hello-world (distinct from the author footer); kept it a hello-world article; bumped version to 2, updated date, prepended changelog. Article is currently draft.
+<!-- SECTION:FINAL_SUMMARY:END -->

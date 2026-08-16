@@ -27,12 +27,6 @@ const d = article.data;
       {d.published && <> on {d.published.toISOString().slice(0, 10)}</>}
     </p>
     <Content />
-    {d.changelog.length > 0 && (
-      <section class="changelog">
-        <h2>Changelog</h2>
-        <ul>{d.changelog.map((c) => <li>{c}</li>)}</ul>
-      </section>
-    )}
   </article>
   <AuthorFooter author={d.author} />
 </Base>
