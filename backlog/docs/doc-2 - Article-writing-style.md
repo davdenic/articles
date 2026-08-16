@@ -45,8 +45,29 @@ loosely.
 - Simple, short sentences. Bullets and tables over paragraphs. Headers to
   structure. Cross-link articles by number.
 
+## Image style
+
+Diagrams carry the same personality as the prose: hand-drawn, unfussy, a bit
+playful.
+
+- **Comic / hand-drawn look.** Simple line art, few elements, slightly loose
+  strokes. No gradients, no 3D, no stock-diagram polish.
+- **White background.** Always. It reads fine on both light and dark themes, so
+  no theme-specific variants are needed.
+- **Handwriting font for any text in the image.** Never a system sans/serif for
+  labels or captions inside a diagram — it must look handwritten. In an SVG the
+  font has to be **embedded** as a base64 `@font-face` (page fonts don't reach a
+  font used inside an `<img>`-loaded SVG), so pick an OFL handwriting/comic face
+  (e.g. Caveat, Comic Neue) and inline a subset. Alternatively convert the text
+  to paths.
+- **Wide by default.** Author landscape at a wide aspect so the diagram fills the
+  reading column — SVG `viewBox` width **≥ 1200** (raster ≥ 1200px wide).
+- Co-locate beside `index.md` as `./name.svg`, reference relatively, and always
+  write descriptive alt text.
+- Format: prefer **SVG** (crisp, tiny, scalable). Keep each diagram to one idea.
+
 ## Scope
 
-- Applies to **new articles and future edits**.
+- Applies to **new articles and future edits** — prose and images alike.
 - **Do not retrofit** the published articles `0001-hello-world` and
   `0002-foundations-of-ai-assisted-software-development` — they stay as they are.
