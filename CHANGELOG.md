@@ -7,6 +7,12 @@ The project version lives in `package.json` (`version`); each release below matc
 
 ## [Unreleased]
 
+## [0.11.0] - 2026-08-16
+
+### Changed
+
+- Home page is now a **masonry mosaic of article cards** (ART-6): each card shows the article's image (frontmatter `image` → first body image, same resolver as the share image) at its native aspect ratio, with title and date; whole card links to the article. Articles without an image get an accent-tinted title block. CSS-columns layout (1/2/3 columns responsive), no JS. Replaces the plain link list.
+
 ## [0.9.0] - 2026-08-16
 
 ### Added
