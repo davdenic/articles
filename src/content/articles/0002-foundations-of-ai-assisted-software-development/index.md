@@ -94,6 +94,8 @@ The harness was valuable before AI; AI just makes it _matter more_ — because n
 | **Harness** | green | green |
 | **No harness** | red | **?** (unpredictable) |
 
+In an AI/software context, "harness AI" has a nice implication — AI has power, but you need a system around it to direct that power effectively.
+
 - DORA names **strong automated testing, mature version control and fast feedback loops** as the control systems that prevent rising change volume from turning into instability.
 - It pays twice: the same tools serve humans and agents. One investment, two beneficiaries.
 - It is measurable: test count up, static-analysis errors down. You can see it working.
