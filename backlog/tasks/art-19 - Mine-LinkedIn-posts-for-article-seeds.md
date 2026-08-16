@@ -30,21 +30,27 @@ ordinal: 18000
 ## Implementation Notes
 
 <!-- SECTION:NOTES:BEGIN -->
-LinkedIn post → article-seed assessment (posts David shared):
+LinkedIn post → article-seed shortlist (David's posts):
 
-STRONG (worth a full article):
-1. 'The flattening / saying less in the age of AI writing' → DONE: drafted as 0011.
-2. 'Automated Testing for Content Elements + TYPO3 Seeder for E2E' (T3DD26 day 3) → TYPO3 QA/testing article; notes available.
-3. 'A weird little lesson in AI-human collaboration' (chatbot can't cancel order; human fixes it; edge cases / human-in-the-loop) → standalone reflection.
-8. 'EU AI Act' (Feb 2026 GPAI transparency/docs; Aug 2026 high-risk obligations; extraterritorial — Swiss/anyone targeting the EU must comply; fines/market bans) → strong, timely article for devs/agencies; pairs with 0005 GDPR.
+STRONG (own article):
+1. Flattening / saying less in the age of AI writing → DONE (0011).
+2. Automated Testing for Content Elements + TYPO3 Seeder for E2E (T3DD26 d3) → TYPO3 QA/testing article; notes available.
+3. Chatbot can't cancel an order, a human fixes it → 'edge cases all the way down' / human-in-the-loop reflection.
+8. EU AI Act (Feb 2026 GPAI transparency; Aug 2026 high-risk; extraterritorial; fines/bans) → timely; pairs with 0005 GDPR.
+10. Digital sovereignty in Switzerland: Matomo instead of GTM, easy on TYPO3+DDEV → privacy-first analytics / sovereignty how-to.
+
+CLUSTER → one experiential article 'Testing local LLMs in real work':
+5. High-memory Mac (256/512GB) to run DeepSeek V4 Pro locally.
+11. Code review local opencode+Gemma-4 vs Claude Code Opus 4.8 — Claude still better, Gemma missed bugs.
+12. Gemma-4 on mobile (Edge Gallery), free + on-device; can't parse 90"=90s (says rest 9 min); LLMs great at language, weak at numbers/units.
+(overlaps/enriches 0010 cloud-vs-self-hosted; could be its companion.)
 
 MEDIUM:
-4. 'Replacing gulp with Vite (WIP)' → short piece on migrating a TYPO3 frontend build gulp→Vite.
-5. 'High-memory Mac to run DeepSeek V4 Pro locally' → overlaps 0010; fold a hardware/digital-sovereignty angle into 0010 or a short companion.
+4. Replacing gulp with Vite (WIP) → short TYPO3 frontend-build migration piece.
 
 HOOK (not standalone):
-7. 'Dear Claude, don't read sensible data… auto mode on' (humor) → opener for an AI-agents-and-secrets / auto-mode piece.
-9. 'ChatGPT: I learned from watching former powerlifters…' (it confidently roleplays a persona) → opener for an AI-hallucination / persona / 'sounds confident, may be wrong' piece.
+7. 'Don't read sensible data… auto mode on' (humor) → opener for AI-agents-and-secrets.
+9. ChatGPT confidently roleplays a powerlifter persona → opener for AI-hallucination/persona.
 
-SKIP (social): 6. 'Friends and cakes at T3DD26.'
+SKIP (social): 6. Friends & cakes at T3DD26.
 <!-- SECTION:NOTES:END -->
