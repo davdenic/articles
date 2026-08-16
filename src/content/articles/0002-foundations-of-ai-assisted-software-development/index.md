@@ -21,6 +21,8 @@ Reality looks like this:
 
 The problem is not necessarily the quality of the model. The problem is the _system around it_ — the **harness** — that doesn’t give the agent (the AI running your tools in a loop) enough context or feedback to know whether what it produced is actually right.
 
+Two things make it worse: the same prompt can return five different answers (it's non-deterministic), and the model will confidently invent APIs that don't exist.
+
 ---
 
 AI does not fix a development system, it amplifies the one you already have. So the interesting work isn't the AI — it's having solid software-development pillars: QA, Team Culture and Specs & Context.
@@ -37,7 +39,7 @@ These pillars are not AI-specific infrastructure. They are good engineering prac
 
 ---
 
-## The short version
+## The short version (TL;DR)
 
 1. **AI is an amplifier, not a fix.** DORA’s 2025 report (~5,000 professionals) concludes that AI magnifies existing strengths _and_ existing dysfunctions. Strong teams get faster; weak teams get faster at producing mess. ([DORA 2025](https://dora.dev/dora-report-2025/))
 2. **Throughput up, stability down.** The same report finds AI adoption correlates positively with delivery throughput and product performance — and _negatively_ with delivery stability. More change volume without control systems = instability. ([Google Cloud](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report))
