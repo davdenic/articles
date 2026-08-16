@@ -1,9 +1,10 @@
 ---
 id: ART-14
 title: 'Article: SaaS AI vs self-hosted/local LLM (privacy & GDPR)'
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-08-16 12:37'
+updated_date: '2026-08-16 14:06'
 labels:
   - research
   - content
