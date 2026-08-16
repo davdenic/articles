@@ -1,6 +1,6 @@
 ---
 title: Hello World
-description: First article — sanity check for the publishing setup.
+description: David Denicolò — full-stack developer in Switzerland, writing about AI-assisted software development and the engineering practices that make it work.
 draft: false
 version: 2
 published: 2026-08-15
@@ -8,7 +8,7 @@ updated: 2026-08-16
 changelog:
   - "2026-08-16: add personal intro"
   - "2026-08-15: first publish"
-modified: 2026-08-16T11:51:18+02:00
+modified: 2026-08-16T11:53:15+02:00
 ---
 
 ### Hello World, I'm David — a full-stack web developer in Switzerland, working with TYPO3 for over two decades

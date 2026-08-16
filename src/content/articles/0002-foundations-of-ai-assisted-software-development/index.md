@@ -87,6 +87,13 @@ Do not read QA as “we test the code”. Read it as: **we have a system that t
 
 With AI this becomes literal. The QA pipeline is the _objective function the agent optimises against_: tests + E2E + types + lint + CI = a machine-readable definition of “done” that the agent can verify itself, iterate against, and fail on. Without it, the agent optimises a fake target and you are left grading its homework by hand.
 
+The harness was valuable before AI; AI just makes it _matter more_ — because now the tools can be run by the AI itself.
+
+| | No AI | With AI |
+| --- | --- | --- |
+| **Harness** | green | green |
+| **No harness** | red | **?** (unpredictable) |
+
 - DORA names **strong automated testing, mature version control and fast feedback loops** as the control systems that prevent rising change volume from turning into instability.
 - It pays twice: the same tools serve humans and agents. One investment, two beneficiaries.
 - It is measurable: test count up, static-analysis errors down. You can see it working.
