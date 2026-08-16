@@ -1,9 +1,10 @@
 ---
 id: ART-11
 title: 'Write article: Scrum in web agencies (from T3CON19 slides)'
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-08-16 11:02'
+updated_date: '2026-08-16 12:32'
 labels:
   - content
 dependencies: []

@@ -1,9 +1,10 @@
 ---
 id: ART-12
 title: 'Research: safety of using Claude skills from an external marketplace'
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-08-16 11:03'
+updated_date: '2026-08-16 12:32'
 labels:
   - research
 dependencies: []
