@@ -11,6 +11,12 @@ The project version lives in `package.json` (`version`); each release below matc
 
 - Writing-style spec: `backlog` doc-2 "Article writing style" plus operative bullets in `CLAUDE.md` — curious/questioning voice (ask real questions, show doubt, open to changing opinion) and 1–2 light humorous asides per article to break the rhythm. Applies to new/edited articles only; published `0001` and `0002` are not retrofitted.
 
+## [0.10.0] - 2026-08-16
+
+### Added
+
+- GEO / AI-visibility (ART-16): `@astrojs/sitemap` integration, `public/robots.txt` allowing named AI crawlers (GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Claude-User, Google-Extended, …) + sitemap reference, an RSS feed (`/rss.xml`), and an `llms.txt` index of live articles. Decision recorded in `backlog/decisions/decision-3`.
+
 ## [0.9.0] - 2026-08-16
 
 ### Added
