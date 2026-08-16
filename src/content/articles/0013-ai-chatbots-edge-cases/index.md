@@ -2,9 +2,12 @@
 title: Edge cases all the way down
 description: A chatbot couldn't cancel my order. Neither could email support. Then a real human sorted it in one call. A small lesson in AI, automation, and the human in the loop.
 draft: true
+image: "hero.png"
 version: 1
 changelog: []
 ---
+
+![Where chatbots fall over — hand-drawn hero](./hero.png)
 
 A weird little lesson in AI–human collaboration.
 
@@ -28,4 +31,8 @@ Development is full of edge cases. In the era of AI chatbots, it's edge cases al
 
 Automation is great at the ninety percent it was designed for. The trouble is that customers keep showing up in the other ten — and a bot trained on the happy path will confidently, politely, refuse to help. What rescued my refund wasn't a smarter model. It was a person with the authority and the judgement to step outside the script.
 
+But is that the model getting worse, or the process around it? I'm honestly not sure. A better bot might have flagged my case for a human on day one instead of day fifteen — the failure here was as much "no escape hatch" as "not smart enough". Maybe the right question isn't how good the bot is, but how fast it gives up gracefully.
+
 That's the part worth keeping as we wire more AI into our products: not "can the bot handle most cases?" but "**what happens at the edge, and can a human still reach in?**" The human in the loop isn't a fallback you bolt on when the demo's done. On the edges, it's the whole product.
+
+That's my current best guess, anyway — formed by one refund and a shop I'll be avoiding. Small sample size. But the pattern feels right.

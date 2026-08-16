@@ -2,9 +2,12 @@
 title: The EU AI Act, for people who ship software
 description: If you build or deploy AI and touch the EU market, the AI Act applies — wherever you are. What it covers, who's on the hook, and why Swiss teams aren't exempt.
 draft: true
+image: "hero.png"
 version: 1
 changelog: []
 ---
+
+![The EU AI Act, for devs — hand-drawn hero](./hero.png)
 
 You've probably heard there's an EU AI Act. What's easy to miss is that it can apply to **you** — even from outside the EU — the same way GDPR does.
 
@@ -29,15 +32,17 @@ Obligations **phase in on a staggered timeline** — prohibitions first, then GP
 
 ## What a dev team should do
 
-- **Classify your systems.** Most everyday software is minimal/limited risk — but know if anything you build or *deploy* lands in high-risk or GPAI territory.
+- **Classify your systems.** Most everyday software is minimal/limited risk — but know if anything you build or *deploy* lands in high-risk or GPAI territory. Where exactly the line sits for borderline cases is the part I find genuinely hard, and I don't think I'd trust my own gut on it — that's a question for a lawyer, not a blog post.
 - **If you only deploy** third-party AI, you still have deployer duties (human oversight, using it as intended, transparency).
-- **Documentation is the theme** — like GDPR, "we thought about it and wrote it down" is much of the job.
+- **Documentation is the theme** — like GDPR, "we thought about it and wrote it down" is much of the job. Nobody ever loved writing it. It's still much of the job.
 - **It stacks with GDPR**, it doesn't replace it. Personal data still means [GDPR duties](/articles/data-privacy-gdpr-in-ai/) on top.
 - **Swiss teams: you're not exempt** if you target the EU. Plan as if you are in scope.
 
 ## Takeaway
 
 The AI Act isn't only a problem for big model labs. If your software uses or offers AI and reaches EU users, work out which tier you're in now — the expensive surprise is discovering you're "high-risk" late.
+
+The open question I keep coming back to: how much of this will feel like GDPR did — a scramble, then a settled routine — versus something that keeps shifting under us as the dates and definitions move? I don't know yet. For now I'm treating "figure out your tier early" as the one safe bet.
 
 ## Sources
 

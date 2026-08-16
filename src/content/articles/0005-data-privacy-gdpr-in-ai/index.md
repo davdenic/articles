@@ -2,9 +2,12 @@
 title: Data privacy and GDPR when you code with AI
 description: It's the content, not the tool, that triggers GDPR. What a dev team needs to know before pasting code, logs, or client data into an AI assistant.
 draft: true
+image: "hero.png"
 version: 1
 changelog: []
 ---
+
+![GDPR while you code — hand-drawn hero](./hero.png)
 
 Using an AI assistant while you build is normal now. But the moment you paste code, a log, a ticket, or a client's content into a prompt, you might be processing **personal data** — and GDPR has opinions about that. This is a practical orientation for developers and agencies, not legal advice. (I'm in Switzerland, where the revFADP is broadly analogous to GDPR but a *separate* regime — check your own.)
 
@@ -19,11 +22,13 @@ Code itself usually isn't personal data. But dev artefacts quietly carry it all 
 - support tickets, screenshots, meeting notes;
 - database dumps, fixtures, CMS exports with customer content.
 
-So the question isn't "can I use AI?" — it's "what's *in* what I'm sending?"
+So the question isn't "can I use AI?" — it's "what's *in* what I'm sending?" I keep coming back to that one, because it's the question I'm worst at answering in the moment: when you're mid-bug and paste a stack trace, are you actually thinking about whose email is buried in line 40? I'm not sure I always am.
 
 ![Consumer chat apps vs API/enterprise tiers: training on your data and retention vs no-training, retention off, and a DPA.](./consumer-vs-api.svg)
 
 ## Who's who: controller, processor, DPA
+
+Fair warning: this section is dense with three-letter acronyms. I don't love them either, but the terms are load-bearing, so here we are.
 
 - **You** (the team or agency) decide why and how data gets fed to the AI — you're the **controller**.
 - The **provider** is usually a **processor**, acting on your instructions under a contract — *if* you're on a tier that works that way.
@@ -68,6 +73,8 @@ The lesson: **use the API/enterprise tier with training off and retention minimi
 ## Bottom line
 
 AI in the workflow doesn't change what GDPR asks — it just adds a fast, easy way to send personal data somewhere new without noticing. Keep personal data and secrets out of prompts, use tiers that don't train on your data and hold a DPA, and write down your rules. The tool is fine; the discipline is the point.
+
+What I'm still genuinely unsure about: how much of this a small team can realistically sustain day to day, versus what only ever exists on paper. I'd want to test a lightweight version on a real project before claiming it works. If a lawyer reads this and winces, I'd rather hear it — this is my current understanding, not the last word.
 
 *Informational only — not legal advice. Provider terms change frequently; verify against the official pages before relying on them. Swiss projects fall under the revFADP, a separate regime from GDPR.*
 
