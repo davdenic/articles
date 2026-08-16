@@ -7,10 +7,13 @@ The project version lives in `package.json` (`version`); each release below matc
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-08-16
+
 ### Changed
 
-- Published article `0002` (foundations of AI-assisted development) — `draft: false`, `published: 2026-08-16`. Unpublished the `0001-hello-world` sample (back to `draft: true`).
-- `0001-hello-world`: added a first-person intro note (ART-4).
+- Published article `0002` (foundations of AI-assisted software development).
+- Reworked `0001-hello-world` into a **published personal intro page** — bio, portrait, a photo, and links (supersedes the sanity-check stub); first-person intro (ART-4).
+- Editorial pass on `0002`: reconstructed the garbled blocks as lists, removed leaked internal notes, introduced the **harness** framing + jargon glosses, clarified the objective-function analogy, rewrote and renamed "The model" → **"The house, part by part"** (avoids the AI sense of "model"), expanded the Specs pillar with the tacit/word-of-mouth knowledge gap, restored the variance point, and moved the closing punch above the references.
 
 ### Removed
 
