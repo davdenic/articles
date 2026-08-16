@@ -7,6 +7,15 @@ The project version lives in `package.json` (`version`); each release below matc
 
 ## [Unreleased]
 
+## [0.8.0] - 2026-08-16
+
+### Added
+
+- Article **tables** styled (ART-15): subtle theme-aware row rules, a hand-drawn curved header underline, real column gaps, and horizontal scroll when wide.
+- **Draft articles** (all `draft: true`, for review): 0003 Scrum in web agencies, 0004 Claude skills marketplace safety, 0005 GDPR when coding with AI, 0006 what happens to our digital life when we die, 0007 what's new in TYPO3 v14, 0008 atomic design.
+- **Hand-drawn SVG diagrams** for the articles that had none (skill-surface risk ladder, consumer-vs-API card, Europe patchwork, component co-location, atomic-design levels) plus the Scrum context-switching and ideal-sprint calendars.
+- Backlog: research/writing tasks ART-9, ART-11..20 tracked (some drafted, some queued).
+
 ## [0.7.0] - 2026-08-16
 
 ### Added
