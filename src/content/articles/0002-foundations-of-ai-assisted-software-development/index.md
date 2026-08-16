@@ -23,7 +23,7 @@ The problem is not necessarily the quality of the model. The problem is that the
 
 ---
 
-AI does not fix a development system, it amplifies the one you already have. So the interesting work is not the AI — But having solid software development Pillars: QA, Team Culture and Specs & Context.
+AI does not fix a development system, it amplifies the one you already have. So the interesting work isn't the AI — it's having solid software-development pillars: QA, Team Culture and Specs & Context.
 
 > Based on Andreas Wolf’s T3DD26 talk _“Before You Let AI Touch Your Code”_ ([slides](https://a-w.io/talks-public/events/2026-t3dd/ai-harness/))
 
@@ -49,7 +49,7 @@ These pillars are not AI-specific infrastructure. They are good engineering prac
 
 > _Before adopting AI, build the house that AI can live in._
 
-Using the 3 pillars as foundation of our software development the AI can assist us in writing better code, code that respect specs and standards, that does what is supposed to be done, while the human is still responsible and observes the whole loop from a different angle.
+Using the 3 pillars as foundation of our software development the AI can assist us in writing better code, code that respects specs and standards, that does what is supposed to be done, while the human is still responsible and observes the whole loop from a different angle.
 
 ![The house model: the AI amplifier resting on the three pillars](./house-three-pillars.png)
 
@@ -69,13 +69,19 @@ What stays per project: a live QA pipeline, real tasks (not just titles), the sh
 
 **Why all three are non-negotiable — what AI does when a pillar is missing:**
 
-Missing pillar What AI does **QA** cannot run any check on its own → optimises a fake target **Specs** — tasks are just titles cannot tell what you meant → guesses and derives **Specs** — no shared guidelines / skills generates incoherent, off-standard code **Team Culture** — no human supervision merges broken code → ships bad things to production
+- **QA missing** — the AI can't run any check on its own, so it optimises a fake target.
+- **Specs missing (tasks are just titles)** — it can't tell what you meant, so it guesses and derives.
+- **Specs missing (no shared guidelines / skills)** — it generates incoherent, off-standard code.
+- **Team Culture missing (no human supervision)** — it merges broken code and ships bad things to production.
 
 ---
 
 ## The model
 
-Part of the house What it is Why it matters with AI **Roof — AI** the amplifier Only as good as what carries it **Left wall — Team Culture** judgement, ownership, trust AI changes _how we decide_, not just how we type **Right wall — Specs & Context** what an agent cannot guess The agent has no colleague to ask **Foundation — QA** tests, E2E, CI/CD, static analysis, security, monitoring, observability, fast rollback The only thing that answers: _is what we just built good or bad?_
+- **Roof — AI:** the amplifier. Only as good as what carries it.
+- **Left wall — Team Culture:** judgement, ownership, trust. AI changes _how we decide_, not just how we type.
+- **Right wall — Specs & Context:** what an agent cannot guess — the agent has no colleague to ask.
+- **Foundation — QA:** tests, E2E, CI/CD, static analysis, security, monitoring, observability, fast rollback. The one thing that answers: _is what we just built good or bad?_
 
 Remove one part and it collapses. Individually they underdeliver; connected, they give the multiplier.
 
@@ -115,7 +121,7 @@ What belongs in this pillar:
 - **team knowledge base — framework · guidelines · reusable skills** — our TYPO3 framework, code guidelines and `claude-skills`, folded into one: to an agent they are all reference material it loads, and they are what keep AI output coherent and on-standard. Keep guidelines a concise bullet list, not sprawling prose, or you clog the context window. Includes technical documentation and domain knowledge & examples — the niche knowledge not in training data (TYPO3 best practices sit in private corporate repos).
 - **decisions written down (ADR)** — read by both people _and_ agents as context ([Nexapp](https://www.nexapp.ca/en/blog/architecture-decision-records-adr), [Actual AI](https://www.actual.ai/blog/agent-optimized-adrs))
 - **specs stay, reuse as context** — write once; every later prompt inherits the captured intent
-- **the spec loop — explore → propose → apply → archive** — the lifecycle that keeps specs alive. Writing a spec is a point-in-time act; the loop is the operating model. The _archive_ step is the differentiator: a finished spec is not deleted but folded into the durable baseline that later specs (and later agents) read. This is what turns “specs stay, reuse as context” from a slogan into a mechanism. OpenSpec is the concrete tool for it (see Sources); we have not adopted it yet — [open research task].
+- **the spec loop — explore → propose → apply → archive** — the lifecycle that keeps specs alive. Writing a spec is a point-in-time act; the loop is the operating model. The _archive_ step is the differentiator: a finished spec is not deleted but folded into the durable baseline that later specs (and later agents) read. This is what turns “specs stay, reuse as context” from a slogan into a mechanism. OpenSpec is the concrete tool for it (see Sources); we have not adopted it yet.
 
 ## 3. Left pillar: Team Culture
 
@@ -147,7 +153,7 @@ Take both directions of the evidence seriously:
 
 ## Bonus track 1: Automated QA
 
-we can teach AI to run QA after edit or read the result of the pipelines in gitlab and based on the result automatically fix the code, adapt and create more tests.
+You can teach the AI to run QA after each edit — or read the GitLab pipeline results — and, based on the outcome, fix the code, adapt, and add more tests.
 
 ![Automated QA loop: AI runs the pipeline and fixes code based on the results](./automated-qa.png)
 
@@ -155,7 +161,7 @@ we can teach AI to run QA after edit or read the result of the pipelines in gitl
 
 ## Bonus track 2: Specs and DoR sanity check
 
-It’s a good habit to have a DoR and update specs and tasks, keep specs and decisions in local md files helps AI to have context.
+It’s a good habit to keep a Definition of Ready (DoR), and to keep specs and decisions in local Markdown files — that's what gives the AI the context it needs.
 
 ![Specs and Definition of Ready sanity check](./specs-dor-check.png)
 
@@ -171,7 +177,7 @@ Once your tasks meet a clear Definition of Ready — and your specs, context, an
 
 ## Sources
 
-- [DORA — State of AI-assisted Software Development 2025](https://dora.dev/dora-report-2025/) · [full PDF](https://services.google.com/fh/files/misc/2025_state_of_ai_assisted_software_development.pdf) — AI as amplifier; seven-capability model; throughput vs stability. _Note: capability labels are quoted differently across summaries (e.g. “clear AI stance”, “AI-accessible internal data”, “small batches”, “quality internal platforms”, “user-centric focus”) — check the PDF before quoting them verbatim._
+- [DORA — State of AI-assisted Software Development 2025](https://dora.dev/dora-report-2025/) · [full PDF](https://services.google.com/fh/files/misc/2025_state_of_ai_assisted_software_development.pdf) — AI as amplifier; seven-capability model; throughput vs stability.
 - [Google Cloud — Announcing the 2025 DORA report](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report) — headline findings, ~30% little/no trust, safety-net argument.
 - [METR — Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) · [arXiv 2507.09089](https://arxiv.org/abs/2507.09089) — RCT, 19% slower, perception gap, caveats.
 - [Stack Overflow Developer Survey 2025](https://survey.stackoverflow.co/2025/)–84% use/plan to use AI, 33% trust output, 66% “almost right but not quite” (~49k respondents; figures via [summary](https://tessl.io/blog/what-happened-devs-appear-to-use-ai-more-and-believe-it-less/) — verify against the survey page).
