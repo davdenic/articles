@@ -19,7 +19,7 @@ Reality looks like this:
 
 ![The prompt, generate, "doesn't fit", re-prompt loop](./redo-loop.png)
 
-The problem is not necessarily the quality of the model. The problem is that the system around it doesn’t provide enough context or feedback for the agent to know whether what it produced is actually right.
+The problem is not necessarily the quality of the model. The problem is the _system around it_ — the **harness** — that doesn’t give the agent (the AI running your tools in a loop) enough context or feedback to know whether what it produced is actually right.
 
 ---
 
@@ -93,6 +93,8 @@ Do not read QA as “we test the code”. Read it as: **we have a system that t
 
 With AI this becomes literal. The QA pipeline is the _objective function the agent optimises against_: tests + E2E + types + lint + CI = a machine-readable definition of “done” that the agent can verify itself, iterate against, and fail on. Without it, the agent optimises a fake target and you are left grading its homework by hand.
 
+(This isn't "training" in the machine-learning sense — the model isn't learning from your CI. The pipeline is simply the pass/fail signal the agent loops on until it goes green.)
+
 The harness was valuable before AI; AI just makes it _matter more_ — because now the tools can be run by the AI itself.
 
 | | No AI | With AI |
@@ -118,8 +120,8 @@ A 2–3 line prompt is a lossy compression of everything in your head plus the d
 What belongs in this pillar:
 
 - **well-written tasks — what / why / definition of done** (the DoD is what the agent can check against QA; a task that is only a title forces the agent to guess)
-- **team knowledge base — framework · guidelines · reusable skills** — our TYPO3 framework, code guidelines and `claude-skills`, folded into one: to an agent they are all reference material it loads, and they are what keep AI output coherent and on-standard. Keep guidelines a concise bullet list, not sprawling prose, or you clog the context window. Includes technical documentation and domain knowledge & examples — the niche knowledge not in training data (TYPO3 best practices sit in private corporate repos).
-- **decisions written down (ADR)** — read by both people _and_ agents as context ([Nexapp](https://www.nexapp.ca/en/blog/architecture-decision-records-adr), [Actual AI](https://www.actual.ai/blog/agent-optimized-adrs))
+- **team knowledge base — framework · guidelines · reusable skills** — our TYPO3 framework, code guidelines and `claude-skills`, folded into one: to an agent they are all reference material it loads, and they are what keep AI output coherent and on-standard. Keep guidelines a concise bullet list, not sprawling prose, or you clog the context window (the limited amount of text the model can consider at once). Includes technical documentation and domain knowledge & examples — the niche knowledge not in training data (TYPO3 best practices sit in private corporate repos).
+- **decisions written down (ADRs — architecture decision records)** — read by both people _and_ agents as context ([Nexapp](https://www.nexapp.ca/en/blog/architecture-decision-records-adr), [Actual AI](https://www.actual.ai/blog/agent-optimized-adrs))
 - **specs stay, reuse as context** — write once; every later prompt inherits the captured intent
 - **the spec loop — explore → propose → apply → archive** — the lifecycle that keeps specs alive. Writing a spec is a point-in-time act; the loop is the operating model. The _archive_ step is the differentiator: a finished spec is not deleted but folded into the durable baseline that later specs (and later agents) read. This is what turns “specs stay, reuse as context” from a slogan into a mechanism. OpenSpec is the concrete tool for it (see Sources); we have not adopted it yet.
 
@@ -127,7 +129,7 @@ What belongs in this pillar:
 
 The most underestimated pillar, because AI does not only change how we write code. It changes how we decide what to build, how we distribute work, how we review, how much we trust each other’s output, how we admit we do not know something, how we handle AI mistakes — and who is responsible for the result.
 
-- **AI output is a draft, not a merge.** Two failure modes: reject everything, or blind-merge everything. Blind-mergers look faster for weeks, then drown in slop.
+- **AI output is a draft, not a merge.** Two failure modes: reject everything, or blind-merge everything. Blind-mergers look faster for weeks, then drown in slop — plausible-looking output that isn't actually right.
 - **Review → reject → redo, every time.** No “it worked for 10 PRs, so #11 goes in blind.” Demand proof (tests, logs) over promises; keep batches small enough that a human can actually understand them. The OCaml maintainers rejecting a 13,000-line PR is the reference case. ([Osmani](https://addyosmani.com/blog/code-review-ai/))
 - **A human owns every merge and deploy.** The AI wrote it, you ship it — you are accountable, a model never is. “A computer can never be held accountable — that’s your job as the human in the loop.”
 
