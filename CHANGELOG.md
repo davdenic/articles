@@ -7,6 +7,10 @@ The project version lives in `package.json` (`version`); each release below matc
 
 ## [Unreleased]
 
+### Added
+
+- Automatic SEO on every page (ART-5): meta description with a derived fallback, Open Graph + Twitter Card tags, canonical URL, and schema.org JSON-LD (Article with author + date; WebSite for the index). The social image defaults to the article's **first image** (optional `image` frontmatter override; site default otherwise). New `npm run qa:seo` warns when an article lacks a description or image.
+
 ## [0.6.0] - 2026-08-16
 
 ### Added

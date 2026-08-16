@@ -11,7 +11,8 @@
     "qa:lint": "markdownlint-cli2 \"src/content/articles/**/*.md\"",
     "qa:spell": "cspell --no-progress \"src/content/articles/**/*.md\"",
     "qa:images": "node scripts/check-images.mjs",
-    "qa": "npm run qa:lint && npm run qa:spell && npm run qa:images"
+    "qa:seo": "node scripts/check-seo.mjs",
+    "qa": "npm run qa:lint && npm run qa:spell && npm run qa:images && npm run qa:seo"
   },
   "dependencies": {
     "astro": "^5.0.0"

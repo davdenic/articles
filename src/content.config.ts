@@ -8,6 +8,10 @@ const articles = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string().optional(),
+    // Social/OG image: filename of a co-located image to use as the share
+    // image. Optional — defaults to the first image in the article, then a
+    // site default. See src/pages/[...slug].astro.
+    image: z.string().optional(),
     // Sole author of the site; override per-article only if ever needed.
     author: z.string().default('David Denicolò'),
     // Publishing status: draft = hidden, absent/false = live.

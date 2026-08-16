@@ -3,10 +3,10 @@ id: ART-5
 title: >-
   Auto-generate SEO from frontmatter (meta, OG, canonical, JSON-LD) + QA flags
   gaps
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-08-15 21:39'
-updated_date: '2026-08-15 21:47'
+updated_date: '2026-08-16 12:21'
 labels:
   - seo
   - frontend
@@ -33,3 +33,9 @@ ordinal: 5000
 - [ ] #7 QA highlights articles missing key SEO (no description and no derivable fallback, or no resolvable image); decide/document warn-vs-fail consistent with the image-size warnings
 - [ ] #8 npm run qa and npm run build pass
 <!-- AC:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+SEO generated centrally in Base.astro: description (frontmatter or derived), OG + Twitter + canonical + JSON-LD (Article/WebSite). Share image resolves frontmatter image -> first body image (optimized to jpg 1200w) -> site default. Added scripts/check-seo.mjs + npm run qa:seo warning. Verified in build + local lychee.
+<!-- SECTION:FINAL_SUMMARY:END -->

@@ -1,12 +1,12 @@
 ---
 import { getCollection, render } from 'astro:content';
+import { getImage } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import AuthorFooter from '../components/AuthorFooter.astro';
 
 export async function getStaticPaths() {
   const isDev = import.meta.env.DEV;
-  const articles = (await getCollection('articles'))
-    .filter((a) => isDev || !a.data.draft);
+  const articles = (await getCollection('articles')).filter((a) => isDev || !a.data.draft);
   return articles.map((article) => ({
     // Public URL strips the leading NNNN- from the folder id.
     params: { slug: article.id.replace(/^\d+-/, '') },
@@ -17,9 +17,52 @@ export async function getStaticPaths() {
 const { article } = Astro.props;
 const { Content } = await render(article);
 const d = article.data;
+
+// All co-located article images, so the share image can be resolved here.
+const articleImages = import.meta.glob('/src/content/articles/**/*.{png,jpg,jpeg,webp,avif}');
+
+// Share image: frontmatter `image` → first image in the body → site default (in Base).
+let imageFile = d.image;
+if (!imageFile) {
+  const m = article.body.match(/!\[[^\]]*\]\(\.\/([^)\s]+)/);
+  if (m) imageFile = m[1];
+}
+let ogImage: string | undefined;
+if (imageFile) {
+  const loader = articleImages[`/src/content/articles/${article.id}/${imageFile}`];
+  if (loader) {
+    const mod: any = await loader();
+    const opt = await getImage({ src: mod.default, format: 'jpg', width: 1200 });
+    ogImage = new URL(opt.src, Astro.site).href;
+  }
+}
+
+// Meta description: frontmatter, else derived from the first real paragraph.
+function deriveDescription(body: string): string {
+  const first =
+    body
+      .replace(/```[\s\S]*?```/g, '')
+      .replace(/^#{1,6}.*$/gm, '')
+      .replace(/!\[[^\]]*\]\([^)]*\)/g, '')
+      .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
+      .replace(/[>*_`#|]/g, '')
+      .split(/\n\s*\n/)
+      .map((s) => s.trim())
+      .filter(Boolean)[0] ?? '';
+  const clean = first.replace(/\s+/g, ' ').trim();
+  return clean.length > 155 ? clean.slice(0, 152).trimEnd() + '…' : clean;
+}
+const description = d.description?.trim() || deriveDescription(article.body);
 ---
 
-<Base title={d.title} description={d.description}>
+<Base
+  title={d.title}
+  description={description}
+  image={ogImage}
+  type="article"
+  author={d.author}
+  published={d.published}
+>
   <article class="prose">
     <h1>{d.title}</h1>
     <p class="meta">
