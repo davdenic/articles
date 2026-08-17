@@ -2,12 +2,14 @@
 title: About the foundations of AI-assisted software development
 description: AI doesn't fix your development process — it amplifies it. Why QA, specs & context, and team culture are the foundations of AI-assisted software development.
 draft: false
-size: "2x1.5"
+size: 2x1.5
 version: 1
 published: 2026-08-16
 changelog:
   - "2026-08-16: first publish"
 modified: 2026-08-16T10:52:51+02:00
+created: 2026-08-16T20:57
+updated: 2026-08-16T20:57
 ---
 
 How many times have you been told to use AI to boost your productivity? It writes code 10× faster. You just need to give it a prompt and let it work.

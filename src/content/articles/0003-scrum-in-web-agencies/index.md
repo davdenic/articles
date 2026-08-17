@@ -1,16 +1,19 @@
 ---
-title: Does Scrum really work in web agencies?
+title: Does Scrum really work in web agencies? The Tetris Effect
 description: Scrum shines on long, complex products — but a typical web agency runs many small projects at once. Here's where it breaks, and how to adapt it.
 draft: true
-image: "hero.png"
+image: hero.png
 version: 1
 changelog: []
-modified: 2026-08-16T19:13:15+02:00
+modified: 2026-08-17T08:31:53+02:00
+created: 2026-08-16T20:57
+updated: 2026-08-17T08:32
 ---
-
-![Is this even Scrum? — hand-drawn hero](./hero.png)
-
 Scrum is everywhere. But most of the advice assumes one dedicated team building one long-lived product. A web agency rarely looks like that. So: does Scrum really work in a web agency? This is my take, from years of running it (and adapting it) in one — first shared as a talk at T3CON19. I still don't have a tidy yes/no, and I've come to think that's the honest answer.
+
+![[ChatGPT Image Aug 17, 2026, 08_31_29 AM.png]]
+
+> This started as a T3CON19 talk in 2019. The slides got older. The problem didn't. Still true, still unresolved in 2026
 
 ## A step back: Waterfall vs Scrum
 
@@ -62,18 +65,25 @@ Now the reality most agencies live in:
 
 **A root cause of many problems: the PO is always busy.** In an agency the PO juggles several projects, stakeholders, requests and phone calls. They often can't attend Scrum events. Stories end up badly written — more task than story — and the PO decides not just *what* to do but *how*.
 
-### The Tetris problem
+## The hidden cost: people and knowledge
+
+- **Burnout** — constant switching + an overloaded PO + the pressure of "just a quick fix" landing in the sprint grinds people down; the "constant pace" idea exists precisely to push back on this.
+    
+- **Onboarding** — a new dev joining lands in a soup of half-known projects with scattered context; "knowledge fragmentation" isn't just a Scrumban risk, it's the baseline state.
+    
+- **Documentation** — every project needs its own context captured, nobody has time, so the doc that exists is stale; this is a real, unaddressed tax of parallelism (and arguably where AI tooling genuinely helps — auto-generated context/ADRs).
+
+### The Tetris effect
 
 A team in an agency rarely gets to sit on one project. Leads, support and "just a quick fix" keep dropping in, so the two weeks become a game of **Tetris**: you slot in whatever falls next, switching context almost every day. Each switch has a cost — reloading the problem, the code, the client's intent. Real focus needs *consecutive* days on the same thing, and that only happens when things are calm. When they are, protect it: give the team a few days in a row on one project and let it actually concentrate.
 
 I'm not fully sure this is even solvable in a busy agency, though. Maybe the switching is the job, and the honest goal is to make it less painful rather than pretend we can banish it. Ask me again in a year.
 
-![Two weeks of a web-agency team: every developer keeps switching between projects, support, offers and spec analysis, rarely two days in a row on the same thing.](./context-switching.svg)
+![[ChatGPT Image Aug 17, 2026, 08_21_42 AM.png]]
 
 Now the opposite — what a real Scrum sprint looks like: one team, one product, the whole two weeks. Everyone pulls in the same direction and gets to focus.
 
-![An ideal Scrum sprint: all four developers on Project A for the full two weeks — one team, one product, sustained focus.](./scrum-sprint.svg)
-
+![[ChatGPT Image Aug 17, 2026, 07_57_46 AM.png]]
 ## Web-agency Scrum vs complex-product Scrum
 
 | Web agency | Complex product |
@@ -153,3 +163,11 @@ Scrum works in a web agency — but rarely by the book. Pick the honest version:
 That's my current best guess, not a verdict. I might be wrong about where the line sits between "adapted Scrum" and "not Scrum any more," and I'd genuinely like to hear where others draw it. Ask me again in a year and the answer may have moved.
 
 *Based on my T3CON19 talk, "Scrum for web agencies — does it really work?"*
+
+## What's changed since 2019
+AI makes the piece feel current rather than evergreen-but-dated. The core argument: AI speeds up the _work_ but doesn't touch the _structural_ agency problems (overloaded PO, context switching, the Tetris effect) — if anything, faster output can make the switching worse. Where AI does move the needle is lowering the team size needed to ship, which relocates (not erases) the threshold where full Scrum pays off.
+### further reading:
+
+- [Giordano Randone — Why Scrum Is Dead: An Obituary from the Field](https://www.giordanorandone.de/blog/why-scrum-is-dead-an-obituary-from-the-field)
+- [SPR — The Contemporary Application of Agile: Scrum Is Failing](https://spr.com/the-contemporary-application-of-agile-scrum-is-failing-part-1/)
+- [Scrum.org — Agile's Quarter-Century Crisis](https://www.scrum.org/resources/blog/agiles-quarter-century-crisis)
