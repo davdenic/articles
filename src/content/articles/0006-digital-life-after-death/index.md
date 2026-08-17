@@ -1,11 +1,14 @@
 ---
 title: What happens to our digital life when we die?
 description: A personal reflection on digital inheritance — emails, messages, cloud photos, saved passwords — and why what happens to our digital traces after death is still so unclear.
-draft: true
+draft: false
 image: pacman-hero.svg
 size: 2x1
 version: 1
-changelog: []
+published: 2026-08-17
+updated: 2026-08-17
+changelog:
+  - "2026-08-17: first publish"
 modified: 2026-08-17T10:35:54+02:00
 ---
 
