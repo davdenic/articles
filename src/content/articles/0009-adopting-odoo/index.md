@@ -14,6 +14,17 @@ At some point a homegrown app stops being the thing you sell and becomes the thi
 
 By the end, the monolith had also become genuinely tangled. Modules depended on each other in ways nobody fully held in their head, so a change in one corner could surface as a surprise in another; updating anything or adding a feature meant tracing threads across half the codebase first. It didn't help that the QA and pipeline never quite reached a good level — coverage had gaps, so regressions had room to slip through. There was a human cost, too: frontend and backend were knotted together, so the frontend developers and the marketing team were effectively blocked on the backend developers — who were always busy on something else. A copy change or a new landing page could end up waiting on a queue it never should have touched. That combination, more than any single missing feature, is what pushed us to rethink the whole shape.
 
+The pain points, in one place:
+
+| Pain point | What it actually meant |
+| --- | --- |
+| Rebuilding the generic 80% by hand | Invoicing, contacts, workflows and permissions re-implemented instead of reused |
+| Tangled, interdependent modules | Nobody fully held the dependencies in their head; one change rippled in surprising places |
+| Slow, risky to change | Updating anything or adding a feature meant tracing threads across the codebase first |
+| Weak QA & pipeline | Coverage gaps left room for regressions to slip through |
+| Frontend and backend knotted together | Frontend devs and marketing were blocked on always-busy backend devs |
+| One monolith, one deploy | No safe way to change a part without risking the whole |
+
 None of this was a sudden switch. It started about two years earlier, at my kitchen table, sketching the idea on paper for my boss — the drawing that slowly turned into a plan, and then into a team effort. So the "we" here is real: this was never a one-person job, even if the first version of it fit on a napkin.
 
 Here's how we think about it after doing it — with the honest caveat that we're one migration in: enough to have opinions, not enough to be smug about them.
