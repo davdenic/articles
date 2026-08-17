@@ -62,6 +62,7 @@ export function polyArea(p: Pt[]): number {
 }
 
 export function centroid(p: Pt[]): Pt {
+  if (!p || p.length === 0) return { x: 0, y: 0 };
   let A = 0, cx = 0, cy = 0;
   for (let i = 0; i < p.length; i++) {
     const j = (i + 1) % p.length;
@@ -129,11 +130,15 @@ export function hexClusterMosaic(
   // Flat-top hexagon lattice: cells sit flush at the top border and fan out
   // center-out (newest = top-centre). Sites are jittered so the hexagons come
   // out slightly imperfect rather than textbook-regular.
-  const R = Math.min(180, (0.9 * W) / 8); // circumradius
+  const maxCols = 5;
+  const rows = Math.max(1, Math.ceil(n / maxCols));
+  // circumradius, limited by both width (COLS across) and height (all rows fit)
+  const Rw = (0.92 * W) / ((maxCols - 1) * 1.5 + 2);
+  const Rh = (0.95 * H - 10) / (Math.sqrt(3) * rows);
+  const R = Math.max(60, Math.min(180, Rw, Rh));
   const dx = 1.5 * R; // column spacing
   const hn = (R * Math.sqrt(3)) / 2; // half vertical step
   const rowH = R * Math.sqrt(3); // row spacing
-  const maxCols = Math.max(3, Math.floor((0.92 * W - 2 * R) / dx) + 1);
   const y0 = hn + 10; // flush near the top border
   const jit = () => (rnd() * 2 - 1) * R * 0.16;
 

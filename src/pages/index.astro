@@ -43,6 +43,7 @@ const cards = await Promise.all(
       }
     }
     const poly = articleCells[i];
+    if (!poly || poly.length < 3) return null;
     const c = centroid(poly);
     const xs = poly.map((p) => p.x);
     const ys = poly.map((p) => p.y);
@@ -73,6 +74,7 @@ const cards = await Promise.all(
     };
   })
 );
+const visibleCards = cards.filter((c): c is NonNullable<typeof c> => c !== null);
 ---
 
 <Base
@@ -93,7 +95,7 @@ const cards = await Promise.all(
       preserveAspectRatio="xMidYMid meet"
     >
       <defs>
-        {cards.map((c) => (
+        {visibleCards.map((c) => (
           <clipPath id={c.id}><path d={c.d} /></clipPath>
         ))}
       </defs>
@@ -104,7 +106,7 @@ const cards = await Promise.all(
       ))}
 
       {/* article cells — image + title, clickable */}
-      {cards.map((c) => (
+      {visibleCards.map((c) => (
         <a href={c.href} role="listitem" aria-label={c.title} class="cell">
           {c.src ? (
             <image
