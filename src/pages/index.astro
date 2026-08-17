@@ -40,6 +40,7 @@ const cards = await Promise.all(
       if (m) imageFile = m[1];
     }
     const { cx, cy } = spans(a.data.size);
+    const pos = a.data.imagePosition;
     let img = null;
     if (imageFile) {
       const loader = articleImages[`/src/content/articles/${a.id}/${imageFile}`];
@@ -56,6 +57,7 @@ const cards = await Promise.all(
       img,
       cx,
       cy,
+      pos,
     };
   })
 );
@@ -74,7 +76,7 @@ const fmtDate = (d?: Date) =>
     <h1>Articles</h1>
     <div class="mosaic">
       {cards.map((c) => (
-        <a class="card" href={c.href} style={`--cx:${c.cx};--cy:${c.cy}`}>
+        <a class="card" href={c.href} style={`--cx:${c.cx};--cy:${c.cy}${c.pos ? `;--pos:${c.pos}` : ''}`}>
           {c.img ? (
             <img
               src={c.img.src}
@@ -153,7 +155,7 @@ const fmtDate = (d?: Date) =>
     object-fit: cover;
     /* Heroes are wide with the headline on the left; anchor left so a narrow
        tile crops the empty right side, not the title. */
-    object-position: left center;
+    object-position: var(--pos, left center);
   }
 
   /* No-image articles: an accent-tinted block carrying the title. */

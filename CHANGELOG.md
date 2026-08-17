@@ -7,14 +7,19 @@ The project version lives in `package.json` (`version`); each release below matc
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-08-17
+
 ### Added
 
+- Optional `imagePosition` frontmatter field: sets the CSS `object-position` for an article's home-mosaic card crop (default anchors left). Lets a tall/narrow tile centre on the relevant part of a wide hero instead of the left edge.
 - Image-style guidance (`CLAUDE.md` + `backlog` doc-2): diagrams are comic / hand-drawn, white background, any in-image text set in an embedded handwriting font, authored wide (SVG `viewBox` ≥ 1200 / raster ≥ 1200px). Applies to new/edited images; published articles not retrofitted.
 - Hand-drawn **hero image** for every draft article (0003–0018): comic-style line art on a white background with a handwritten headline (Caveat, converted to vector paths so it renders everywhere), authored wide (1200×630 PNG). Wired as each article's first body image and `image` frontmatter, so it drives the article hero, the mosaic tile, and the OG/share image from one file. The two previously imageless drafts (0011, 0017) also gained a topical in-body diagram (`sound-the-same.svg`, `erd-auto.svg`).
 
 ### Changed
 
+- Keep articles vendor/agency-agnostic: removed the only LST reference in article content (an `outline.lst.team` talk-notes link in `0002`, sentence kept) and added a `CLAUDE.md` "Don't" rule barring agency name / internal tools / internal links (`outline.lst.team`, `composer.lst.team`) in articles.
 - Editorial pass on all 16 draft articles (0003–0018): applied the writing-style spec — curious/questioning voice (real open questions, admitted doubt, positions framed as current best guesses) and 1–2 light asides each to break the rhythm. Facts, figures, sources, tables, images and frontmatter left unchanged; published `0001`/`0002` untouched. Added British spellings `organised`/`formalising`/`customise` to the cspell dictionary.
+- Research-backed refresh of `0003-scrum-in-web-agencies`: swapped the images to standard relative links (were Obsidian `![[…]]` embeds) with clean filenames; added a verified interruption-cost citation (Parnin & Rugaber) to the Tetris section, a Shape Up "appetite" idea to the techniques list, a 2025 DORA "mirror and multiplier" point to the AI section (cross-linked to `0002`); added an "I still love Scrum" section pushing back on the "Scrum is dead" clickbait genre; corrected the "complex product" framing to the 2020 Scrum Guide's "complex problems / adaptive solutions" (with the 2017→2020 wording shift called out); added a point on how agencies reuse tech stacks to keep most projects *non*-complex (1–2 devs + a designer); promoted the further-reading heading; removed the now-unused `hero.png`, `context-switching.svg`, and `scrum-sprint.svg` from the article folder. **Published 2026-08-17** (draft → live).
 
 ## [1.1.0] - 2026-08-16
 
