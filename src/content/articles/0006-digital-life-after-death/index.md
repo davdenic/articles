@@ -5,10 +5,10 @@ draft: false
 image: pacman-hero.svg
 size: 2x1
 version: 1
-published: 2026-08-17
-updated: 2026-08-17
+published: 2026-08-16
+updated: 2026-08-16
 changelog:
-  - "2026-08-17: first publish"
+  - "2026-08-16: first publish"
 modified: 2026-08-17T10:35:54+02:00
 ---
 
