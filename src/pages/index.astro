@@ -80,7 +80,8 @@ const fmtDate = (d?: Date) =>
 >
   <div class="wide">
     <h1>Articles <span class="version">v0.42.0-rc1</span></h1>
-    <div class="mosaic">
+  </div>
+  <div class="mosaic">
       {cards.map((c) => (
         <a class="card" href={c.href} style={`--cx:${c.cx};--cy:${c.cy}${c.pos ? `;--pos:${c.pos}` : ''}`}>
           {c.img ? (
@@ -102,7 +103,6 @@ const fmtDate = (d?: Date) =>
           </div>
         </a>
       ))}
-    </div>
   </div>
 </Base>
 
@@ -133,12 +133,21 @@ const fmtDate = (d?: Date) =>
     grid-auto-flow: dense;
     gap: 1.25rem;
     margin-top: 1.5rem;
+    /* full-bleed: break out of the width-capped, padded <main> */
+    margin-inline: calc(50% - 50vw);
+    padding-inline: clamp(1rem, 4vw, 3rem);
   }
   @media (min-width: 44rem) {
     .mosaic { grid-template-columns: repeat(6, 1fr); } /* 3 logical */
   }
   @media (min-width: 64rem) {
     .mosaic { grid-template-columns: repeat(8, 1fr); } /* 4 logical */
+  }
+  @media (min-width: 84rem) {
+    .mosaic { grid-template-columns: repeat(10, 1fr); } /* 5 logical */
+  }
+  @media (min-width: 106rem) {
+    .mosaic { grid-template-columns: repeat(12, 1fr); } /* 6 logical */
   }
 
   .card {

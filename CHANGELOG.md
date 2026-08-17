@@ -7,6 +7,12 @@ The project version lives in `package.json` (`version`); each release below matc
 
 ## [Unreleased]
 
+## [1.6.0] - 2026-08-17
+
+### Changed
+
+- Home mosaic is now **full-bleed**: the grid breaks out of the width-capped `<main>` to the viewport edges (`margin-inline: calc(50% - 50vw)` + padding) and gains 10- and 12-column breakpoints on wide screens. Same cards, sizes and image cropping; the heading stays in the reading column.
+
 ## [1.5.0] - 2026-08-17
 
 ### Added
