@@ -126,39 +126,61 @@ export function hexClusterMosaic(
   seed = 20260817
 ): { articleCells: Pt[][]; fillerCells: Pt[][] } {
   const rnd = mulberry32(seed);
-  // rows needed for a downward triangle (1 + 2 + ... = triangular number >= n)
-  const R = Math.max(0, Math.ceil((-1 + Math.sqrt(1 + 8 * n)) / 2) - 1);
-  // spacing that keeps the cluster inside the frame (and cells text-sized)
-  const a = Math.min(360, (0.6 * W) / Math.max(1, R), (0.8 * H) / Math.max(1, R + 1));
-  const h = (a * Math.sqrt(3)) / 2;
-  const y0 = a * 0.62;
+  // Flat-top hexagon lattice: cells sit flush at the top border and fan out
+  // center-out (newest = top-centre). Sites are jittered so the hexagons come
+  // out slightly imperfect rather than textbook-regular.
+  const R = Math.min(180, (0.9 * W) / 8); // circumradius
+  const dx = 1.5 * R; // column spacing
+  const hn = (R * Math.sqrt(3)) / 2; // half vertical step
+  const rowH = R * Math.sqrt(3); // row spacing
+  const maxCols = Math.max(3, Math.floor((0.92 * W - 2 * R) / dx) + 1);
+  const y0 = hn + 10; // flush near the top border
+  const jit = () => (rnd() * 2 - 1) * R * 0.16;
+
+  // center-out column order: [0, -1, 1, -2, 2, ...]
+  const centerOut = (cnt: number): number[] => {
+    const r: number[] = [0];
+    let d = 1;
+    while (r.length < cnt) {
+      r.push(-d);
+      if (r.length < cnt) r.push(d);
+      d++;
+    }
+    return r;
+  };
 
   const articleSites: Pt[] = [];
-  for (let r = 0; articleSites.length < n; r++) {
-    for (let i = 0; i <= r && articleSites.length < n; i++) {
-      articleSites.push({ x: W / 2 + (i - r / 2) * a, y: y0 + r * h });
+  let row = 0;
+  while (articleSites.length < n) {
+    const cnt = Math.min(maxCols, n - articleSites.length);
+    for (const off of centerOut(cnt)) {
+      articleSites.push({
+        x: W / 2 + off * dx + jit(),
+        y: y0 + row * rowH + (Math.abs(off) % 2) * hn + jit(),
+      });
     }
+    row++;
   }
 
-  // guards = the 6 lattice neighbours of each article that aren't articles
+  // guards = flat-top lattice neighbours that aren't articles (regularise edges)
   const nb = [
-    { x: a, y: 0 }, { x: -a, y: 0 },
-    { x: a / 2, y: h }, { x: -a / 2, y: h },
-    { x: a / 2, y: -h }, { x: -a / 2, y: -h },
+    { x: 0, y: rowH }, { x: 0, y: -rowH },
+    { x: dx, y: hn }, { x: dx, y: -hn },
+    { x: -dx, y: hn }, { x: -dx, y: -hn },
   ];
   const guards: Pt[] = [];
   articleSites.forEach((s) => {
     nb.forEach((o) => {
-      const p = { x: s.x + o.x, y: s.y + o.y };
-      if (nearAny(p, articleSites, a * 0.4)) return;
-      if (nearAny(p, guards, a * 0.4)) return;
+      const p = { x: s.x + o.x + jit() * 0.5, y: s.y + o.y + jit() * 0.5 };
+      if (nearAny(p, articleSites, R * 0.7)) return;
+      if (nearAny(p, guards, R * 0.7)) return;
       guards.push(p);
     });
   });
 
   // small jittered background filler, kept clear of the cluster
   const scatter: Pt[] = [];
-  const step = a * 0.6;
+  const step = R * 0.95;
   const gx = Math.max(2, Math.round(W / step));
   const gy = Math.max(2, Math.round(H / step));
   for (let r = 0; r < gy; r++) {
@@ -167,8 +189,8 @@ export function hexClusterMosaic(
         x: ((c + 0.5) / gx) * W + (rnd() * 2 - 1) * step * 0.4,
         y: ((r + 0.5) / gy) * H + (rnd() * 2 - 1) * step * 0.4,
       };
-      if (nearAny(p, articleSites, a * 0.9)) continue;
-      if (nearAny(p, guards, a * 0.42)) continue;
+      if (nearAny(p, articleSites, R * 1.85)) continue;
+      if (nearAny(p, guards, R * 0.7)) continue;
       scatter.push(p);
     }
   }
