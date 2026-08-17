@@ -75,7 +75,11 @@ A few concrete pieces ended up outside Odoo entirely:
 
 Add those up and the real shift becomes clear. We didn't just swap PHP for Odoo; we went from a single **monolithic PHP app** (CMS website and all) to an **API-first** architecture — Odoo as the domain core, FastAPI at the edges, a standalone public website, a separate customer front-end, Keycloak for identity, and Meilisearch for search — all talking over APIs. That reframing, more than the ERP itself, is what actually changed how we build.
 
-Though I do keep asking myself: *have we just traded one kind of complexity — a tangled monolith — for another, with more moving parts to keep in sync?* Honestly, a little. The bet is that boundaries you can see are easier to live with than couplings you can't — but I won't really know until we've lived with it a while.
+Though I do keep asking myself: *have we just traded one kind of complexity — a tangled monolith — for another, with more moving parts to keep in sync?* Honestly, a little. But here's the bet:
+
+> Boundaries you can see are easier to live with than couplings you can't.
+
+I won't really know if it paid off until we've lived with it a while.
 
 Laid side by side, the trade is pretty clear:
 
