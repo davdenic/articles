@@ -4,7 +4,9 @@ description: "What we learned moving from a monolithic PHP app to Odoo: put the 
 draft: true
 image: hero.png
 version: 1
-changelog: []
+published: 2026-05-03
+changelog:
+  - "2026-05-03: first publish"
 modified: 2026-08-17T13:34:54+02:00
 ---
 ### At some point, software stops being the thing you develop and becomes the thing you maintain
