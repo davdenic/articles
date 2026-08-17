@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-label="A hand-drawn Pac-Man chasing a fleeing ghost across a row of dots — a playful take on chasing down accounts left behind.">
+  <style>
+    .body { stroke: #1a1a1a; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+    .eye { fill: #fff; stroke: #1a1a1a; stroke-width: 3.5; }
+    .pupil { fill: #1a1a1a; }
+    .dot { fill: #f2c94c; stroke: #1a1a1a; stroke-width: 3; }
+  </style>
+  <rect width="1200" height="420" fill="#ffffff"/>
+
+  <!-- Pac-Man, mouth open to the right -->
+  <g transform="translate(0 10)">
+    <path class="body" fill="#f6d24c" d="M250 210 L338 150 A106 106 0 1 0 338 270 Z"/>
+    <circle class="pupil" cx="238" cy="150" r="9"/>
+  </g>
+
+  <!-- dots being chased -->
+  <circle class="dot" cx="470" cy="220" r="13"/>
+  <circle class="dot" cx="560" cy="220" r="13"/>
+  <circle class="dot" cx="650" cy="220" r="13"/>
+
+  <!-- fleeing ghost, glancing back at Pac-Man -->
+  <g transform="translate(820 96)">
+    <path class="body" fill="#f4b6b0" d="M24 210 V96 C24 46 60 18 108 18 C156 18 192 46 192 96 V210
+      L169 188 L148 210 L127 188 L108 210 L89 188 L68 210 L47 188 Z"/>
+    <ellipse class="eye" cx="74" cy="96" rx="19" ry="25"/>
+    <ellipse class="eye" cx="128" cy="96" rx="19" ry="25"/>
+    <circle class="pupil" cx="64" cy="102" r="8"/>
+    <circle class="pupil" cx="118" cy="102" r="8"/>
+  </g>
+</svg>

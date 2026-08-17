@@ -131,7 +131,8 @@
     "diss",
     "RUFADAA",
     "HSLU",
-    "Nachlass"
+    "Nachlass",
+    "pacman"
   ],
   "ignorePaths": [
     "node_modules/**",

@@ -2,14 +2,14 @@
 title: What happens to our digital life when we die?
 description: A personal reflection on digital inheritance — emails, messages, cloud photos, saved passwords — and why what happens to our digital traces after death is still so unclear.
 draft: true
-image: hero.png
+image: pacman-hero.svg
 size: 2x1
 version: 1
 changelog: []
-modified: 2026-08-17T09:48:11+02:00
+modified: 2026-08-17T10:35:54+02:00
 ---
 
-![Who inherits your logins? — hand-drawn hero](./hero.png)
+![Pac-Man chasing a fleeing ghost across a row of dots — hand-drawn hero](./pacman-hero.svg)
 
 I recently lost someone close.
 
@@ -49,9 +49,9 @@ Death already leaves enough behind. Technology shouldn’t make it harder for th
 
 A little digging confirmed the mess — but also turned up a few concrete things worth knowing.
 
-![Europe is a patchwork: Germany, France, Italy, Spain and Belgium each have some national provision; Switzerland offers no data-protection route.](./europe-patchwork.svg)
+A caveat before any of this: what follows is my own reading of public sources, not legal advice. For what I know it's roughly right, but I'm a developer poking at legal texts, not a lawyer, and I honestly can't claim it's accurate — treat it as a map I sketched, not the territory.
 
-GDPR really does stop at death. Recital 27 says the regulation "does not apply to the personal data of deceased persons," and leaves the question to each member state. ([Recital 27](https://gdpr-info.eu/recitals/no-27/)) So in Europe there is no single answer — it is a patchwork, and it varies more than I expected:
+From what I can tell, GDPR really does stop at death. Recital 27 says the regulation "does not apply to the personal data of deceased persons," and leaves the question to each member state. ([Recital 27](https://gdpr-info.eu/recitals/no-27/)) So in Europe there seems to be no single answer — it is a patchwork, and it varies more than I expected:
 
 - **Germany** — no special "digital death" law; it runs through ordinary inheritance. In 2018 the Federal Court of Justice ruled that a deceased person’s Facebook account passes to the heirs as part of the estate — and later, that this means real access to the account, not just a data export. ([Library of Congress](https://www.loc.gov/item/global-legal-monitor/2018-09-07/germany-federal-court-of-justice-rules-digital-social-media-accounts-inheritable/))
 - **France** — you can leave directives about what happens to your data after you die, under the 2016 "République numérique" law (now art. 85 of the data-protection act); without them, heirs can still act to settle the estate. ([CNIL](https://www.cnil.fr/fr/mort-numerique-effacement-informations-personne-decedee))
@@ -60,11 +60,13 @@ GDPR really does stop at death. Recital 27 says the regulation "does not apply t
 - **Belgium** — no specific rule; access flows through ordinary succession law, so the accounts pass to the legal heirs (and only to them). ([ICT-recht](https://www.ictrechtswijzer.be/en/heirs-can-access-the-deceaseds-digital-accounts/))
 - **Switzerland** (outside the GDPR) — the revised FADP, in force since September 2023, protects only the living, so there is no data-protection route at all; digital inheritance runs entirely through ordinary private law. ([DLA Piper](https://www.dlapiperdataprotection.com/?t=law&c=CH))
 
-I am a developer, not a lawyer — this is what I found, not legal advice, and the details (even article numbers) shift over time. But the shape is clear: some countries let you plan ahead, some lean on the heirs, and one — mine, Switzerland — offers no data-protection help at all.
+Again — my research, not gospel, and the details (even article numbers) shift over time. But the shape seems clear enough: some countries let you plan ahead, some lean on the heirs. My own case straddles two of them — I'm Italian, my relative died in Italy, and I live in Switzerland — so I dug into both.
 
-Since it's my own country, I dug into the Swiss side a bit more. There's no special digital-inheritance law here at all: under universal succession (art. 560 ZGB) an heir steps into the *whole* estate — cloud data included, in theory. In practice the wall isn't the law, it's the fine print. Data on a physical device you can usually reach — a forgotten password is the only real lock. Online accounts are another story: the platforms' own terms often forbid transferring an account and grant survivors no rights whatsoever (Apple says so outright). And because those contracts usually run under foreign law with a foreign court, enforcing a Swiss inheritance right against them is close to hopeless. So the theory says "you inherit everything," and the terms of service say "good luck with that." ([HSLU analysis](https://hub.hslu.ch/management-and-law/2023/05/25/der-digitale-nachlass-in-der-praxis-teil-i/))
+Italy is the one that actually touched me, and on paper — for what I understand of it — it's one of the kinder regimes: as an heir I *may* exercise the deceased's data rights (art. 2-terdecies) without having planned anything in advance. And yet I still ended up standing in front of a locked phone. That's the gap that stuck with me — a law saying you *may* reach the data doesn't hand you the password, and the platform holding it doesn't much care what the Codice Privacy allows.
 
-![Bureaucracy drawn as an arcade climbing game: slanted girders and ladders stacked up, barrels rolling down as obstacles, a small figure at the bottom trying to reach a padlock at the very top.](./bureaucracy-climb.svg)
+Switzerland, where I live, is starker still. There's no special digital-inheritance law and no data-protection route at all: under universal succession (art. 560 ZGB) an heir steps into the *whole* estate — cloud data included, in theory. In practice the wall isn't the law, it's the fine print. Data on a physical device you can usually reach — a forgotten password is the only real lock. Online accounts are another story: the platforms' own terms often forbid transferring an account and grant survivors no rights whatsoever (Apple says so outright). And because those contracts usually run under foreign law with a foreign court, enforcing an inheritance right against them is close to hopeless. So the theory says "you inherit everything," and the terms of service say "good luck with that." ([HSLU analysis](https://hub.hslu.ch/management-and-law/2023/05/25/der-digitale-nachlass-in-der-praxis-teil-i/))
+
+![Donkey Kong arcade screen — the endless girders-and-ladders climb, dodging barrels the whole way up — as a picture of the bureaucracy.](./donkey-kong.png)
 
 Step outside Europe and the framing flips entirely. The UK's [Property (Digital Assets etc) Act 2025](https://www.legislation.gov.uk/ukpga/2025/29) treats things like crypto as inheritable *property* — a possessions question, not a privacy one. The US leans on a model law, [RUFADAA](https://www.nolo.com/legal-encyclopedia/ufadaa.html), adopted in most states, which gives an executor a path to digital assets — but with a twist that matters here: a platform's own legacy tool *wins over your will*. Set Google's Inactive Account Manager one way and your testament another, and the checkbox beats the lawyer. Which, as a developer, is either reassuring or slightly terrifying.
 
@@ -102,3 +104,5 @@ Germany has at least tested it once: in that Facebook case, a US platform's term
 - US: [Nolo — RUFADAA (fiduciary access to digital assets)](https://www.nolo.com/legal-encyclopedia/ufadaa.html)
 - EU (coming): [European Law Institute — Succession of Digital Assets, Data and other Digital Remains](https://www.europeanlawinstitute.eu/projects-instruments/current-projects/current-projects/eli-succession-of-digital-assets-data-and-other-digital-remains/)
 - Platforms: [Google — Inactive Account Manager](https://support.google.com/accounts/answer/3036546) · [Apple — Digital Legacy](https://support.apple.com/en-us/102631) · [Facebook — memorialized accounts](https://www.facebook.com/help/1568013990080948) · [Bitwarden — Emergency Access](https://bitwarden.com/help/emergency-access/) · [1Password — Emergency Kit](https://support.1password.com/emergency-kit/)
+
+![Ghosts 'n Goblins arcade screen — a lone knight facing an endless parade of ghosts.](./ghosts-and-goblins.avif)
