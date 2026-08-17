@@ -10,7 +10,7 @@ modified: 2026-08-16T19:20:37+02:00
 
 ![We moved to Odoo — hand-drawn hero](./hero.png)
 
-At some point a homegrown app stops being the thing you sell and becomes the thing you maintain. We had a monolithic PHP application carrying years of business processes, and every new requirement meant re-inventing something an ERP already does well. Moving to **Odoo** was less about the framework and more about a decision: stop rebuilding invoicing, contacts, workflows and access control by hand, and put our energy into what's actually specific to us.
+At some point a homegrown app stops being the thing you sell and becomes the thing you maintain. We had a monolithic PHP application — built on **TYPO3**, a CMS with a solid, extensible development framework — carrying years of business processes, and every new requirement meant re-inventing something an ERP already does well. Moving to **Odoo** (a Python/PostgreSQL ERP/CRM) was less about the framework and more about a decision: stop rebuilding invoicing, contacts, workflows and access control by hand, and put our energy into what's actually specific to us.
 
 By the end, the monolith had also become genuinely tangled. Modules depended on each other in ways nobody fully held in their head, so a change in one corner could surface as a surprise in another; updating anything or adding a feature meant tracing threads across half the codebase first. It didn't help that the QA and pipeline never quite reached a good level — coverage had gaps, so regressions had room to slip through. That combination, more than any single missing feature, is what pushed us to rethink the whole shape.
 
