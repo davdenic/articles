@@ -25,7 +25,7 @@ The pain points, in one place:
 | Frontend and backend knotted together | Frontend devs and marketing were blocked on always-busy backend devs |
 | One monolith, one deploy | No safe way to change a part without risking the whole |
 
-None of this was a sudden switch. It started about two years earlier, at my kitchen table, sketching the idea on paper for my boss — the drawing that slowly turned into a plan, and then into a team effort. So the "we" here is real: this was never a one-person job, even if the first version of it fit on a napkin.
+None of this was a sudden switch. It started about two years earlier, at the office kitchen table — yes, offices here in Switzerland tend to come with a proper kitchen — sketching the idea on paper for my boss — the drawing that slowly turned into a plan, and then into a team effort. So the "we" here is real: this was never a one-person job, even if the first version of it fit on a napkin.
 
 Here's how we think about it after doing it — with the honest caveat that we're one migration in: enough to have opinions, not enough to be smug about them.
 
