@@ -4,10 +4,10 @@ description: AI doesn't fix your development process — it amplifies it. Why QA
 draft: false
 size: 2x1.5
 version: 2
-published: 2026-08-16
+published: 2026-08-15
 changelog:
   - "2026-08-17: removed internal talk-notes link (keep articles agnostic)"
-  - "2026-08-16: first publish"
+  - "2026-08-15: first publish"
 modified: 2026-08-16T10:52:51+02:00
 created: 2026-08-16T20:57
 updated: 2026-08-17
