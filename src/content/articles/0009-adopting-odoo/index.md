@@ -12,6 +12,8 @@ modified: 2026-08-16T19:20:37+02:00
 
 At some point a homegrown app stops being the thing you sell and becomes the thing you maintain. We had a monolithic PHP application carrying years of business processes, and every new requirement meant re-inventing something an ERP already does well. Moving to **Odoo** was less about the framework and more about a decision: stop rebuilding invoicing, contacts, workflows and access control by hand, and put our energy into what's actually specific to us.
 
+By the end, the monolith had also become genuinely tangled. Modules depended on each other in ways nobody fully held in their head, so a change in one corner could surface as a surprise in another; updating anything or adding a feature meant tracing threads across half the codebase first. It didn't help that the QA and pipeline never quite reached a good level — coverage had gaps, so regressions had room to slip through. That combination, more than any single missing feature, is what pushed us to rethink the whole shape.
+
 None of this was a sudden switch. It started about two years earlier, at my kitchen table, sketching the idea on paper for my boss — the drawing that slowly turned into a plan, and then into a team effort. So the "we" here is real: this was never a one-person job, even if the first version of it fit on a napkin.
 
 Here's how we think about it after doing it — with the honest caveat that we're one migration in: enough to have opinions, not enough to be smug about them.
@@ -63,6 +65,7 @@ The point isn't "microservices everywhere." It's: don't cram every integration i
 
 - **Customisations as modules, not core edits** — the difference between a smooth upgrade and a dreaded one.
 - **Respect the ORM** — fighting it with raw SQL is usually a smell; when you do need it, isolate it.
+- **Raise the testing bar on purpose** — the old monolith's QA and pipeline never really got there, and the gaps showed up as regressions. This time we set stricter test-coverage rules from the start — at least for Odoo and FastAPI, which are my area of competence; I can't honestly vouch for every layer, but where I could set the bar, I set it higher.
 - **Draw the Odoo ↔ FastAPI line deliberately** — re-litigating it per feature is where integrations rot.
 - **Migrate incrementally** — move one process at a time from the old app; keep both running until each slice is proven. For us this was the genuinely interesting part: instead of a big bang, we rolled out over **three major go-lives**, each deploying a different slice of the system at a different moment — with the standing constraint that everything not yet migrated had to keep working across every step. Slower than a single cutover, far less terrifying.
 - **Expect the integration glue to change under you** — during the migration the integrations first ran through custom APIs we'd built into the old PHP monolith. As pieces moved over, we replaced those with **n8n** workflows talking to **Odoo's XML-RPC API**, which took a lot of bespoke glue code out of our hands. The transitional plumbing is temporary by nature; don't over-engineer it.
