@@ -7,6 +7,10 @@ The project version lives in `package.json` (`version`); each release below matc
 
 ## [Unreleased]
 
+### Changed
+
+- Refined draft `0009-adopting-odoo`: reframed the piece as a team effort ("I" → "we" for the work and opinions) and added the origin — a process that began ~2 years earlier, sketched for the boss on a kitchen table. Still a draft.
+
 ## [1.3.1] - 2026-08-17
 
 ### Fixed
