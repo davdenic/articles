@@ -64,6 +64,7 @@ The point isn't "microservices everywhere." It's: don't cram every integration i
 - **Respect the ORM** — fighting it with raw SQL is usually a smell; when you do need it, isolate it.
 - **Draw the Odoo ↔ FastAPI line deliberately** — re-litigating it per feature is where integrations rot.
 - **Migrate incrementally** — move one process at a time from the old app; keep both running until each slice is proven.
+- **Expect the integration glue to change under you** — during the migration the integrations first ran through custom APIs we'd built into the old PHP monolith. As pieces moved over, we replaced those with **n8n** workflows talking to **Odoo's XML-RPC API**, which took a lot of bespoke glue code out of our hands. The transitional plumbing is temporary by nature; don't over-engineer it.
 
 ## Takeaway
 
