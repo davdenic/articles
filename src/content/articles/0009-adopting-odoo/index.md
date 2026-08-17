@@ -81,6 +81,8 @@ The point isn't "microservices everywhere." It's: don't cram every integration i
 
 ## So what do you even call this?
 
+> "There are only two hard things in Computer Science: cache invalidation and naming things." — Phil Karlton
+
 Honestly, I'm not sure it has one clean name. A few that fit, from most accurate to most hand-wavy:
 
 - **Modular-monolith core + satellite services** — the most accurate, to me. Odoo is a *modular monolith* (one deployable, modules inside — a term [popularised by Simon Brown](https://simonbrown.je/modular-monolith/)); the website, customer area, FastAPI, Keycloak and Meilisearch are satellites around it.
