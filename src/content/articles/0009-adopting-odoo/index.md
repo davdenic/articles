@@ -92,8 +92,6 @@ The point isn't "microservices everywhere." It's: don't cram every integration i
 
 ## So what do you even call this?
 
-> "There are only two hard things in Computer Science: cache invalidation and naming things." — Phil Karlton
-
 Honestly, I'm not sure it has one clean name. A few that fit, from most accurate to most hand-wavy:
 
 - **Modular-monolith core + satellite services** — the most accurate, to me. Odoo is a *modular monolith* (one deployable, modules inside — a term [popularised by Simon Brown](https://simonbrown.je/modular-monolith/)); the website, customer area, FastAPI, Keycloak and Meilisearch are satellites around it.
@@ -106,6 +104,8 @@ Honestly, I'm not sure it has one clean name. A few that fit, from most accurate
 
 - **BFF (backend-for-frontend)** — FastAPI acting as the edge for the customer area. The term was [coined by Phil Calçado at SoundCloud and popularised by Sam Newman](https://samnewman.io/patterns/architectural/bff/).
 - **CQRS-lite read model** — Odoo → Meilisearch is a read projection: search reads never touch the source of truth. "CQRS" was [coined by Greg Young](https://martinfowler.com/bliki/CQRS.html), building on Bertrand Meyer's command-query separation.
+
+> "There are only two hard things in Computer Science: cache invalidation and naming things." — Phil Karlton
 
 If I had to pick one, I'd call it a *modular-monolith core with API-first edges* — or, when I want to sound like I read blogs, an Odoo-centric Citadel. But naming architectures is half vibes, and I'd happily be told there's a better word for it.
 
