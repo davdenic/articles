@@ -15,7 +15,7 @@ The project version lives in `package.json` (`version`); each release below matc
 
 ### Changed
 
-- Back-dated `0003-scrum-in-web-agencies` publish date to 2026-05-23 (retroactive to when the piece actually went out).
+- Corrected publish dates to when pieces actually went out: `0001-hello-world` → 2026-05-23, `0003-scrum-in-web-agencies` → 2026-05-30, `0006-digital-life-after-death` → 2026-08-16.
 
 ## [1.2.0] - 2026-08-17
 
