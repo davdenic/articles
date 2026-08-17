@@ -138,7 +138,8 @@
     "popularised",
     "Calçado",
     "Karlton",
-    "InnoDB"
+    "InnoDB",
+    "ondelete"
   ],
   "ignorePaths": [
     "node_modules/**",

@@ -9,7 +9,7 @@ modified: 2026-08-17T13:34:54+02:00
 ---
 ### At some point, software stops being the thing you develop and becomes the thing you maintain
 
-At TYPO3 Camp Schweiz I got talking with a few friends about Odoo and TYPO3. That nudged me to look back and write up our big migration.
+At TYPO3 Camp Schweiz 2026 I got talking with a few friends about Odoo and TYPO3. That nudged me to look back and write up our big migration.
 
 ![A lone figure leaps from a fortress — the old monolith — across a gap to a cluster of connected floating platforms: the new API-first services.](./hero.png)
 
@@ -125,7 +125,7 @@ If I had to pick one, I'd call it a *modular-monolith core with API-first edges*
 
 - **Customisations as modules, not core edits** — the difference between a smooth upgrade and a dreaded one.
 - **Respect the ORM** — fighting it with raw SQL is usually a smell; when you do need it, isolate it.
-- **Postgres, not MySQL** — Odoo runs on PostgreSQL, so the move also took us off MySQL. To be precise: this isn't "MySQL can't do transactions" — with InnoDB it gives you full ACID transactions for your data, same as Postgres. The real difference is [transactional DDL](https://wiki.postgresql.org/wiki/Transactional_DDL_in_PostgreSQL:_A_Competitive_Analysis). In Postgres you can wrap schema changes — `CREATE`/`ALTER`/`DROP TABLE` — in a transaction and roll them back if something breaks. MySQL implicitly commits on each DDL, so you can't. (Its 8.0 "atomic DDL" makes a single statement crash-safe, but per MySQL's own docs it's [not transactional DDL](https://dev.mysql.com/doc/refman/8.0/en/atomic-ddl.html).) In two years of schema churn, that safety net mattered.
+- **Real foreign keys now** — the quieter database win. TYPO3 Core doesn't use database foreign keys. Relations live in its TCA config and are enforced by the framework — comma-separated UID lists, or MM join tables ([the Core has "no support for foreign key constraints"](https://forge.typo3.org/issues/84639)). Odoo's ORM maps relations to real PostgreSQL foreign keys instead: a `Many2one` becomes an actual FK column with an `ondelete` rule ([ORM reference](https://www.odoo.com/documentation/17.0/developer/reference/backend/orm.html)). So referential integrity moved from application-enforced to database-enforced. For a web of entities that all point at each other, that's a real safety net. You still pick how strict each link is — the default `ondelete` is `set null`, with `restrict` and `cascade` for the tight cases.
 - **Raise the testing bar on purpose** — the old monolith's QA never got there, and the gaps showed up as regressions. This time we set stricter test-coverage rules from the start. Same instinct I wrote about in [Foundations of AI-assisted software development](/articles/foundations-of-ai-assisted-software-development/): QA is the foundation, not an afterthought. At least for Odoo and FastAPI, my area. I can't vouch for every layer, but where I could set the bar, I set it higher.
 - **Add eyes on production** — tests catch what you thought to check. Observability catches the rest. We added **Grafana** and **Loki**, so issues show up as signals we watch, not surprises a client reports back to us.
 - **Draw the Odoo ↔ FastAPI line deliberately** — re-litigating it per feature is where integrations rot.
