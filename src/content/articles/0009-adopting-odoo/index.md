@@ -134,3 +134,5 @@ If I had to pick one, I'd call it a *modular-monolith core with API-first edges*
 Adopting Odoo paid off. Not because it's magic. Because it let us stop maintaining the generic parts and focus on our actual business logic, as proper modules, while FastAPI took the edges. The framework does the boring 80%. You own the 20% that's really yours.
 
 Would we do it again? Yes. But check back after our first major version upgrade. That's when the "modules, not core edits" discipline gets its real exam. It's the bit we're quietly nervous about.
+
+Was it worth it? I want to say yes — and mostly I mean it. But I'll be honest: somewhere in those two years, it cost me a burnout. The architecture came out better. The road there was heavy. Both are true, and I'm still working out how to weigh them.
