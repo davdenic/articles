@@ -12,7 +12,9 @@ modified: 2026-08-16T19:20:37+02:00
 
 At some point a homegrown app stops being the thing you sell and becomes the thing you maintain. We had a monolithic PHP application — built on **TYPO3**, a CMS with a solid, extensible development framework — carrying years of website-related logic, but with no CRM or ERP behind it. So invoicing, contacts, workflows and access control were handled by hand or scattered outside any real system, and every new requirement meant re-inventing something an ERP already does well. Moving to **Odoo** (a Python/PostgreSQL ERP/CRM) was less about the framework and more about a decision: stop doing that generic work by hand, and put our energy into what's actually specific to us.
 
-By the end, the monolith had also become genuinely tangled. Modules depended on each other in ways nobody fully held in their head. A change in one corner could surface as a surprise in another, and updating anything or adding a feature meant tracing threads across half the codebase first. It didn't help that the QA and pipeline never quite reached a good level — coverage had gaps, so regressions had room to slip through. There was a human cost, too: frontend and backend were knotted together, so the frontend developers and the marketing team were effectively blocked on the backend developers — who were always busy on something else. A copy change or a new landing page could end up waiting on a queue it never should have touched. That combination, more than any single missing feature, is what pushed us to rethink the whole shape.
+By the end, the monolith had also become genuinely tangled. Modules depended on each other in ways nobody fully held in their head. A change in one corner could surface as a surprise in another, and updating anything or adding a feature meant tracing threads across half the codebase first.
+
+Part of that was the domain itself. Our business logic is a web of entities — customer companies, their users, subscriptions, paid job postings (clients pay to list one), training ("formation") offers, the newsletter — and they're all naturally wired to each other. Post a job offer and it touches billing, the company, its users and their subscription at once. The monolith encoded those links rigidly, so pulling on one entity tugged half a dozen others: exactly the kind of coupling that makes a system tangled. It didn't help that the QA and pipeline never quite reached a good level — coverage had gaps, so regressions had room to slip through. There was a human cost, too: frontend and backend were knotted together, so the frontend developers and the marketing team were effectively blocked on the backend developers — who were always busy on something else. A copy change or a new landing page could end up waiting on a queue it never should have touched. That combination, more than any single missing feature, is what pushed us to rethink the whole shape.
 
 The pain points, in one place:
 
@@ -31,7 +33,7 @@ There was something uncomfortable underneath it, too. I'd spent most of my caree
 
 Here's how we think about it after doing it — with the honest caveat that we're one migration in: enough to have opinions, not enough to be smug about them.
 
-![Odoo owns the domain and business rules (the source of truth); FastAPI handles the edges and integrations to external systems.](./odoo-fastapi.svg)
+![The API-first architecture: a public website and a customer area talk to a FastAPI edge layer; Odoo is the domain core and source of truth; Keycloak handles identity over a dedicated API while the detailed access rights live in an Odoo module; Grafana and Loki watch over everything.](./architecture.svg)
 
 ## Why Odoo, not another rewrite
 
@@ -50,7 +52,7 @@ The single most important habit: **your domain logic lives in your own Odoo modu
 - Lean on Odoo's access rights and record rules instead of reinventing permissions.
 - Keep each concern a separate, installable module with clear dependencies — so it survives upgrades and can be reasoned about on its own.
 
-When the business logic is *inside* Odoo, the ERP's tooling (views, reports, security, the ORM) works with your rules instead of against them. When it's bolted on outside, you fight the platform forever.
+Those same interlinked entities — companies, users, subscriptions, job postings, offers — are now Odoo models, with the relationships declared explicitly instead of tangled implicitly. When the business logic is *inside* Odoo, the ERP's tooling (views, reports, security, the ORM) works with your rules instead of against them. When it's bolted on outside, you fight the platform forever.
 
 ## Let FastAPI handle what Odoo shouldn't
 
