@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 540" role="img" aria-label="An arcade climbing game as bureaucracy: slanted girders and ladders stacked up, barrels rolling down as obstacles, a tiny figure at the bottom trying to climb toward a padlock at the top.">
+  <style>
+    .beam { fill: #f1d5a6; stroke: #1a1a1a; stroke-width: 4; stroke-linejoin: round; }
+    .rivet { fill: #1a1a1a; }
+    .ink { fill: none; stroke: #1a1a1a; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+    .barrel { fill: #e39a5b; stroke: #1a1a1a; stroke-width: 4; stroke-linejoin: round; }
+    .band { fill: none; stroke: #1a1a1a; stroke-width: 3; }
+    .lock { fill: #aac4ea; stroke: #1a1a1a; stroke-width: 4; stroke-linejoin: round; }
+    .arc { fill: none; stroke: #1a1a1a; stroke-width: 3; stroke-linecap: round; opacity: .55; }
+  </style>
+  <rect width="1200" height="540" fill="#ffffff"/>
+
+  <!-- girders (slanted platforms) -->
+  <polygon class="beam" points="140,150 1060,120 1060,138 140,168"/>
+  <polygon class="beam" points="140,268 1060,298 1060,316 140,286"/>
+  <polygon class="beam" points="140,398 1060,368 1060,386 140,416"/>
+  <polygon class="beam" points="140,496 1060,496 1060,514 140,514"/>
+
+  <!-- rivets -->
+  <circle class="rivet" cx="200" cy="160" r="3.5"/><circle class="rivet" cx="520" cy="150" r="3.5"/>
+  <circle class="rivet" cx="840" cy="140" r="3.5"/>
+  <circle class="rivet" cx="240" cy="279" r="3.5"/><circle class="rivet" cx="600" cy="290" r="3.5"/>
+  <circle class="rivet" cx="940" cy="301" r="3.5"/>
+  <circle class="rivet" cx="260" cy="408" r="3.5"/><circle class="rivet" cx="640" cy="389" r="3.5"/>
+  <circle class="rivet" cx="960" cy="375" r="3.5"/>
+  <circle class="rivet" cx="300" cy="505" r="3.5"/><circle class="rivet" cx="700" cy="505" r="3.5"/>
+
+  <!-- ladders -->
+  <g class="ink">
+    <!-- bottom to 3rd (right) -->
+    <line x1="890" y1="500" x2="900" y2="392"/><line x1="922" y1="500" x2="932" y2="392"/>
+    <line x1="892" y1="480" x2="924" y2="480"/><line x1="895" y1="452" x2="927" y2="452"/>
+    <line x1="898" y1="424" x2="930" y2="424"/><line x1="900" y1="400" x2="932" y2="400"/>
+    <!-- 3rd to 2nd (left) -->
+    <line x1="256" y1="408" x2="266" y2="288"/><line x1="288" y1="408" x2="298" y2="288"/>
+    <line x1="258" y1="388" x2="290" y2="388"/><line x1="262" y1="360" x2="294" y2="360"/>
+    <line x1="266" y1="332" x2="298" y2="332"/><line x1="270" y1="304" x2="302" y2="304"/>
+    <!-- 2nd to top (right) -->
+    <line x1="840" y1="284" x2="850" y2="150"/><line x1="872" y1="284" x2="882" y2="150"/>
+    <line x1="842" y1="264" x2="874" y2="264"/><line x1="846" y1="232" x2="878" y2="232"/>
+    <line x1="850" y1="200" x2="882" y2="200"/><line x1="854" y1="168" x2="886" y2="168"/>
+  </g>
+
+  <!-- barrels rolling down -->
+  <g>
+    <rect class="barrel" x="470" y="228" width="52" height="34" rx="12"/>
+    <line class="band" x1="484" y1="230" x2="484" y2="260"/><line class="band" x1="508" y1="230" x2="508" y2="260"/>
+    <path class="arc" d="M470 224 q26 -16 52 0"/>
+
+    <rect class="barrel" x="640" y="332" width="52" height="34" rx="12"/>
+    <line class="band" x1="654" y1="334" x2="654" y2="364"/><line class="band" x1="678" y1="334" x2="678" y2="364"/>
+    <path class="arc" d="M640 328 q26 -16 52 0"/>
+
+    <!-- one mid-fall near the ladder -->
+    <rect class="barrel" x="792" y="336" width="48" height="48" rx="14" transform="rotate(18 816 360)"/>
+    <line class="band" x1="806" y1="342" x2="806" y2="378" transform="rotate(18 816 360)"/>
+    <line class="band" x1="826" y1="342" x2="826" y2="378" transform="rotate(18 816 360)"/>
+  </g>
+
+  <!-- padlock goal at the top -->
+  <g transform="translate(300 78)">
+    <path class="ink" d="M14 34 V22 a22 22 0 0 1 44 0 V34"/>
+    <rect class="lock" x="2" y="34" width="68" height="52" rx="9"/>
+    <circle class="rivet" cx="36" cy="56" r="6"/>
+    <line class="ink" x1="36" y1="60" x2="36" y2="72"/>
+  </g>
+
+  <!-- little climber at bottom-left, reaching up -->
+  <g class="ink" transform="translate(178 430)">
+    <circle cx="20" cy="10" r="11" fill="#fff"/>
+    <line x1="20" y1="21" x2="20" y2="52"/>
+    <line x1="20" y1="30" x2="4" y2="14"/>
+    <line x1="20" y1="30" x2="38" y2="16"/>
+    <line x1="20" y1="52" x2="6" y2="72"/>
+    <line x1="20" y1="52" x2="34" y2="72"/>
+  </g>
+</svg>
