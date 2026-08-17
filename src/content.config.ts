@@ -12,6 +12,9 @@ const articles = defineCollection({
     // image. Optional — defaults to the first image in the article, then a
     // site default. See src/pages/[...slug].astro.
     image: z.string().optional(),
+    // CSS object-position for the home mosaic card crop. Default anchors left;
+    // set e.g. "center" or "50% 30%" when the subject sits elsewhere.
+    imagePosition: z.string().optional(),
     // Home mosaic tile size as `WxH` grid spans (columns x rows), in 0.5
     // steps: e.g. "1x1" (default), "2x1" (wide), "1x2" (tall), "2x2" (big),
     // "1.5x1.5". The grid runs at 2x resolution so halves land on real

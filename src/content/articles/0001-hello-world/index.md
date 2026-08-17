@@ -4,11 +4,12 @@ description: David Denicolò — full-stack developer in Switzerland, writing ab
 draft: false
 version: 2
 published: 2026-08-15
-updated: 2026-08-16
+updated: 2026-08-16T20:57
 changelog:
   - "2026-08-16: add personal intro"
   - "2026-08-15: first publish"
 modified: 2026-08-16T14:29:13+02:00
+created: 2026-08-16T20:57
 ---
 
 ### Hello World, I'm David — a full-stack web developer in Switzerland, working with TYPO3 for over two decades

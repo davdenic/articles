@@ -2,12 +2,15 @@
 title: About the foundations of AI-assisted software development
 description: AI doesn't fix your development process — it amplifies it. Why QA, specs & context, and team culture are the foundations of AI-assisted software development.
 draft: false
-size: "2x1.5"
-version: 1
+size: 2x1.5
+version: 2
 published: 2026-08-16
 changelog:
+  - "2026-08-17: removed internal talk-notes link (keep articles agnostic)"
   - "2026-08-16: first publish"
 modified: 2026-08-16T10:52:51+02:00
+created: 2026-08-16T20:57
+updated: 2026-08-17
 ---
 
 How many times have you been told to use AI to boost your productivity? It writes code 10× faster. You just need to give it a prompt and let it work.
@@ -118,7 +121,7 @@ In an AI/software context, "harness AI" has a nice implication — AI has power,
 - It is measurable: test count up, static-analysis errors down. You can see it working.
 - Guardrail against gaming: fail the build if the **static-analysis baseline grows**. Removing baseline entries because you fixed the code is fine; adding entries to hide new problems is not.
 
-**Live example from the T3DD26 talk:** a Claude Code session ran PHPStan on its own, saw 4 errors, fixed the 2 it had introduced and left the 2 pre-existing ones — because it had the tool and a clear pass/fail signal. ([talk notes](https://outline.lst.team/doc/before-you-let-ai-touch-your-code-the-harness-every-dev-team-needs-FuEz0jtm8n))
+**Live example from the T3DD26 talk:** a Claude Code session ran PHPStan on its own, saw 4 errors, fixed the 2 it had introduced and left the 2 pre-existing ones — because it had the tool and a clear pass/fail signal.
 
 ## 2. Right pillar: Specs & Context
 
