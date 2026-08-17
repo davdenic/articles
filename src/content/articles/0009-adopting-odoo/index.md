@@ -66,6 +66,8 @@ A boundary that worked for us:
 - **FastAPI owns the edges** — custom or high-throughput endpoints, webhooks, and bridges to external software that don't belong in the ERP.
 - They talk over a clear API (Odoo's, or one you expose), and each side stays in its lane.
 
+> Boundaries you can see are easier to live with than couplings you can't.
+
 A few concrete pieces ended up outside Odoo entirely:
 
 - **The public website** — the frontend that used to be baked into the monolithic PHP CMS became its own thing, no longer tangled up with the business logic behind it. Splitting the site from the system it talks to was one of the clearer wins — and it finally let the frontend and marketing folks ship without queuing behind the backend team.
@@ -75,11 +77,7 @@ A few concrete pieces ended up outside Odoo entirely:
 
 Add those up and the real shift becomes clear. We didn't just swap PHP for Odoo; we went from a single **monolithic PHP app** (CMS website and all) to an **API-first** architecture — Odoo as the domain core, FastAPI at the edges, a standalone public website, a separate customer front-end, Keycloak for identity, and Meilisearch for search — all talking over APIs. That reframing, more than the ERP itself, is what actually changed how we build.
 
-Though I do keep asking myself: *have we just traded one kind of complexity — a tangled monolith — for another, with more moving parts to keep in sync?* Honestly, a little. But here's the bet:
-
-> Boundaries you can see are easier to live with than couplings you can't.
-
-I won't really know if it paid off until we've lived with it a while.
+Though I do keep asking myself: *have we just traded one kind of complexity — a tangled monolith — for another, with more moving parts to keep in sync?* Honestly, a little. But I'll take boundaries I can see over couplings I can't — I just won't know if it paid off until we've lived with it a while.
 
 Laid side by side, the trade is pretty clear:
 
