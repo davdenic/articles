@@ -77,6 +77,20 @@ Add those up and the real shift becomes clear. We didn't just swap PHP for Odoo;
 
 Though I do keep asking myself: *have we just traded one kind of complexity — a tangled monolith — for another, with more moving parts to keep in sync?* Honestly, a little. The bet is that boundaries you can see are easier to live with than couplings you can't — but I won't really know until we've lived with it a while.
 
+Laid side by side, the trade is pretty clear:
+
+| | Old monolith | API-first core + edges |
+| --- | --- | --- |
+| Moving parts | Few — one app, one deploy (**KISS**) | Many — several services to run and keep in sync |
+| Simplicity | Simple to run and reason about locally | Distributed; you need observability just to see across it |
+| Coupling | Tight — one change ripples everywhere | Loose — clear boundaries between pieces |
+| Team flow | Frontend & marketing blocked on backend | Teams can ship independently |
+| Reuse | Rebuild the generic 80% by hand | Odoo gives the 80% for free |
+| Right tool per job | One stack for everything | Best fit per edge (Meilisearch, Keycloak, FastAPI) |
+| Changing it | Risky, big-bang | Incremental, one piece at a time |
+
+The monolith genuinely wins the top rows — fewer parts, less to run, easier to hold in your head. **KISS** is a real argument, and I don't want to pretend we didn't give something up. We're betting we needed the boundaries more than we needed the simplicity. Ask me in a year whether that was true.
+
 The point isn't "microservices everywhere." It's: don't cram every integration into Odoo, and don't leak business rules out into the FastAPI layer. Keep the domain in one place.
 
 ## So what do you even call this?
