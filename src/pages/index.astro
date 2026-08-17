@@ -2,14 +2,7 @@
 import { getCollection } from 'astro:content';
 import { getImage } from 'astro:assets';
 import Base from '../layouts/Base.astro';
-import {
-  buildMosaic,
-  centroid,
-  pathFrom,
-  wrapTitle,
-  ARTICLE_LAYOUT,
-  type Pt,
-} from '../lib/voronoi';
+import { hexClusterMosaic, centroid, polyArea, pathFrom, wrapTitle } from '../lib/voronoi';
 
 // Live articles (draft !== true), newest first — the newest lands top-centre.
 const isDev = import.meta.env.DEV;
@@ -25,14 +18,9 @@ const articleImages = import.meta.glob('/src/content/articles/**/*.{png,jpg,jpeg
 const W = 1600;
 const H = 1000;
 
-// Article seed points, radiating from top-centre (index 0 = newest).
-const rel = (i: number): Pt =>
-  ARTICLE_LAYOUT[i] ?? { x: 0.16 + ((i * 0.17) % 0.68), y: 0.6 + ((i * 0.23) % 0.34) };
-const articleSites: Pt[] = articles.map((_, i) => ({ x: rel(i).x * W, y: rel(i).y * H }));
-
-// Enough filler to pack the space around the articles.
-const fillerCount = Math.max(16, articles.length * 3);
-const { articleCells, fillerCells } = buildMosaic(articleSites, fillerCount, W, H);
+// Article cells form a touching cluster of near-regular hexagons radiating from
+// the top-centre (newest = apex). Small filler fills the space around it.
+const { articleCells, fillerCells } = hexClusterMosaic(articles.length, W, H);
 
 const fmtDate = (d?: Date) =>
   d ? d.toLocaleDateString('en-GB', { year: 'numeric', month: 'short', day: 'numeric' }) : '';
@@ -60,6 +48,11 @@ const cards = await Promise.all(
     const ys = poly.map((p) => p.y);
     const bx = Math.min(...xs);
     const by = Math.min(...ys);
+    // scale the title to the cell so it always fits
+    const cr = Math.sqrt(polyArea(poly) / Math.PI);
+    const font = Math.max(16, Math.min(36, Math.round(cr * 0.3)));
+    const lh = Math.round(font * 1.14);
+    const maxChars = Math.max(9, Math.round((cr * 1.5) / (font * 0.52)));
     return {
       href: `${base}/${publicSlug(a.id)}/`,
       title: a.data.title,
@@ -73,7 +66,9 @@ const cards = await Promise.all(
       by,
       bw: Math.max(...xs) - bx,
       bh: Math.max(...ys) - by,
-      lines: wrapTitle(a.data.title, 16),
+      font,
+      lh,
+      lines: wrapTitle(a.data.title, maxChars, 3),
       id: `cell-${i}`,
     };
   })
@@ -125,17 +120,17 @@ const cards = await Promise.all(
             <path d={c.d} class="cell-fallback" />
           )}
           <path d={c.d} class="cell-outline" />
-          <text class="ttl" text-anchor="middle" font-size="28">
+          <text class="ttl" text-anchor="middle" font-size={c.font}>
             {c.lines.map((ln, k) => (
-              <tspan x={c.cx} y={c.cy - (c.lines.length - 1) * 15 - 4 + k * 30}>{ln}</tspan>
+              <tspan x={c.cx} y={c.cy - ((c.lines.length - 1) * c.lh) / 2 - 2 + k * c.lh}>{ln}</tspan>
             ))}
           </text>
           <text
             class="dt"
             text-anchor="middle"
-            font-size="17"
+            font-size={Math.round(c.font * 0.6)}
             x={c.cx}
-            y={c.cy - (c.lines.length - 1) * 15 - 4 + c.lines.length * 30 + 2}
+            y={c.cy - ((c.lines.length - 1) * c.lh) / 2 - 2 + c.lines.length * c.lh + 4}
           >
             {c.date}{c.draft ? ' · draft' : ''}
           </text>
