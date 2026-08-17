@@ -134,6 +134,8 @@ If I had to pick one, I'd call it a *modular-monolith core with API-first edges*
 - **Migrate incrementally** — move one process at a time. Keep both systems running until each slice is proven. For us this was the interesting part. No big bang: we rolled out over **three major go-lives**, each deploying a different slice at a different moment. The rule throughout: everything not yet migrated had to keep working. Slower than a single cutover, far less terrifying.
 - **Expect the integration glue to change under you** — at first the integrations ran through custom APIs in the old PHP monolith. As pieces moved over, we replaced those with **n8n** workflows on **Odoo's XML-RPC API**. That took a lot of bespoke glue off our hands. Transitional plumbing is temporary. Don't over-engineer it.
 
+At the camp, someone asked if I'd released a TYPO3 extension for all this. Now you know why I couldn't: there isn't one. The whole thing moved out of TYPO3 and into Odoo and a handful of services — there's no extension to hand over.
+
 ## Takeaway
 
 Adopting Odoo paid off. Not because it's magic. Because it let us stop maintaining the generic parts and focus on our actual business logic, as proper modules, while FastAPI took the edges. The framework does the boring 80%. You own the 20% that's really yours.
