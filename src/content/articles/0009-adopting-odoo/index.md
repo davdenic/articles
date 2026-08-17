@@ -27,6 +27,8 @@ The pain points, in one place:
 
 None of this was a sudden switch. It started about two years earlier, sketching the idea on paper for my boss at the office kitchen table. (Yes, offices here in Switzerland tend to come with a proper kitchen.) That drawing slowly turned into a plan, and then into a team effort — so the "we" in this piece is real. It was never a one-person job, even if the first version of it fit on a napkin.
 
+There was something uncomfortable underneath it, too. I'd spent most of my career inside that CMS — *was it a bold move to question the tool I knew best for the sake of a better product, or just an overdue one?* I still catch myself going back and forth.
+
 Here's how we think about it after doing it — with the honest caveat that we're one migration in: enough to have opinions, not enough to be smug about them.
 
 ![Odoo owns the domain and business rules (the source of truth); FastAPI handles the edges and integrations to external systems.](./odoo-fastapi.svg)
@@ -69,6 +71,8 @@ A few concrete pieces ended up outside Odoo entirely:
 - **Identity** — we pulled identity and access management out too, into **Keycloak** as a standalone service reached over an API with JWT auth, rather than leaning on Odoo's login for everything that touches the system. But we deliberately split it: Keycloak answers *who you are*, while the **detailed access rights** — what each client's users are actually allowed to do — live in a dedicated Odoo module. That way clients can administer their own users' permissions right from the account area, and the fine-grained rules stay where the domain already lives. Keycloak and Odoo stay in sync over a dedicated API between the two. Authentication on the outside, domain-specific authorization in Odoo.
 
 Add those up and the real shift becomes clear. We didn't just swap PHP for Odoo; we went from a single **monolithic PHP app** (CMS website and all) to an **API-first** architecture — Odoo as the domain core, FastAPI at the edges, a standalone public website, a separate customer front-end, and Keycloak for identity, all talking over APIs. That reframing, more than the ERP itself, is what actually changed how we build.
+
+Though I do keep asking myself: *have we just traded one kind of complexity — a tangled monolith — for another, with more moving parts to keep in sync?* Honestly, a little. The bet is that boundaries you can see are easier to live with than couplings you can't — but I won't really know until we've lived with it a while.
 
 The point isn't "microservices everywhere." It's: don't cram every integration into Odoo, and don't leak business rules out into the FastAPI layer. Keep the domain in one place.
 
