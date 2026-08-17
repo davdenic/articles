@@ -7,6 +7,12 @@ The project version lives in `package.json` (`version`); each release below matc
 
 ## [Unreleased]
 
+## [1.5.0] - 2026-08-17
+
+### Added
+
+- **Published `0009-adopting-odoo`** — "Adopting Odoo — business logic in modules, integrations at the edge (FastAPI & friends)". A personal, plain-language piece on moving from a tangled TYPO3/PHP monolith to an Odoo domain core with API-first edges: FastAPI, a standalone public website, a customer area, Keycloak for identity (with detailed access rights in an Odoo module), and Meilisearch for search; phased over three go-lives, transitional glue via n8n + Odoo XML-RPC. Includes a pain-points table, a monolith-vs-distributed pros/cons table, a sourced "what do you even call this?" section (modular-monolith core / DHH's Citadel / domain-centric / …), a verified TYPO3-vs-Odoo foreign-keys side note, reflective questions, blockquotes, a new leaping-from-the-fortress hero (1.5×1.5 mosaic tile), and an honest closing on burnout. Published 2026-05-03.
+
 ## [1.4.0] - 2026-08-17
 
 ### Added

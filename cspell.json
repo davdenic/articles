@@ -132,7 +132,14 @@
     "RUFADAA",
     "HSLU",
     "Nachlass",
-    "pacman"
+    "pacman",
+    "cutover",
+    "Meilisearch",
+    "popularised",
+    "Calçado",
+    "Karlton",
+    "InnoDB",
+    "ondelete"
   ],
   "ignorePaths": [
     "node_modules/**",
