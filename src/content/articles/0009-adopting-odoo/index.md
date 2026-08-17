@@ -49,12 +49,13 @@ A boundary that worked for us:
 - **FastAPI owns the edges** — custom or high-throughput endpoints, webhooks, and bridges to external software that don't belong in the ERP.
 - They talk over a clear API (Odoo's, or one you expose), and each side stays in its lane.
 
-Two concrete pieces ended up outside Odoo entirely:
+A few concrete pieces ended up outside Odoo entirely:
 
+- **The public website** — the frontend that used to be baked into the monolithic PHP CMS became its own thing, no longer tangled up with the business logic behind it. Splitting the site from the system it talks to was one of the clearer wins.
 - **The customer area** — where clients log in and handle their own stuff — became its own front-end layer, consuming FastAPI instead of living inside the ERP. Keeping it separate let us shape the client experience without bending Odoo's back-office UI to do a job it wasn't built for.
 - **Identity** — we pulled identity and access management out too, into **Keycloak** as a standalone service reached over an API with JWT auth, rather than leaning on Odoo's login for everything that touches the system. But we deliberately split it: Keycloak answers *who you are*, while the **detailed access rights** — what each client's users are actually allowed to do — live in a dedicated Odoo module. That way clients can administer their own users' permissions right from the account area, and the fine-grained rules stay where the domain already lives. Keycloak and Odoo stay in sync over a dedicated API between the two. Authentication on the outside, domain-specific authorization in Odoo.
 
-Add those up and the real shift becomes clear. We didn't just swap PHP for Odoo; we went from a single **monolithic PHP app** to an **API-first** architecture — Odoo as the domain core, FastAPI at the edges, a separate customer front-end, and Keycloak for identity, all talking over APIs. That reframing, more than the ERP itself, is what actually changed how we build.
+Add those up and the real shift becomes clear. We didn't just swap PHP for Odoo; we went from a single **monolithic PHP app** (CMS website and all) to an **API-first** architecture — Odoo as the domain core, FastAPI at the edges, a standalone public website, a separate customer front-end, and Keycloak for identity, all talking over APIs. That reframing, more than the ERP itself, is what actually changed how we build.
 
 The point isn't "microservices everywhere." It's: don't cram every integration into Odoo, and don't leak business rules out into the FastAPI layer. Keep the domain in one place.
 

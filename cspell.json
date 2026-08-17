@@ -132,7 +132,8 @@
     "RUFADAA",
     "HSLU",
     "Nachlass",
-    "pacman"
+    "pacman",
+    "cutover"
   ],
   "ignorePaths": [
     "node_modules/**",
