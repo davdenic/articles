@@ -133,8 +133,10 @@ const fmtDate = (d?: Date) =>
     grid-auto-flow: dense;
     gap: 1.25rem;
     margin-top: 1.5rem;
-    /* full-bleed: break out of the width-capped, padded <main> */
-    margin-inline: calc(50% - 50vw);
+    /* full-bleed up to a cap, then stop stretching and centre on big screens */
+    --bleed-cap: 100rem;
+    width: min(100vw, var(--bleed-cap));
+    margin-inline: calc(50% - min(50vw, var(--bleed-cap) / 2));
     padding-inline: clamp(1rem, 4vw, 3rem);
   }
   @media (min-width: 44rem) {

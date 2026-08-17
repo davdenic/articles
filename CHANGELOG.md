@@ -7,6 +7,12 @@ The project version lives in `package.json` (`version`); each release below matc
 
 ## [Unreleased]
 
+## [1.6.1] - 2026-08-17
+
+### Changed
+
+- Cap the full-bleed home mosaic at `100rem`: it fills the viewport up to that width, then stops stretching and centres on very large screens.
+
 ## [1.6.0] - 2026-08-17
 
 ### Changed
