@@ -134,7 +134,9 @@
     "Nachlass",
     "pacman",
     "cutover",
-    "Meilisearch"
+    "Meilisearch",
+    "popularised",
+    "Calçado"
   ],
   "ignorePaths": [
     "node_modules/**",

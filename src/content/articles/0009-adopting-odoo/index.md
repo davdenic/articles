@@ -79,6 +79,23 @@ Though I do keep asking myself: *have we just traded one kind of complexity — 
 
 The point isn't "microservices everywhere." It's: don't cram every integration into Odoo, and don't leak business rules out into the FastAPI layer. Keep the domain in one place.
 
+## So what do you even call this?
+
+Honestly, I'm not sure it has one clean name. A few that fit, from most accurate to most hand-wavy:
+
+- **Modular-monolith core + satellite services** — the most accurate, to me. Odoo is a *modular monolith* (one deployable, modules inside — a term [popularised by Simon Brown](https://simonbrown.je/modular-monolith/)); the website, customer area, FastAPI, Keycloak and Meilisearch are satellites around it.
+- **The Citadel** — DHH's name for a "majestic monolith" kept at the centre and supported by a few *outposts*, each peeling off a slice of responsibility ([Signal v. Noise, 2020](https://signalvnoise.com/svn3/the-majestic-monolith-can-become-the-citadel/)). Almost exactly our shape, and a nice quotable label — though a purist would note a real Citadel has fewer, thinner outposts than ours.
+- **Domain-centric / system-of-record** — Odoo owns the domain and the truth; everything else defers to it. "Domain-centric" echoes [Eric Evans' Domain-Driven Design](https://www.dddcommunity.org/book/evans_2003/); "system of record" is an older enterprise-IT term (the sense [Gartner still uses](https://www.gartner.com/en/documents/3745519) for the authoritative store). This is the property that matters most.
+- **Headless + API-first** — captures the frontend split (the website and customer area are decoupled "heads", a framing from the [headless CMS/commerce](https://www.contentstack.com/blog/all-about-headless/content-management-systems-history-and-headless-cms) world of the mid-2010s) and the API glue — but it undersells the Odoo-as-core part.
+- **Hub-and-spoke**, Odoo as the hub — fine informally, though the name is borrowed from logistics and only reached software through [enterprise integration patterns](https://www.enterpriseintegrationpatterns.com/ramblings/03_hubandspoke.html). A bit dated.
+
+**What it's *not* is microservices** (the term [popularised by Fowler and Lewis in 2014](https://martinfowler.com/articles/microservices.html)). There's no domain carved into many independently-owned services — it's one core with edges. Two smaller patterns do show up inside it, though:
+
+- **BFF (backend-for-frontend)** — FastAPI acting as the edge for the customer area. The term was [coined by Phil Calçado at SoundCloud and popularised by Sam Newman](https://samnewman.io/patterns/architectural/bff/).
+- **CQRS-lite read model** — Odoo → Meilisearch is a read projection: search reads never touch the source of truth. "CQRS" was [coined by Greg Young](https://martinfowler.com/bliki/CQRS.html), building on Bertrand Meyer's command-query separation.
+
+If I had to pick one, I'd call it a *modular-monolith core with API-first edges* — or, when I want to sound like I read blogs, an Odoo-centric Citadel. But naming architectures is half vibes, and I'd happily be told there's a better word for it.
+
 ## Lessons and gotchas
 
 - **Customisations as modules, not core edits** — the difference between a smooth upgrade and a dreaded one.
