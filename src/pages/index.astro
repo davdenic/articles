@@ -2,76 +2,82 @@
 import { getCollection } from 'astro:content';
 import { getImage } from 'astro:assets';
 import Base from '../layouts/Base.astro';
+import {
+  buildMosaic,
+  centroid,
+  pathFrom,
+  wrapTitle,
+  ARTICLE_LAYOUT,
+  type Pt,
+} from '../lib/voronoi';
 
-// Only live articles (draft !== true). In dev, drafts stay visible for preview.
+// Live articles (draft !== true), newest first — the newest lands top-centre.
 const isDev = import.meta.env.DEV;
 const articles = (await getCollection('articles'))
   .filter((a) => isDev || !a.data.draft)
   .sort((a, b) => (b.data.published?.valueOf() ?? 0) - (a.data.published?.valueOf() ?? 0));
 
-// Strip the leading NNNN- from the folder id to get the public slug.
 const publicSlug = (id: string) => id.replace(/^\d+-/, '');
-
-// Site base without a trailing slash, so link joins are unambiguous.
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-
-// All co-located article images, so each card image can be resolved here
-// (same source of truth as the share image in [...slug].astro).
 const articleImages = import.meta.glob('/src/content/articles/**/*.{png,jpg,jpeg,webp,avif,svg}');
 
-// Tile size: `WxH` grid spans in 0.5 steps → fine tracks (grid runs at 2x
-// resolution, so 1 logical unit = 2 tracks and 0.5 lands on a real track).
-const spans = (size?: string): { cx: number; cy: number } => {
-  const [w, h] = (size ?? '1x1').split('x').map(Number);
-  return {
-    cx: Math.max(1, Math.round((w || 1) * 2)),
-    cy: Math.max(1, Math.round((h || 1) * 2)),
-  };
-};
+// Mosaic frame (viewBox units; the SVG scales to full width).
+const W = 1600;
+const H = 1000;
 
-// For each article, resolve a card image: frontmatter `image` → first body image.
-// Cards crop to fill their tile (object-fit: cover), so ask for a width that
-// suits wider tiles.
+// Article seed points, radiating from top-centre (index 0 = newest).
+const rel = (i: number): Pt =>
+  ARTICLE_LAYOUT[i] ?? { x: 0.16 + ((i * 0.17) % 0.68), y: 0.6 + ((i * 0.23) % 0.34) };
+const articleSites: Pt[] = articles.map((_, i) => ({ x: rel(i).x * W, y: rel(i).y * H }));
+
+// Enough filler to pack the space around the articles.
+const fillerCount = Math.max(16, articles.length * 3);
+const { articleCells, fillerCells } = buildMosaic(articleSites, fillerCount, W, H);
+
+const fmtDate = (d?: Date) =>
+  d ? d.toLocaleDateString('en-GB', { year: 'numeric', month: 'short', day: 'numeric' }) : '';
+
+// Resolve each article's hero image to an optimized URL + cell geometry.
 const cards = await Promise.all(
-  articles.map(async (a) => {
+  articles.map(async (a, i) => {
     let imageFile = a.data.image;
     if (!imageFile) {
       const m = a.body?.match(/!\[[^\]]*\]\(\.\/([^)]+)\)/);
       if (m) imageFile = m[1];
     }
-    const { cx, cy } = spans(a.data.size);
-    const pos = a.data.imagePosition;
-    let img = null;
+    let src: string | null = null;
     if (imageFile) {
       const loader = articleImages[`/src/content/articles/${a.id}/${imageFile}`];
       if (loader) {
         const mod: any = await loader();
-        if (imageFile.endsWith('.svg')) {
-          // SVG is already scalable — use it as-is; getImage/sharp would not
-          // meaningfully transform it (and can't emit webp from it).
-          img = { src: mod.default.src ?? mod.default };
-        } else {
-          img = await getImage({ src: mod.default, format: 'webp', width: cx > 2 ? 1200 : 720 });
-        }
+        if (imageFile.endsWith('.svg')) src = mod.default.src ?? mod.default;
+        else src = (await getImage({ src: mod.default, format: 'webp', width: 900 })).src;
       }
     }
+    const poly = articleCells[i];
+    const c = centroid(poly);
+    const xs = poly.map((p) => p.x);
+    const ys = poly.map((p) => p.y);
+    const bx = Math.min(...xs);
+    const by = Math.min(...ys);
     return {
       href: `${base}/${publicSlug(a.id)}/`,
       title: a.data.title,
-      published: a.data.published,
+      date: fmtDate(a.data.published),
       draft: a.data.draft,
-      img,
-      cx,
-      cy,
-      pos,
+      src,
+      d: pathFrom(poly),
+      cx: c.x,
+      cy: c.y,
+      bx,
+      by,
+      bw: Math.max(...xs) - bx,
+      bh: Math.max(...ys) - by,
+      lines: wrapTitle(a.data.title, 16),
+      id: `cell-${i}`,
     };
   })
 );
-
-const fmtDate = (d?: Date) =>
-  d
-    ? d.toLocaleDateString('en-GB', { year: 'numeric', month: 'short', day: 'numeric' })
-    : '';
 ---
 
 <Base
@@ -80,130 +86,118 @@ const fmtDate = (d?: Date) =>
 >
   <div class="wide">
     <h1>Articles <span class="version">v0.42.0-rc1</span></h1>
-    <div class="mosaic">
+    <p class="tagline">A mosaic of things I'm working out — the newest sits up top.</p>
+  </div>
+
+  <div class="bleed">
+    <svg
+      class="mosaic"
+      viewBox={`0 0 ${W} ${H}`}
+      role="list"
+      aria-label="Articles"
+      preserveAspectRatio="xMidYMid meet"
+    >
+      <defs>
+        {cards.map((c) => (
+          <clipPath id={c.id}><path d={c.d} /></clipPath>
+        ))}
+      </defs>
+
+      {/* filler cells — quiet, non-interactive */}
+      {fillerCells.map((poly) => (
+        <path class="filler" d={pathFrom(poly)} />
+      ))}
+
+      {/* article cells — image + title, clickable */}
       {cards.map((c) => (
-        <a class="card" href={c.href} style={`--cx:${c.cx};--cy:${c.cy}${c.pos ? `;--pos:${c.pos}` : ''}`}>
-          {c.img ? (
-            <img
-              src={c.img.src}
-              alt={c.title}
-              loading="lazy"
-              decoding="async"
+        <a href={c.href} role="listitem" aria-label={c.title} class="cell">
+          {c.src ? (
+            <image
+              href={c.src}
+              x={c.bx}
+              y={c.by}
+              width={c.bw}
+              height={c.bh}
+              preserveAspectRatio="xMidYMid slice"
+              clip-path={`url(#${c.id})`}
             />
           ) : (
-            <div class="card-fallback" aria-hidden="true"><span>{c.title}</span></div>
+            <path d={c.d} class="cell-fallback" />
           )}
-          <div class="card-body">
-            <h2 class="card-title">{c.title}</h2>
-            <p class="card-meta">
-              {fmtDate(c.published)}
-              {c.draft && <span class="card-draft"> · draft</span>}
-            </p>
-          </div>
+          <path d={c.d} class="cell-outline" />
+          <text class="ttl" text-anchor="middle" font-size="28">
+            {c.lines.map((ln, k) => (
+              <tspan x={c.cx} y={c.cy - (c.lines.length - 1) * 15 - 4 + k * 30}>{ln}</tspan>
+            ))}
+          </text>
+          <text
+            class="dt"
+            text-anchor="middle"
+            font-size="17"
+            x={c.cx}
+            y={c.cy - (c.lines.length - 1) * 15 - 4 + c.lines.length * 30 + 2}
+          >
+            {c.date}{c.draft ? ' · draft' : ''}
+          </text>
         </a>
       ))}
-    </div>
+    </svg>
   </div>
 </Base>
 
 <style>
-  /* Wider than the reading column — the mosaic wants room. */
-  .wide {
-    max-width: 72rem;
-    margin-inline: auto;
-    padding-inline: 1rem;
-  }
+  .wide { max-width: 72rem; margin-inline: auto; padding-inline: 1rem; }
+  .tagline { color: var(--muted, #6b7280); margin: 0.4rem 0 0; }
 
-  /* Playful version tag beside the title (42 — the answer to everything). */
-  .version {
-    font-size: 0.5em;
-    font-weight: 400;
-    opacity: 0.55;
-    vertical-align: middle;
-    letter-spacing: 0.02em;
-  }
-
-  /* CSS-grid masonry at 2x resolution: 2 fine tracks = 1 logical column, and
-     grid-auto-rows is a half-unit, so `size` values in 0.5 steps map to whole
-     tracks. `grid-auto-flow: dense` back-fills the gaps left by big tiles. */
-  .mosaic {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* = 2 logical columns */
-    grid-auto-rows: 7rem;
-    grid-auto-flow: dense;
-    gap: 1.25rem;
+  /* Full-bleed row for the mosaic. */
+  .bleed {
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
     margin-top: 1.5rem;
   }
-  @media (min-width: 44rem) {
-    .mosaic { grid-template-columns: repeat(6, 1fr); } /* 3 logical */
+  .mosaic { display: block; width: 100%; height: auto; }
+
+  .filler {
+    fill: color-mix(in srgb, currentColor 8%, transparent);
+    stroke: color-mix(in srgb, currentColor 4%, transparent);
+    stroke-width: 2;
   }
-  @media (min-width: 64rem) {
-    .mosaic { grid-template-columns: repeat(8, 1fr); } /* 4 logical */
+  @media (prefers-color-scheme: dark) {
+    .filler { fill: color-mix(in srgb, currentColor 12%, transparent); }
   }
 
-  .card {
-    /* Span W×H logical units → 2× fine tracks each. Over-wide spans are
-       clamped to the available columns by the grid on narrow screens. */
-    grid-column: span var(--cx, 2);
-    grid-row: span var(--cy, 2);
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
-    color: inherit;
-    border: 1px solid color-mix(in srgb, currentColor 14%, transparent);
-    border-radius: 14px;
-    overflow: hidden;
-    background: transparent;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  .cell { cursor: pointer; }
+  .cell image { transition: opacity 0.16s ease; }
+  .cell-outline {
+    fill: none;
+    stroke: var(--bg, #fff);
+    stroke-width: 3;
   }
-  .card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-  }
+  .cell-fallback { fill: color-mix(in srgb, var(--accent, #2f5bea) 20%, transparent); }
 
-  /* Image (or fallback) fills the remaining tile height and crops to cover. */
-  .card img,
-  .card-fallback {
-    flex: 1 1 auto;
-    min-height: 0;
-    width: 100%;
-    object-fit: cover;
-    /* Heroes are wide with the headline on the left; anchor left so a narrow
-       tile crops the empty right side, not the title. */
-    object-position: var(--pos, left center);
-  }
+  .cell:hover image { opacity: 0.88; }
+  .cell:focus-visible { outline: none; }
+  .cell:focus-visible .cell-outline { stroke: var(--accent, #2f5bea); stroke-width: 5; }
 
-  /* No-image articles: an accent-tinted block carrying the title. */
-  .card-fallback {
-    display: grid;
-    place-items: center;
-    padding: 1.25rem;
-    background: color-mix(in srgb, var(--accent) 16%, transparent);
+  .ttl {
+    fill: #14171d;
+    font-weight: 680;
+    paint-order: stroke;
+    stroke: rgba(255, 255, 255, 0.9);
+    stroke-width: 4px;
+    stroke-linejoin: round;
+    pointer-events: none;
   }
-  .card-fallback span {
-    font-family: var(--font-heading, inherit);
-    font-size: 1.25rem;
-    line-height: 1.2;
-    text-align: center;
-    color: var(--accent);
+  .dt {
+    fill: #14171d;
+    opacity: 0.62;
+    paint-order: stroke;
+    stroke: rgba(255, 255, 255, 0.85);
+    stroke-width: 3px;
+    pointer-events: none;
   }
-
-  .card-body {
-    flex: 0 0 auto;
-    padding: 0.85rem 1rem 1.05rem;
-  }
-  .card-title {
-    margin: 0;
-    font-size: 1.15rem;
-    line-height: 1.25;
-  }
-  .card-meta {
-    margin: 0.4rem 0 0;
-    font-size: 0.85rem;
-    opacity: 0.7;
-  }
-  .card-draft {
-    color: var(--accent);
-    opacity: 1;
+  @media (prefers-reduced-motion: reduce) {
+    .cell image { transition: none; }
   }
 </style>

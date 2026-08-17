@@ -7,6 +7,12 @@ The project version lives in `package.json` (`version`); each release below matc
 
 ## [Unreleased]
 
+## [1.6.0] - 2026-08-17
+
+### Changed
+
+- **Home page is now a Voronoi mosaic** (ART-36): a full-bleed, build-time Voronoi tessellation of irregular cells. Article cells carry the hero image (clipped to the polygon), title and date and are clickable; the remaining cells are quiet monochrome filler. Articles are placed newest-first radiating from **top-centre**; filler sites get Lloyd relaxation so cells pack evenly and gap-free. Pure inline SVG, no client JS, no dependencies (`src/lib/voronoi.ts`). Replaces the rectangular masonry grid.
+
 ## [1.5.0] - 2026-08-17
 
 ### Added
