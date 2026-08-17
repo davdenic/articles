@@ -17,7 +17,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 // All co-located article images, so each card image can be resolved here
 // (same source of truth as the share image in [...slug].astro).
-const articleImages = import.meta.glob('/src/content/articles/**/*.{png,jpg,jpeg,webp,avif}');
+const articleImages = import.meta.glob('/src/content/articles/**/*.{png,jpg,jpeg,webp,avif,svg}');
 
 // Tile size: `WxH` grid spans in 0.5 steps → fine tracks (grid runs at 2x
 // resolution, so 1 logical unit = 2 tracks and 0.5 lands on a real track).
@@ -46,7 +46,13 @@ const cards = await Promise.all(
       const loader = articleImages[`/src/content/articles/${a.id}/${imageFile}`];
       if (loader) {
         const mod: any = await loader();
-        img = await getImage({ src: mod.default, format: 'webp', width: cx > 2 ? 1200 : 720 });
+        if (imageFile.endsWith('.svg')) {
+          // SVG is already scalable — use it as-is; getImage/sharp would not
+          // meaningfully transform it (and can't emit webp from it).
+          img = { src: mod.default.src ?? mod.default };
+        } else {
+          img = await getImage({ src: mod.default, format: 'webp', width: cx > 2 ? 1200 : 720 });
+        }
       }
     }
     return {
