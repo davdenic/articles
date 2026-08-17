@@ -33,7 +33,7 @@ There was something uncomfortable underneath it, too. I'd spent most of my caree
 
 Here's how we think about it after doing it — with the honest caveat that we're one migration in: enough to have opinions, not enough to be smug about them.
 
-![The API-first architecture: a public website and a customer area talk to a FastAPI edge layer; Odoo is the domain core and source of truth; Keycloak handles identity over a dedicated API while the detailed access rights live in an Odoo module; Grafana and Loki watch over everything.](./architecture.svg)
+![The API-first architecture: a public website and a customer area talk to a FastAPI edge layer; Odoo is the domain core and source of truth; Keycloak handles identity over a dedicated API while the detailed access rights live in an Odoo module; Meilisearch indexes Odoo's data and powers the website's search.](./architecture.svg)
 
 ## Why Odoo, not another rewrite
 
