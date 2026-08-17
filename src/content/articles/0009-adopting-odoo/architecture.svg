@@ -70,4 +70,13 @@ text{font-family:'Caveat',cursive;fill:#1b1b1b;}
 <!-- everything -> observability -->
 <path class="dash" marker-end="url(#ah)" d="M600 590 L600 646"/>
 <text class="lbl" x="655" y="628">logs &amp; metrics</text>
+
+<!-- Meilisearch: Odoo -> Meilisearch -> public website -->
+<rect class="box" x="70" y="330" width="250" height="115" rx="16" fill="#bfe3b0"/>
+<text class="t" x="195" y="385" text-anchor="middle">Meilisearch</text>
+<text class="s" x="195" y="417" text-anchor="middle">fast search index</text>
+<path class="flow" marker-end="url(#ah)" d="M400 505 C 330 505, 300 470, 296 448"/>
+<text class="lbl" x="300" y="495" text-anchor="middle">indexes</text>
+<path class="flow" marker-end="url(#ah)" d="M190 330 C 195 275, 215 225, 240 182"/>
+<text class="lbl" x="105" y="260" text-anchor="middle">powers search</text>
 </svg>

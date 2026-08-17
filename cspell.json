@@ -133,7 +133,8 @@
     "HSLU",
     "Nachlass",
     "pacman",
-    "cutover"
+    "cutover",
+    "Meilisearch"
   ],
   "ignorePaths": [
     "node_modules/**",
