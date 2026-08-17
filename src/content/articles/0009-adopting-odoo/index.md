@@ -5,9 +5,11 @@ draft: true
 image: hero.png
 version: 1
 changelog: []
-modified: 2026-08-17T13:33:22+02:00
+modified: 2026-08-17T13:34:54+02:00
 ---
 ### At some point, software stops being the thing you develop and becomes the thing you maintain
+
+At TYPO3 Camp Schweiz I got talking with a few friends about Odoo and TYPO3. That nudged me to look back and write up our big migration.
 
 ![A lone figure leaps from a fortress — the old monolith — across a gap to a cluster of connected floating platforms: the new API-first services.](./hero.png)
 
