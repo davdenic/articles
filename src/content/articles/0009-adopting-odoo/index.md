@@ -87,8 +87,6 @@ Laid side by side, the trade is pretty clear:
 | --- | --- | --- |
 | Moving parts | Few, one deploy — simpler to run | Many services to run and keep in sync |
 | Coupling | Tight — changes ripple, teams block | Loose — clear boundaries, teams ship on their own |
-| Reuse & tools | Rebuild the generic 80% yourself | Odoo's 80% for free, best tool per edge |
-| Changing it | Risky, big-bang | Incremental, one piece at a time |
 
 The monolith genuinely wins the first row — fewer parts, less to run, easier to hold in your head. We're betting we needed the boundaries more than we needed that simplicity. Ask me in a year whether that was true.
 
