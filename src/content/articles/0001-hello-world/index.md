@@ -3,11 +3,11 @@ title: Hello World
 description: David Denicolò — full-stack developer in Switzerland, writing about AI-assisted software development and the engineering practices that make it work.
 draft: false
 version: 2
-published: 2026-08-15
+published: 2026-05-23
 updated: 2026-08-16T20:57
 changelog:
   - "2026-08-16: add personal intro"
-  - "2026-08-15: first publish"
+  - "2026-05-23: first publish"
 modified: 2026-08-16T14:29:13+02:00
 created: 2026-08-16T20:57
 ---

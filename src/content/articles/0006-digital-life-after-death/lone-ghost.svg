@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" role="img" aria-label="A single little ghost drifting off to the side, glancing back.">
+  <style>
+    .ink { fill: none; stroke: #1a1a1a; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+    .eye { fill: #fff; stroke: #1a1a1a; stroke-width: 3.5; }
+    .pupil { fill: #1a1a1a; }
+    .dash { fill: none; stroke: #1a1a1a; stroke-width: 3; stroke-linecap: round; stroke-dasharray: 2 15; opacity: .45; }
+  </style>
+  <rect width="1200" height="320" fill="#ffffff"/>
+
+  <!-- long drift trail from the right, thinning toward the ghost -->
+  <path class="dash" d="M1150 235 C 950 165, 820 300, 640 220 S 520 150, 470 175"/>
+
+  <!-- lone ghost, glancing back to the right -->
+  <g transform="translate(300 55)">
+    <path class="body" fill="#c9d4e4" d="M24 190 V88 C24 42 58 14 104 14 C150 14 184 42 184 88 V190
+      L162 168 L142 190 L122 168 L104 190 L86 168 L66 190 L45 168 Z"/>
+    <ellipse class="eye" cx="82" cy="90" rx="18" ry="24"/>
+    <ellipse class="eye" cx="136" cy="90" rx="18" ry="24"/>
+    <circle class="pupil" cx="92" cy="96" r="7.5"/>
+    <circle class="pupil" cx="146" cy="96" r="7.5"/>
+  </g>
+</svg>

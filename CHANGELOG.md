@@ -7,6 +7,16 @@ The project version lives in `package.json` (`version`); each release below matc
 
 ## [Unreleased]
 
+## [1.3.0] - 2026-08-17
+
+### Added
+
+- **Published `0006-digital-life-after-death`** — a personal essay on digital inheritance. Research-verified legal survey (GDPR Recital 27; Germany BGH; France/Italy/Spain/Belgium provisions; Switzerland via art. 560 ZGB; UK Property (Digital Assets etc) Act 2025; US RUFADAA; EU ELI model rules) and platform legacy tools (Google, Apple, Facebook, GitHub successor, Bitwarden vs 1Password, and the no-advance-nomination reality of Microsoft/AWS/Azure), all in a cautious "my research, not gospel" voice. Personal threads: the author is Italian (relative died in Italy) living in Switzerland; a 2FA lock-screen deadlock; still writing on a late friend's memorialized page. New hand-drawn hero (Pac-Man chasing a ghost) plus arcade-ghost sketches; user-provided Donkey Kong and Ghosts 'n Goblins images.
+
+### Changed
+
+- Corrected publish dates to when pieces actually went out: `0001-hello-world` → 2026-05-23, `0003-scrum-in-web-agencies` → 2026-05-30, `0006-digital-life-after-death` → 2026-08-16.
+
 ## [1.2.0] - 2026-08-17
 
 ### Added

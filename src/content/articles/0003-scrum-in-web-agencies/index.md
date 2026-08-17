@@ -6,9 +6,9 @@ image: tetris-split.png
 imagePosition: center
 size: 1x2
 version: 1
-published: 2026-08-17
+published: 2026-05-30
 changelog:
-  - "2026-08-17: first publish"
+  - "2026-05-30: first publish"
 modified: 2026-08-17T09:23:41+02:00
 created: 2026-08-16T20:57
 updated: 2026-08-17

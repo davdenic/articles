@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" role="img" aria-label="Four little arcade ghosts drifting in a row — the accounts that outlive us.">
+  <style>
+    .body { stroke: #1a1a1a; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+    .eye { fill: #fff; stroke: #1a1a1a; stroke-width: 3.5; }
+    .pupil { fill: #1a1a1a; }
+    .dash { fill: none; stroke: #1a1a1a; stroke-width: 3; stroke-linecap: round; stroke-dasharray: 2 14; opacity: .5; }
+  </style>
+  <rect width="1200" height="340" fill="#ffffff"/>
+
+  <!-- drifting motion line -->
+  <path class="dash" d="M60 250 C 260 180, 360 300, 560 230 S 900 180, 1140 250"/>
+
+  <!-- ghost 1 (coral) -->
+  <g transform="translate(90 40)">
+    <path class="body" fill="#f4b6b0" d="M22 168 V80 C22 38 54 14 96 14 C138 14 170 38 170 80 V168
+      L150 148 L131 168 L112 148 L96 168 L80 148 L61 168 L42 148 Z"/>
+    <ellipse class="eye" cx="72" cy="82" rx="17" ry="22"/>
+    <ellipse class="eye" cx="122" cy="82" rx="17" ry="22"/>
+    <circle class="pupil" cx="78" cy="88" r="7"/>
+    <circle class="pupil" cx="128" cy="88" r="7"/>
+  </g>
+
+  <!-- ghost 2 (teal) -->
+  <g transform="translate(370 58)">
+    <path class="body" fill="#a8dcd6" d="M22 168 V80 C22 38 54 14 96 14 C138 14 170 38 170 80 V168
+      L149 150 L132 168 L113 150 L96 168 L79 150 L60 168 L42 150 Z"/>
+    <ellipse class="eye" cx="70" cy="80" rx="17" ry="22"/>
+    <ellipse class="eye" cx="120" cy="80" rx="17" ry="22"/>
+    <circle class="pupil" cx="66" cy="86" r="7"/>
+    <circle class="pupil" cx="116" cy="86" r="7"/>
+  </g>
+
+  <!-- ghost 3 (amber) -->
+  <g transform="translate(650 40)">
+    <path class="body" fill="#f6cf8e" d="M22 168 V80 C22 38 54 14 96 14 C138 14 170 38 170 80 V168
+      L151 149 L130 168 L114 149 L96 168 L78 149 L62 168 L41 149 Z"/>
+    <ellipse class="eye" cx="72" cy="82" rx="17" ry="22"/>
+    <ellipse class="eye" cx="122" cy="82" rx="17" ry="22"/>
+    <circle class="pupil" cx="76" cy="76" r="7"/>
+    <circle class="pupil" cx="126" cy="76" r="7"/>
+  </g>
+
+  <!-- ghost 4 (blue) -->
+  <g transform="translate(930 58)">
+    <path class="body" fill="#aac4ea" d="M22 168 V80 C22 38 54 14 96 14 C138 14 170 38 170 80 V168
+      L150 150 L131 168 L112 150 L96 168 L80 150 L61 168 L42 150 Z"/>
+    <ellipse class="eye" cx="70" cy="80" rx="17" ry="22"/>
+    <ellipse class="eye" cx="120" cy="80" rx="17" ry="22"/>
+    <circle class="pupil" cx="74" cy="84" r="7"/>
+    <circle class="pupil" cx="124" cy="84" r="7"/>
+  </g>
+</svg>
