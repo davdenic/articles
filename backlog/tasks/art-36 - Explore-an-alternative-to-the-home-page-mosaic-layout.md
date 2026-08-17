@@ -1,10 +1,10 @@
 ---
 id: ART-36
 title: Explore a polygonal (non-rectangular) home-page tile layout
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-08-17 07:42'
-updated_date: '2026-08-17 07:44'
+updated_date: '2026-08-17 18:18'
 labels:
   - chore
 dependencies: []
@@ -32,3 +32,15 @@ ordinal: 33000
 - [ ] #11 Recommendation with rationale + minimal proof-of-concept branch or screenshot; responsive + light/dark + accessibility considered
 - [ ] #12 Existing per-article size/imagePosition frontmatter accounted for; npm run qa and npm run build pass for any prototype committed
 <!-- AC:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+Explored polygonal/Voronoi home layouts (PoC branch feat-voronoi-home + hex-cluster, since closed). Decision: keep the rectangular masonry — made it full-bleed, capped at 100rem (shipped in 1.6.0/1.6.1). Voronoi/hex-cluster not adopted.
+<!-- SECTION:NOTES:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Explored polygonal/Voronoi layouts; decided to keep and extend the masonry (full-bleed). Not adopting Voronoi.
+<!-- SECTION:FINAL_SUMMARY:END -->
