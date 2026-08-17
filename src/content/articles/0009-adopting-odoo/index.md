@@ -5,7 +5,7 @@ draft: true
 image: hero.png
 version: 1
 changelog: []
-modified: 2026-08-17T13:26:47+02:00
+modified: 2026-08-17T13:30:01+02:00
 ---
 ### At some point, software stops being the thing you develop and becomes the thing you maintain
 
@@ -94,6 +94,7 @@ Laid side by side, the trade is pretty clear:
 | --- | --- | --- |
 | Moving parts | Few, one deploy — simpler to run | Many services to run and keep in sync |
 | Coupling | Tight — changes ripple, teams block | Loose — clear boundaries, teams ship on their own |
+| Performance tuning | One server to profile and tune | Several services to tune, each its own way |
 
 The monolith genuinely wins the first row — fewer parts, less to run, easier to hold in your head. We're betting we needed the boundaries more than we needed that simplicity. Ask me in a year whether that was true.
 
@@ -122,6 +123,7 @@ If I had to pick one, I'd call it a *modular-monolith core with API-first edges*
 
 - **Customisations as modules, not core edits** — the difference between a smooth upgrade and a dreaded one.
 - **Respect the ORM** — fighting it with raw SQL is usually a smell; when you do need it, isolate it.
+- **Postgres, not MySQL** — Odoo runs on PostgreSQL, so the move also took us off MySQL. As I understand it, that's a quiet win for a schema-heavy migration. Both do ACID transactions (MySQL through InnoDB), but Postgres supports [transactional DDL](https://wiki.postgresql.org/wiki/Transactional_DDL_in_PostgreSQL:_A_Competitive_Analysis): you can wrap schema changes in a transaction and roll them back if something breaks. MySQL commits each DDL statement as it runs, so you can't. In two years of schema churn, that safety net mattered.
 - **Raise the testing bar on purpose** — the old monolith's QA never got there, and the gaps showed up as regressions. This time we set stricter test-coverage rules from the start. Same instinct I wrote about in [Foundations of AI-assisted software development](/articles/foundations-of-ai-assisted-software-development/): QA is the foundation, not an afterthought. At least for Odoo and FastAPI, my area. I can't vouch for every layer, but where I could set the bar, I set it higher.
 - **Add eyes on production** — tests catch what you thought to check. Observability catches the rest. We added **Grafana** and **Loki**, so issues show up as signals we watch, not surprises a client reports back to us.
 - **Draw the Odoo ↔ FastAPI line deliberately** — re-litigating it per feature is where integrations rot.

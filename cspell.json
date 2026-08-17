@@ -137,7 +137,8 @@
     "Meilisearch",
     "popularised",
     "Calçado",
-    "Karlton"
+    "Karlton",
+    "InnoDB"
   ],
   "ignorePaths": [
     "node_modules/**",
