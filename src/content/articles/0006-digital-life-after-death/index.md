@@ -89,6 +89,8 @@ That's a lot of companies and a lot of different mechanisms, none of which know 
 
 The catch: every one of these is **opt-in and must be set up in advance.** Do nothing, and your heirs are left where I was — locked out, asking around.
 
+And there's a smaller, nastier catch underneath that one: nearly everything now sits behind two-factor authentication, and the second factor is usually a code sent to the phone — or to an email you also can't get into. So the lock guarding the account is the very thing you can't reach: a tidy little deadlock. I got lucky here. Android showed an incoming 2FA code right on the lock screen, so I could read it without unlocking the phone at all. I'm genuinely not sure whether to thank Android or file a bug — "your security codes are legible to anyone holding the device" is a strange thing to be grateful for — but in that moment it was the one door left open.
+
 So the "digital will" isn't just a nice idea; it's the practical fix available today: turn on each platform's legacy feature now, write down who gets access to what, and keep it somewhere your people can actually reach. Is that a real fix or just the best of a bad set of options? I lean towards "best available" rather than "good" — but I'd rather do it than leave someone where I ended up.
 
 ![A single little ghost drifting off to the side, glancing back.](./lone-ghost.svg)
