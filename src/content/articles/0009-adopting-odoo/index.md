@@ -1,18 +1,17 @@
 ---
-title: "Adopting Odoo — business logic in modules, integrations at the edge (FastAPI & friends)"
+title: Adopting Odoo — business logic in modules, integrations at the edge (FastAPI & friends)
 description: "What we learned moving from a monolithic PHP app to Odoo: put the business logic in custom modules, and let FastAPI handle the integrations Odoo shouldn't."
 draft: true
-image: "hero.png"
+image: hero.png
 version: 1
 changelog: []
-modified: 2026-08-16T19:20:37+02:00
+modified: 2026-08-17T13:26:47+02:00
 ---
-
-![We moved to Odoo — hand-drawn hero](./hero.png)
-
 ### At some point, software stops being the thing you develop and becomes the thing you maintain
 
-Ours was a monolithic PHP application, built on **TYPO3** (a CMS with a solid, extensible framework). It held years of website logic. But there was no CRM or ERP behind it. So invoicing, contacts, workflows and access control were done by hand, or scattered across other tools. Every new requirement meant rebuilding something an ERP already does well.
+![A lone figure leaps from a fortress — the old monolith — across a gap to a cluster of connected floating platforms: the new API-first services.](./hero.png)
+
+Ours was a monolithic PHP application, built on **TYPO3** (a PHP CMS with a solid, extensible framework). It held years of website logic. But there was no CRM or ERP behind it. So invoicing, contacts, workflows and access control were done by hand, or scattered across other tools. Every new requirement meant rebuilding something an ERP already does well.
 
 Moving to **Odoo** (a Python/PostgreSQL ERP/CRM) wasn't really about the framework. It was a decision: stop doing the generic work by hand, and spend our energy on what's actually ours.
 
