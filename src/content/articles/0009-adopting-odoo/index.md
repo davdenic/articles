@@ -49,6 +49,8 @@ So here's how we think about it now. One caveat first: we're one migration in. E
 
 ![The API-first architecture: a public website and a customer area talk to a FastAPI edge layer; Odoo is the domain core and source of truth; Keycloak handles identity over a dedicated API while the detailed access rights live in an Odoo module; Meilisearch indexes Odoo's data and powers the website's search.](./architecture.svg)
 
+*The new architecture ends up looking roughly like this.*
+
 ## Why Odoo, not another rewrite
 
 Odoo isn't just an ERP you install. It's an application framework. It ships with a strong ORM, a data model, views, workflows and access rights. So the boring 80% comes for free: who can do what, how records relate, audit, the admin UI. A rewrite becomes an *incremental migration* instead of a big bang.
