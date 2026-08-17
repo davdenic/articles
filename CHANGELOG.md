@@ -7,6 +7,12 @@ The project version lives in `package.json` (`version`); each release below matc
 
 ## [Unreleased]
 
+## [1.4.0] - 2026-08-17
+
+### Added
+
+- A small version tag beside the home-page "Articles" heading (`v0.42.0-rc1`) — a Hitchhiker's-Guide nod to 42.
+
 ## [1.3.1] - 2026-08-17
 
 ### Fixed

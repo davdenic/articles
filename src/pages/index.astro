@@ -79,7 +79,7 @@ const fmtDate = (d?: Date) =>
   description="Articles by David Denicolò on AI-assisted software development and the engineering practices behind it."
 >
   <div class="wide">
-    <h1>Articles</h1>
+    <h1>Articles <span class="version">v0.42.0-rc1</span></h1>
     <div class="mosaic">
       {cards.map((c) => (
         <a class="card" href={c.href} style={`--cx:${c.cx};--cy:${c.cy}${c.pos ? `;--pos:${c.pos}` : ''}`}>
@@ -112,6 +112,15 @@ const fmtDate = (d?: Date) =>
     max-width: 72rem;
     margin-inline: auto;
     padding-inline: 1rem;
+  }
+
+  /* Playful version tag beside the title (42 — the answer to everything). */
+  .version {
+    font-size: 0.5em;
+    font-weight: 400;
+    opacity: 0.55;
+    vertical-align: middle;
+    letter-spacing: 0.02em;
   }
 
   /* CSS-grid masonry at 2x resolution: 2 fine tracks = 1 logical column, and
