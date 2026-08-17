@@ -1,10 +1,10 @@
 ---
 id: ART-36
-title: Explore a true masonry layout for the home page
+title: Explore a polygonal (non-rectangular) home-page tile layout
 status: To Do
 assignee: []
 created_date: '2026-08-17 07:42'
-updated_date: '2026-08-17 07:43'
+updated_date: '2026-08-17 07:44'
 labels:
   - chore
 dependencies: []
@@ -14,7 +14,7 @@ ordinal: 33000
 ## Description
 
 <!-- SECTION:DESCRIPTION:BEGIN -->
-**What:** Explore replacing the current home-page layout with a true **masonry** layout. The current home grid (ART-6) is a dense CSS-grid approximation with variable `size` tile spans — not real masonry. Evaluate the genuine masonry options and recommend one, with a small proof-of-concept:\n- **Native CSS masonry** (`grid-template-rows: masonry` / the CSS Masonry spec) — check current browser support and whether a fallback is still needed as of 2026.\n- **CSS columns masonry** (`column-count`) — simple, but reflows order top-to-bottom per column.\n- **JS masonry** (e.g. Masonry.js / a lightweight modern equivalent) — precise, but adds a dependency and layout-shift considerations.\n\nCompare against the current dense-grid mosaic and recommend whether to switch.\n\n**Why:** David specifically wants a real masonry layout; the current approximation isn't it. Naming the concrete masonry approaches makes the choice deliberate.
+**What:** Explore replacing the current rectangular home-page grid with a more **polygonal, less rectangular** layout, while keeping each card's **title readable**. The current home grid (ART-6) is a dense CSS-grid mosaic of rectangular tiles with variable `size` spans. David wants something more visually organic/angular. Evaluate approaches and recommend one with a proof-of-concept:\n- **Hexagonal grid** (honeycomb of hex tiles via clip-path)\n- **Angled / sheared tiles** (parallelogram/rhombus via CSS `clip-path` or transforms)\n- **Voronoi / irregular-polygon mosaic** (organic cells; most distinctive, hardest to keep tidy)\n- **Clip-path masonry** (rectangular flow, polygonal masks on top)\n\nKey constraint: the **title must stay fully legible** — polygonal cropping must not eat the headline (e.g. keep a readable text zone, overlay a straight text band, or place titles below the shape).\n\n**Why:** David wants a more intentional, less boxy home layout, but not at the cost of readability. Naming concrete polygonal patterns makes the choice deliberate.
 <!-- SECTION:DESCRIPTION:END -->
 
 ## Acceptance Criteria
@@ -27,4 +27,8 @@ ordinal: 33000
 - [ ] #6 Recommendation with rationale, plus a minimal proof-of-concept branch or screenshot
 - [ ] #7 Accessibility + responsive behaviour, light/dark themes, and existing per-article size/imagePosition frontmatter accounted for
 - [ ] #8 npm run qa and npm run build pass for any prototype committed
+- [ ] #9 Compares at least 3 polygonal approaches (hex grid, angled/sheared tiles, Voronoi/irregular, clip-path masonry) with pros/cons for this content set
+- [ ] #10 Title/headline remains fully readable in every approach evaluated (explicit note on how text stays legible over/under the polygon)
+- [ ] #11 Recommendation with rationale + minimal proof-of-concept branch or screenshot; responsive + light/dark + accessibility considered
+- [ ] #12 Existing per-article size/imagePosition frontmatter accounted for; npm run qa and npm run build pass for any prototype committed
 <!-- AC:END -->

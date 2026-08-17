@@ -2,34 +2,32 @@
 title: What happens to our digital life when we die?
 description: A personal reflection on digital inheritance — emails, messages, cloud photos, saved passwords — and why what happens to our digital traces after death is still so unclear.
 draft: true
-image: "hero.png"
-size: "2x1"
+image: hero.png
+size: 2x1
 version: 1
 changelog: []
-modified: 2026-08-16T15:49:37+02:00
+modified: 2026-08-17T09:48:11+02:00
 ---
 
 ![Who inherits your logins? — hand-drawn hero](./hero.png)
 
-A self-reflection on what happens to our digital lives when we die
-
 I recently lost someone close.
 
-After they passed away, I had to deal with their computer, phone, and online accounts—trying to figure out what to close, what to keep, and what to pass on.
+After he passed away, I had to deal with his computer, phone, and online accounts — trying to figure out what to close, what to keep, and what to pass on.
 
-I couldn’t get into their computer or unlock their phone, so even reaching their contacts came down to asking around.
+I couldn’t get into his computer or unlock his phone, so even reaching his contacts came down to asking around.
 
 I’m the only heir, so the physical stuff is straightforward. But it made me wonder:
 
-Does that also mean I have the right to their digital life?
+Does that also mean I have the right to his digital life?
 
-What about emails, WhatsApp, cloud photos, or saved passwords—and all the data that involves other people?
+What about emails, WhatsApp, cloud photos, or saved passwords — and all the data that involves other people?
 
 Unlike things like houses or cars, a digital life doesn’t really fit into inheritance rules in a clean way. At least not to my knowledge.
 
 Then there’s GDPR. As far as I understand, it doesn’t really apply after someone dies, so it’s mostly up to national law.
 
-But in practice, does inheritance actually give you access to emails, private messages, or cloud accounts—or are those still controlled by platform terms and privacy rules?
+But in practice, does inheritance actually give you access to emails, private messages, or cloud accounts — or are those still controlled by platform terms and privacy rules?
 
 I honestly don’t know, and that’s kind of the point.
 
@@ -64,20 +62,28 @@ GDPR really does stop at death. Recital 27 says the regulation "does not apply t
 
 I am a developer, not a lawyer — this is what I found, not legal advice, and the details (even article numbers) shift over time. But the shape is clear: some countries let you plan ahead, some lean on the heirs, and one — mine, Switzerland — offers no data-protection help at all.
 
+Step outside Europe and the framing flips entirely. The UK's [Property (Digital Assets etc) Act 2025](https://www.legislation.gov.uk/ukpga/2025/29) treats things like crypto as inheritable *property* — a possessions question, not a privacy one. The US leans on a model law, [RUFADAA](https://www.nolo.com/legal-encyclopedia/ufadaa.html), adopted in most states, which gives an executor a path to digital assets — but with a twist that matters here: a platform's own legacy tool *wins over your will*. Set Google's Inactive Account Manager one way and your testament another, and the checkbox beats the lawyer. Which, as a developer, is either reassuring or slightly terrifying.
+
 **The platforms each built their own tool — and they don't talk to each other:**
 
 - **Google — Inactive Account Manager.** You set an inactivity deadline (e.g. 3 or 12 months); after it, Google can share chosen data with people you named, or delete the account.
-- **Apple — Legacy Contact.** You generate an access key and give it to someone you trust; after you die they use that key plus a death certificate to request your data.
-- **Facebook/Instagram — memorialization + Legacy Contact.** An account can be memorialized (preserved) or removed; a legacy contact can manage the memorialized profile within limits.
-- **Password managers** (1Password, Bitwarden and others) have their own emergency-access / legacy features — often the real key, since they hold everything else.
+- **Apple — Legacy Contact.** You generate an access key and give it to someone you trust; after you die they use that key plus a death certificate to request your data. Access then lasts three years before the account is deleted.
+- **Facebook/Instagram — memorialization + Legacy Contact.** An account can be memorialized (preserved) or removed; a legacy contact can manage the memorialized profile within limits — but never log in, read messages, or edit past posts.
+- **Password managers** — often the real key, since they hold everything else. But they differ more than you'd hope: **Bitwarden** has a proper *Emergency Access* feature (nominate a trusted contact who can request access after a wait you set), while **1Password** has *no* designed handoff at all — just an "Emergency Kit" printout you have to physically leave somewhere. Worth checking which camp yours is in before you rely on it.
 
 Four companies, four different mechanisms, none of which know the others exist. As a developer I find that almost impressive — we can federate logins across half the internet, but "who gets my account when I die" is still four separate opt-in checkboxes in four separate settings pages.
+
+![Four little arcade ghosts drifting in a row — the accounts that outlive us.](./account-ghosts.svg)
 
 The catch: every one of these is **opt-in and must be set up in advance.** Do nothing, and your heirs are left where I was — locked out, asking around.
 
 So the "digital will" isn't just a nice idea; it's the practical fix available today: turn on each platform's legacy feature now, write down who gets access to what, and keep it somewhere your people can actually reach. Is that a real fix or just the best of a bad set of options? I lean towards "best available" rather than "good" — but I'd rather do it than leave someone where I ended up.
 
+![A single little ghost drifting off to the side, glancing back.](./lone-ghost.svg)
+
 And here's the knot underneath all of it: most of us in Europe live our digital lives on **US products** — Gmail, iCloud, WhatsApp, Meta. So even where a European law grants an heir a right to the data, the account itself sits under a US company's terms of service and, often, foreign jurisdiction. Which one actually wins — my national inheritance right, or the platform's contract and the law it answers to? I genuinely don't know. It's an open conflict between regional rights and international platforms — and it's the part that unsettles me most.
+
+Germany has at least tested it once: in that Facebook case, a US platform's terms lost to German inheritance law. But one national precedent isn't a global rule. There's a hint of something better coming — the [European Law Institute is drafting model rules](https://www.europeanlawinstitute.eu/projects-instruments/current-projects/current-projects/eli-succession-of-digital-assets-data-and-other-digital-remains/) for digital succession that would, pointedly, override a provider's terms of service. Whether that ever becomes law anywhere is another question. But at least someone is naming the conflict out loud — which is more than I could do when I was standing in front of a locked phone.
 
 ### Sources
 
@@ -88,4 +94,7 @@ And here's the knot underneath all of it: most of us in Europe live our digital 
 - Spain: [AEPD — datos de personas fallecidas](https://www.aepd.es/preguntas-frecuentes/0-conceptos-basicos/FAQ-0011-sobre-datos-personales-de-personas-fallecidas)
 - Belgium: [ICT-recht — heirs can access the deceased’s digital accounts](https://www.ictrechtswijzer.be/en/heirs-can-access-the-deceaseds-digital-accounts/)
 - Switzerland: [DLA Piper — data protection in Switzerland (revFADP)](https://www.dlapiperdataprotection.com/?t=law&c=CH)
-- Platforms: [Everplans — Apple Digital Legacy](https://www.everplans.com/articles/apple-ios-15-digital-legacy-program-offers-some-control-over-an-account-after-death-follows-efforts-from-facebook-and-google) · [Nolo — legacy contacts](https://www.nolo.com/legal-encyclopedia/how-to-add-legacy-contacts-to-your-accounts.html)
+- UK: [Property (Digital Assets etc) Act 2025](https://www.legislation.gov.uk/ukpga/2025/29)
+- US: [Nolo — RUFADAA (fiduciary access to digital assets)](https://www.nolo.com/legal-encyclopedia/ufadaa.html)
+- EU (coming): [European Law Institute — Succession of Digital Assets, Data and other Digital Remains](https://www.europeanlawinstitute.eu/projects-instruments/current-projects/current-projects/eli-succession-of-digital-assets-data-and-other-digital-remains/)
+- Platforms: [Google — Inactive Account Manager](https://support.google.com/accounts/answer/3036546) · [Apple — Digital Legacy](https://support.apple.com/en-us/102631) · [Facebook — memorialized accounts](https://www.facebook.com/help/1568013990080948) · [Bitwarden — Emergency Access](https://bitwarden.com/help/emergency-access/) · [1Password — Emergency Kit](https://support.1password.com/emergency-kit/)

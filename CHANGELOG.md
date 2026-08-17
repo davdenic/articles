@@ -7,6 +7,10 @@ The project version lives in `package.json` (`version`); each release below matc
 
 ## [Unreleased]
 
+### Changed
+
+- Refined draft `0006-digital-life-after-death`: research-refresh (re-verified GDPR Recital 27, the German BGH rulings, France/Italy/Spain/Belgium/Switzerland provisions, and platform legacy tools; corrected the password-manager claim — Bitwarden has Emergency Access, 1Password has no designed handoff; added Apple's 3-year access window; added beyond-Europe angles: UK Property (Digital Assets etc) Act 2025, US RUFADAA, and the EU's forthcoming ELI model rules); pronoun/voice + typography pass; added two hand-drawn arcade-ghost SVGs (`account-ghosts.svg`, `lone-ghost.svg`). Still a draft.
+
 ## [1.2.0] - 2026-08-17
 
 ### Added
