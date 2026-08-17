@@ -53,10 +53,9 @@ text{font-family:'Caveat',cursive;fill:#1b1b1b;}
 <rect class="box" x="410" y="650" width="380" height="70" rx="14" fill="#dcdcdc"/>
 <text class="t" x="600" y="700" text-anchor="middle">Grafana + Loki — observability</text>
 
-<!-- flows: clients -> FastAPI -->
-<path class="flow" marker-end="url(#ah)" d="M300 180 C 340 215, 400 225, 460 248"/>
+<!-- flow: customer area -> FastAPI (the public website does NOT use FastAPI) -->
 <path class="flow" marker-end="url(#ah)" d="M900 180 C 860 215, 800 225, 740 248"/>
-<text class="lbl" x="300" y="230" text-anchor="middle">consumes API</text>
+<text class="lbl" x="855" y="225" text-anchor="middle">consumes API</text>
 
 <!-- FastAPI -> Odoo -->
 <path class="flow" marker-end="url(#ah)" d="M600 360 L600 436"/>
