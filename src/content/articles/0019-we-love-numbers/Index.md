@@ -1,13 +1,15 @@
 ---
 title: We Love Numbers
-description: ""
+description: "Software metrics tell us a lot, but not everything. A look at context, value, test coverage, velocity, and the role of human judgement."
 draft: true
 image: "hero.png"
 version: 1
 changelog: []
 ---
 
-# We Love Numbers
+The number can be right and the conclusion still wrong.
+
+## We Love Numbers
 
 Recently, I was looking at some numbers from my old photos and noticed that one of my favourites, if not my favourite of all, had received very little attention in terms of likes and comments. Other photos I posted later received hundreds of reactions, sometimes much more.
 
@@ -51,35 +53,33 @@ The client may care about something else entirely: cost, time saved, fewer error
 
 Some of these things fit nicely into a spreadsheet. Others don't.
 
-## And then there is gut feeling
+## And what about value for ourselves?
 
-There is also something much harder to put into a dashboard: **gut feeling**.
+There is another kind of value that is even harder to measure: the value we perceive in our own work.
 
-As developers, we sometimes finish a project and simply think: *I'm happy with how this turned out.* The architecture makes sense, the code feels coherent, changes don't make us nervous, and opening the project six months later doesn't immediately make us regret decisions made six months earlier.
+I like appreciation as much as anyone. A client telling me that something works well feels good. Seeing people use something I built feels good. Even a like on a photo feels good.
 
-And sometimes it's exactly the opposite. Nothing is catastrophically wrong: tests pass, the pipeline is green, performance is acceptable and tickets are being delivered. But every time you have to open that project, you think: *Oh no, not this one again.*
+But there is another feeling that doesn't require anyone else.
 
-Users have their own version of this. A piece of software can tick all the measurable boxes and still make you feel uncomfortable every time you have to use it. Perhaps it is slightly confusing, slightly slow, inconsistent or unpredictable. No single problem is serious enough to explain the reaction, but together they create an experience that no individual metric quite captures.
+Sometimes, while building something, I just know: *this is coming together well.*
 
-Of course, gut feeling isn't a metric, and it shouldn't replace one. It can be biased, subjective and sometimes completely wrong. But it can also be the result of years of experience, or simply our brain combining dozens of small signals that we haven't measured individually.
+Sometimes I feel it immediately. Sometimes it takes ten iterations, a lot of frustration and several wrong turns before something finally clicks. But when it does, I recognize it.
 
-Maybe that's why *“I'm happy with how this turned out”* and *“I hate using this thing”* are worth listening to. Not as answers, but as signals that there may be something worth understanding.
+I can have the same feeling about a piece of software, a photo, something I've written or almost anything I've made.
 
-## Metrics are proxies
+And perhaps this isn't really about metrics or even external validation. It is partly about the image we have of ourselves and the standards we choose to work by.
 
-We don't really care about velocity itself. We care about our ability to deliver useful software sustainably and predictably.
+Nobody may ever notice that particular piece of code. The client may never know that we spent another hour making something simpler, cleaner or more robust. It may never appear in a KPI.
 
-And test coverage? Well, as a developer, I do care about test coverage. Quite a lot. 😉
+But **we know it's there**.
 
-But 80% is not valuable just because it's 80%. What I really want is confidence that I can change the software without unexpectedly breaking something.
+For some people, that matters a lot. There is an intrinsic satisfaction in doing something well, even when nobody is watching. For others, work is much more about reaching the required result, closing the task and moving on. Neither perspective fits particularly well into a dashboard.
 
-The same goes for merge requests. The number itself matters much less than whether those changes improve the product and leave the codebase in a state where we can continue improving it.
+And maybe this is another reason why defining value is so difficult. Some of it exists in business outcomes. Some in technical quality. Some in what other people think of our work.
 
-Clients generally don't care about any of those metrics directly. They care about what the software allows their business, their employees or their customers to do.
+And some of it exists simply in being able to look at something we made and think:
 
-Metrics are useful because the things we actually care about are often difficult to measure directly. The problem starts when the proxy quietly becomes the objective.
-
-Then we optimize velocity, coverage, tickets, merge requests, deployments, clicks, and eventually we can end up with a beautiful dashboard describing a project that nobody actually wants.
+*Yes. I'm happy with this.*
 
 ## We love numbers
 
@@ -91,6 +91,9 @@ But numbers don't remove the need for judgement. They make judgement better info
 
 Maybe the most useful question isn't **“What do the numbers say?”** but **“What are we actually trying to understand, and are these numbers really telling us that?”**
 
-That old photo still has very little engagement. The number is correct. What changed was my understanding of what that number represented.
-
-Software projects aren't that different.
+That old photo still has very little engagement.
+I now understand why the number is so low. Context explains a lot of it.
+But perhaps there is another point.
+Even if nobody had liked it, I would probably still consider it one of my best photos.
+**We love numbers. And we should.**
+But not everything we value needs a number to become valuable.
