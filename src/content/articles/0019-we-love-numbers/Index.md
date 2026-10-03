@@ -53,6 +53,8 @@ The client may care about something else entirely: cost, time saved, fewer error
 
 Some of these things fit nicely into a spreadsheet. Others don't.
 
+---
+
 ## And what about value for ourselves?
 
 There is another kind of value that is even harder to measure: the value we perceive in our own work.
@@ -97,3 +99,8 @@ But perhaps there is another point.
 Even if nobody had liked it, I would probably still consider it one of my best photos.
 **We love numbers. And we should.**
 But not everything we value needs a number to become valuable.
+
+---
+
+![The Photo](https://live.staticflickr.com/220/489654046_6395905535_c.jpg)
+[The Photo on Flickr](https://flic.kr/p/KgB69)
