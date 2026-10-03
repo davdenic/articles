@@ -15,193 +15,71 @@ The obvious conclusion would be that those photos simply worked better. More peo
 
 Maybe what I considered one of my best photos simply wasn't as good as I thought.
 
-But there was a problem with that conclusion.
-
-I posted that photo almost twenty years ago, when I had just opened my account. I had almost no followers, no established audience, and very little visibility.
+But there was a problem with that conclusion. I posted that photo almost twenty years ago, when I had just opened my account. I had almost no followers, no established audience, and very little visibility.
 
 Seen in that context, those few likes and comments suddenly meant something completely different.
 
 **The number didn't change. Its meaning did.**
 
-# We love numbers
+## We love numbers in tech
 
-And in tech, we really love them.
+And we have plenty of them.
 
-I've probably been through around a hundred Scrum sprints over the years, both as a developer and as a Scrum Master.
+I've probably been through around a hundred Scrum sprints over the years, both as a developer and as a Scrum Master. You know the ritual: at the end of the sprint we look at what was planned, what was completed, what moved to the next sprint, and perhaps how velocity changed.
 
-And Scrum gives us plenty of numbers to look at.
+Useful information. But a sprint with everything completed isn't necessarily a successful sprint, and a lower velocity doesn't necessarily mean the team achieved less. The type of work changed, estimates changed, unexpected problems emerged, or perhaps the team spent time solving something that will make the next ten sprints easier.
 
-Story points. Velocity. Burndown charts. Completed tickets. Sprint goals. Carry-over. Bugs. Cycle time.
+Then there are the numbers we developers particularly like. Test coverage is an obvious one.
 
-After a while, it becomes very tempting to look at those numbers and feel that we know how a project is doing.
+Going from 60% to 80% feels like progress, and it probably is. But 80% coverage doesn't tell us whether those tests give us confidence to change the system. We can have impressive coverage and poor tests, or lower coverage with very good tests around the parts of the system where mistakes actually matter.
 
-Velocity went from 45 to 60.
+And then there are all the numbers around our everyday development process: merge requests opened and closed, review time, build time, deployment frequency. Closing more merge requests might mean we're delivering more, or it might simply mean we're creating smaller merge requests. A faster pipeline is nice, but it tells us nothing about whether we're building the right thing.
 
-Good sprint.
+You get the point. **We've all been there, haven't we?**
 
-We completed 90% of the planned stories.
+The numbers aren't wrong. The problem starts when we give them a meaning they don't actually contain.
 
-Good sprint.
+## So what are we actually trying to measure?
 
-Three stories moved to the next sprint.
+Ultimately, I think the interesting question is **value**. And value becomes surprisingly difficult to define as soon as you ask: **value for whom?**
 
-Bad sprint.
+As a developer, I may value good architecture, meaningful tests, reliable pipelines and a codebase I can change with confidence.
 
-But is it really that simple?
+A Project Lead may ask different questions: How easily can we add the next feature? How expensive will the next change request be? Can we plan with reasonable confidence?
 
-A team can increase its velocity without becoming more productive. Estimates may have changed. Stories may have become smaller. The type of work may have changed. A difficult architectural problem solved during one sprint might unlock months of future development while contributing surprisingly little to the numbers we normally celebrate.
+The client may care about something else entirely: cost, time saved, fewer errors, better workflows, conversion, or even something much harder to quantify, like how the product reflects their brand.
 
-And the opposite can happen too.
+Some of these things fit nicely into a spreadsheet. Others don't.
 
-A sprint can look fantastic on a burndown chart while producing very little that actually matters.
+## And then there is gut feeling
 
-The numbers can be perfectly correct.
+There is also something much harder to put into a dashboard: **gut feeling**.
 
-Our interpretation of them can still be wrong.
+As developers, we sometimes finish a project and simply think: *I'm happy with how this turned out.* The architecture makes sense, the code feels coherent, changes don't make us nervous, and opening the project six months later doesn't immediately make us regret decisions made six months earlier.
 
-## But what are we actually trying to measure?
+And sometimes it's exactly the opposite. Nothing is catastrophically wrong: tests pass, the pipeline is green, performance is acceptable and tickets are being delivered. But every time you have to open that project, you think: *Oh no, not this one again.*
 
-This is where I think the question becomes more interesting.
+Users have their own version of this. A piece of software can tick all the measurable boxes and still make you feel uncomfortable every time you have to use it. Perhaps it is slightly confusing, slightly slow, inconsistent or unpredictable. No single problem is serious enough to explain the reaction, but together they create an experience that no individual metric quite captures.
 
-Because ultimately, what we want to measure is **value**.
+Of course, gut feeling isn't a metric, and it shouldn't replace one. It can be biased, subjective and sometimes completely wrong. But it can also be the result of years of experience, or simply our brain combining dozens of small signals that we haven't measured individually.
 
-And value becomes surprisingly difficult to define once you ask: value for whom?
-
-As a developer, I might see enormous value in improving the architecture of a system.
-
-Reducing coupling. Cleaning up technical debt. Increasing test coverage. Building reliable CI/CD pipelines. Making deployments boring. Making the codebase easier to understand six months from now.
-
-A Project Lead may look at the same project differently.
-
-For them, value might mean being able to accommodate a new feature without turning a two-day change request into a three-week refactoring exercise. It might mean predictability, easier planning, fewer surprises and the ability to respond when requirements inevitably change.
-
-And then there is the client.
-
-The client may care about all of those things indirectly, but their definition of value can be completely different.
-
-Cost matters, of course.
-
-But perhaps a feature removes twenty minutes of manual work from a workflow performed fifty times every day.
-
-Perhaps an integration eliminates a source of recurring errors.
-
-Perhaps a redesign doesn't directly generate a measurable conversion but strengthens the brand.
-
-Perhaps better performance makes a service feel more trustworthy.
-
-Perhaps a small UX improvement removes a frustration customers have experienced for years.
-
-The interesting thing is that some of these things are relatively easy to turn into numbers.
-
-Others aren't.
-
-## Not everything valuable fits nicely into a dashboard
-
-If an automation saves 20 minutes and is used 50 times per day, we can calculate something.
-
-If a new checkout increases conversion from 2.1% to 2.6%, we can calculate something.
-
-If infrastructure changes reduce hosting costs by 30%, we can calculate something.
-
-That's the comfortable part.
-
-But what is the numerical value of a codebase that developers aren't afraid to change?
-
-What is the value of an architecture that makes the next five feature requests easier to implement?
-
-How much is a consistent brand worth?
-
-What number represents a client trusting the development team enough to discuss a problem instead of arriving with a predefined solution?
-
-How do we quantify a project that simply *feels healthy*?
-
-We can try.
-
-We can create proxies. Developer satisfaction surveys. Lead time. Change failure rate. Customer satisfaction. Retention. Conversion. Support requests. Time spent implementing change requests.
-
-And those metrics can be extremely useful.
-
-But eventually we have to acknowledge that the model is not the thing itself.
-
-## Sometimes you have all the numbers and still have a feeling
-
-This is something I've found increasingly interesting after many years of building software.
-
-Sometimes all the numbers look fine and something feels wrong.
-
-The sprint is on schedule.
-
-Velocity is stable.
-
-Tests are green.
-
-The pipeline is green.
-
-The backlog is moving.
-
-And yet you can feel that every change is becoming slightly harder. Discussions take longer. Developers are increasingly reluctant to touch certain areas. Small requests produce unexpected side effects. The architecture is slowly losing coherence.
-
-There may not be a single metric telling you that the project is becoming unhealthy.
-
-Not yet.
-
-And sometimes the opposite happens.
-
-A sprint looks terrible.
-
-Velocity drops. Stories aren't completed. A feature takes much longer than expected.
-
-But perhaps the team finally stopped and fixed an architectural problem that had been slowing everyone down for months.
-
-The dashboard says productivity decreased.
-
-The developers know the project just became healthier.
-
-That doesn't mean we should replace metrics with feelings.
-
-Experience can be wrong too. Intuition is full of biases. The loudest person in the room is not necessarily seeing something everyone else has missed.
-
-But I also don't think we should dismiss a persistent feeling simply because we cannot immediately attach a number to it.
-
-Sometimes that feeling is just the human brain noticing many weak signals before we have found a good way to measure them.
+Maybe that's why *“I'm happy with how this turned out”* and *“I hate using this thing”* are worth listening to. Not as answers, but as signals that there may be something worth understanding.
 
 ## Metrics are proxies
 
-Maybe that's the important distinction.
+We don't really care about velocity itself. We care about our ability to deliver useful software sustainably and predictably.
 
-We don't really care about velocity.
+And test coverage? Well, as a developer, I do care about test coverage. Quite a lot. 😉
 
-We care about our ability to deliver useful software sustainably and predictably.
+But 80% is not valuable just because it's 80%. What I really want is confidence that I can change the software without unexpectedly breaking something.
 
-We don't really care about test coverage.
+The same goes for merge requests. The number itself matters much less than whether those changes improve the product and leave the codebase in a state where we can continue improving it.
 
-We care about being able to change software with confidence.
+Clients generally don't care about any of those metrics directly. They care about what the software allows their business, their employees or their customers to do.
 
-We don't really care about deployment frequency.
+Metrics are useful because the things we actually care about are often difficult to measure directly. The problem starts when the proxy quietly becomes the objective.
 
-We care about getting useful changes safely into production when they are needed.
-
-And clients usually don't care about any of these metrics directly.
-
-They care about what the software allows their business to do.
-
-Metrics are useful because the things we actually care about are often difficult to measure directly.
-
-Problems begin when the proxy quietly becomes the objective.
-
-Then people start optimizing the metric.
-
-More story points.
-
-More tickets.
-
-More coverage.
-
-More deployments.
-
-More clicks.
-
-And dashboards become greener while the thing we originally wanted to improve may not be improving at all.
+Then we optimize velocity, coverage, tickets, merge requests, deployments, clicks, and eventually we can end up with a beautiful dashboard describing a project that nobody actually wants.
 
 ## We love numbers
 
@@ -209,22 +87,10 @@ And we should.
 
 Numbers help us challenge assumptions. They expose problems that intuition can miss. They allow us to compare, experiment and learn.
 
-But numbers don't remove the need for judgement.
+But numbers don't remove the need for judgement. They make judgement better informed.
 
-They make judgement better informed.
+Maybe the most useful question isn't **“What do the numbers say?”** but **“What are we actually trying to understand, and are these numbers really telling us that?”**
 
-Maybe the most useful question isn't:
-
-**“What do the numbers say?”**
-
-but:
-
-**“What are we actually trying to understand, and are these numbers really telling us that?”**
-
-That old photo still has very few likes.
-
-The number is correct.
-
-What changed was my understanding of what that number represented.
+That old photo still has very little engagement. The number is correct. What changed was my understanding of what that number represented.
 
 Software projects aren't that different.
