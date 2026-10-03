@@ -1,10 +1,16 @@
 ---
 title: We Love Numbers
 description: "Software metrics tell us a lot, but not everything. A look at context, value, test coverage, velocity, and the role of human judgement."
-draft: true
 image: "hero.png"
+draft: false
 version: 1
-changelog: []
+published: 2026-10-03
+updated: 2026-10-03T09:24
+changelog:
+  - "2026-10-03: new article"
+  - "2026-10-03: first publish"
+modified: 2026-10-03T09:24:13+02:00
+created: 2026-10-03T08:01
 ---
 
 The number can be right and the conclusion still wrong.
