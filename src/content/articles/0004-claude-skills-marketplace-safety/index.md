@@ -2,9 +2,12 @@
 title: How safe is it to use Claude skills from a marketplace?
 description: A marketplace skill is code plus instructions your agent will run. Here's the real threat model, how exposed you actually are, and how to use them safely.
 draft: true
-image: "hero.png"
+image: hero.png
 version: 1
 changelog: []
+modified: 2026-10-10T13:01:37+02:00
+created: 2026-08-16T20:57
+updated: 2026-10-10T13:01
 ---
 
 ![Trust, but read the skill — hand-drawn hero](./hero.png)
