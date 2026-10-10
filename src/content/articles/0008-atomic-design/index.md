@@ -3,7 +3,7 @@ title: Atomic design, and where it finally clicks in TYPO3 v14
 description: Atomic design gave me a useful way to think about reusable UI. TYPO3 v14's Fluid components finally let me put that thinking into practice.
 draft: false
 image: hero.png
-size: 1x2
+size: 2.5x1.5
 version: 8
 changelog:
   - Simplified prose with short sentences and removed dash separators.
