@@ -25,7 +25,7 @@ What I'm still turning over: how much of the relationship graph can you honestly
 
 ## Try it
 
-Give it a try — feedback very welcome: <https://lnkd.in/eupFuJYg>
+Give it a try. Feedback is very welcome: <https://lnkd.in/eupFuJYg>
 
 > **Draft note (David to fill in before publishing):** the concrete details — the exact extension name, `composer require …`, how you run the generation, supported TYPO3 versions, and a screenshot of a generated diagram. I've left those out rather than guess them.
 
