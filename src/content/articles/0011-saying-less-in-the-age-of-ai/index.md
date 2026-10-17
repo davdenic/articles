@@ -22,6 +22,6 @@ Maybe this is also why I'm increasingly drawn to the opposite: saying less, cutt
 
 In a world where everyone can write more, perhaps the real skill is knowing what doesn't need to be said. Ask me again in a year — I might have changed my mind.
 
-*(AI wrote this. I just gestured wildly🤌)*
+
 
 ![Many different voices go through an AI and come out sounding the same](./sound-the-same.svg)
