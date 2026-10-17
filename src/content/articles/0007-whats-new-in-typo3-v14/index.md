@@ -9,7 +9,7 @@ changelog: []
 
 ![TYPO3 v14, honestly — hand-drawn hero](./hero.png)
 
-TYPO3 v14 is a big release — and, unusually, a big one for **integrators**: the people working at the seam between backend and frontend. The keynote features get the headlines, but the day-to-day wins are spread across dozens of smaller changes. Here's my tour of what actually changes how you work, gathered from the T3DD26 talks.
+TYPO3 v14 is a big release. It's also an unusually big one for **integrators**: the people working at the seam between backend and frontend. The keynote features get the headlines, but the day-to-day wins are spread across dozens of smaller changes. Here's my tour of what actually changes how you work, gathered from the T3DD26 talks.
 
 I've not shipped a full v14 project yet, so treat this as notes from the talks plus a bit of tinkering, not a battle report. The question I kept asking in every session: does this actually remove work, or just move it somewhere new?
 
@@ -41,16 +41,16 @@ Components/
 
 ![A Fluid component co-locates its template, CSS and JS in one folder, isolated from the rest of the site.](./component-colocation.svg)
 
-- Two new files in `Configuration/Fluid/` (`ComponentCollections.php`, `Namespaces.php`) register a **global namespace**, so you can write `<my:molecules.gallery />` in *any* template — with auto-completion.
-- Each component starts from an **API** (its arguments): an `Image` component becomes the single place every `<img>` is generated — add responsive handling once, everywhere benefits.
+- Two new files in `Configuration/Fluid/` (`ComponentCollections.php`, `Namespaces.php`) register a **global namespace**, so you can write `<my:molecules.gallery />` in *any* template with auto-completion.
+- Each component starts from an **API** (its arguments): an `Image` component becomes the single place every `<img>` is generated, so you add responsive handling once and it applies everywhere.
 - **Isolation** is the real win: a component carries its own scoped CSS and JS, so you can move, copy, or delete it without breaking the rest of the site.
 - Page templates glue it together with the new **`<f:render.contentArea contentArea="{content.main}" />`** (the `content.*` identifiers come straight from the backend layout), and **`<f:render.text>`** handles RTE output.
 
-Frontend assets move to **Vite** at project level: `ddev vite` for hot-reload in dev, a build step on deploy, and dynamic `import()` inside a component so a heavy library (Swiper, say) loads **only** when that component is on the page.
+Frontend assets move to **Vite** at project level: `ddev vite` for hot-reload in dev, a build step on deploy, and dynamic `import()` inside a component so a heavy library (like Swiper) loads **only** when that component is on the page.
 
-The open question for me is upgrades: how much of an existing v13 sitepackage do you realistically port to components, versus leave alone? I'd want to test this on a real project before promising a clean migration path to anyone.
+The open question for me is upgrades: how much of an existing v13 sitepackage do you realistically port to components, and how much can stay as-is? I'd want to test this on a real project before promising a clean migration path.
 
-The end state: integration templates are mostly component calls, almost no raw HTML — and much less friction where frontend and backend meet.
+The end state: integration templates are mostly component calls, almost no raw HTML, and much less friction where frontend and backend meet.
 
 ## Content Blocks — now with a GUI
 
@@ -80,9 +80,9 @@ The quality-of-life changes that add up (Jigal van Hemert's rapid-fire session):
 
 ## Takeaway
 
-Most of these patterns — components, co-location, isolation, code-splitting — have been standard in the wider frontend world for years. v14's real achievement is bringing them into TYPO3 *at the integration seam*, where projects usually get messy. If you're starting a v14 sitepackage, lean into components and the `PAGEVIEW` record API; you'll write far less glue.
+Most of these patterns (components, co-location, isolation, code-splitting) have been standard in the wider frontend world for years. v14's real achievement is bringing them into TYPO3 *at the integration seam*, where projects usually get messy. If you're starting a v14 sitepackage, lean into components and the `PAGEVIEW` record API; you'll write far less glue.
 
-That's my current read, anyway. Whether it holds up once I've dragged a real client project through an upgrade is a different question — ask me again in a year.
+That's my current read, anyway. Whether it holds up once I've dragged a real client project through an upgrade is a different question. Ask me again in a year.
 
 ## Sources
 
