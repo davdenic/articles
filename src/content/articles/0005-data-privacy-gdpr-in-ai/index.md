@@ -71,13 +71,13 @@ Here's what I'd put in front of a team tomorrow. The GDPR article numbers are in
 - Check international transfers (Ch. V). Prefer an EU or otherwise approved region where you have the choice. US providers count as "adequate" only under the **EU–US Data Privacy Framework** — without it you need **Standard Contractual Clauses plus a transfer impact assessment**. The framework's durability is a live risk: the General Court upheld it in September 2025 (*Latombe v Commission*, T-553/23), and that judgment is now on appeal to the Court of Justice as case C-703/25 P, still pending. ([IAPP on the ruling](https://iapp.org/news/a/european-general-court-dismisses-latombe-challenge-upholds-eu-us-data-privacy-framework))
 - **Write the rules down, and train on them.** A short internal AI-usage policy, plus a human reviewing AI output before it touches client systems.
 
-And keep an audit trail: which tools are approved, which data classes are allowed, who approved it, and where AI sits in each workflow.
+- Keep an audit trail: which tools are approved, which data classes are allowed, who approved it, and where AI sits in each workflow.
 
 ## Bottom line
 
 The duties here are older than AI: a lawful basis, a reason to send the data, someone accountable for it. What AI adds is speed, and an easy route for personal data to leave without anyone noticing. So design for that instead of trusting a tired developer to remember it mid-bug. Keep personal data and secrets out of prompts, use a tier that doesn't train on your data and holds a DPA, and write your rules down.
 
-What I'm still genuinely unsure about: how much of this a small team can realistically sustain day to day, versus what only ever exists on paper. I'd want to test a lightweight version on a real project before claiming it works. If a lawyer reads this and winces, I'd rather hear it — this is my current understanding, not the last word.
+What I'm still genuinely unsure about is how much of this a small team can realistically sustain day to day, versus what only ever exists on paper. I'd want to test a lightweight version on a real project before claiming it works. If a lawyer reads this and winces, I'd rather hear it. This is my current understanding, not the last word.
 
 ## Sources
 
