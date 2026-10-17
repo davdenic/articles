@@ -5,7 +5,9 @@ draft: false
 image: hero.png
 size: 2.5x1.5
 version: 8
+published: 2026-10-10
 changelog:
+  - "2026-10-10: first publish; added the published date to the frontmatter."
   - Simplified prose with short sentences and removed dash separators.
   - "Corrected source locations throughout: main examples use Public Sass and JavaScript; Private colocation is an optional proposal."
   - Reframed mirrored Public component sources as a reflection on maintaining duplicate directory hierarchies.
@@ -426,4 +428,3 @@ Atomic Design gave me a useful mental model. TYPO3 v14 finally gave me an implem
 - Simon Praetorius: [*Fluid Detected: Next-Gen Templating in TYPO3 14*](https://t3dd.typo3.com/schedule/sessions/fluid-detected-next-gen-templating-in-typo3-14-1132)
 
 *These TYPO3 examples draw on the v14 documentation and TYPO3 Developer Days 2026 talks. See also my TYPO3 v14 article.*
-
