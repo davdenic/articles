@@ -12,11 +12,13 @@ updated: 2026-10-10T13:01
 
 ![Trust, but read the skill — hand-drawn hero](./hero.png)
 
-Claude Agent Skills are great — drop in a folder and the agent suddenly knows how to do something new. Marketplaces make that a one-click habit. But a skill isn't just a prompt: it's **code plus instructions your agent will run**. So before you install one from a stranger, it's worth asking how safe that really is.
+Think of it like adding a new app to your phone—if you don’t trust the source, you might get a pop‑up asking for your bank PIN.
+
+Claude Agent Skills let you add new actions by dropping a folder. Marketplaces make that a one‑click habit. But a skill isn’t just a prompt; it’s code plus instructions your agent will run. Before you install a skill from a stranger, ask how safe it really is.
 
 Short answer: **not safe by default.** Treat it like installing software from an unknown source.
 
-I'll admit I asked this question because I'd already installed a couple of marketplace skills without reading a single line of them. So this is partly me working out how worried I should have been.
+I asked this because I had installed a few marketplace skills without reading any of them. This post is partly me figuring out how worried I should be.
 
 ![How exposed you are depends on where a skill runs: Claude API (sandboxed) to Claude Code (full local access).](./skill-surfaces.svg)
 
@@ -24,9 +26,9 @@ I'll admit I asked this question because I'd already installed a couple of marke
 
 A Skill is a folder with a required `SKILL.md` (instructions) and, optionally, bundled `scripts/`, `references/`, and `assets/`. The agent loads the instructions when the skill triggers — and **it executes the bundled code**.
 
-Per Anthropic's own docs, skills run "in a code execution environment where Claude has filesystem access, bash commands, and code execution capabilities." When the instructions reference a script, Claude runs it through bash — and only the *output* comes back into context, not the code. So reading the model's transcript won't show you what a bundled script actually did.
+Per Anthropic's own docs, skills run "in a code execution environment where Claude has filesystem access, bash commands, and code execution capabilities." When the instructions reference a script, Claude runs it through bash and only the output comes back into context, not the code. So reading the model's transcript won't show you what a bundled script actually did.
 
-That's the part that changed my mind, honestly. I'd assumed I could just watch the agent work and spot anything dodgy. You can't — the interesting bits happen off-screen.
+That's the part that changed my mind, honestly. I'd assumed I could just watch the agent work and spot anything dodgy. You can’t; the interesting bits happen off‑screen.
 
 ## The threat model
 
@@ -49,7 +51,9 @@ This is the nuance that matters most — the same skill is far more dangerous in
 | **claude.ai** | Network access **varies** by user/admin settings | Medium |
 | **Claude Code** | **Full network + filesystem access — like any program on your machine** | Highest |
 
-The trap: third-party skills are most tempting exactly where they're most dangerous — **Claude Code on a developer's laptop**, with real credentials and full access, and (today) no admin-level central vetting.
+The trap: third‑party skills are most tempting exactly where they're most dangerous: **Claude Code on a developer's laptop**, with real credentials and full access, and (today) no admin‑level central vetting.
+
+Sandboxing is like putting your skill in a tiny, no‑network jail.
 
 ## The risk is not hypothetical
 
@@ -68,7 +72,7 @@ If you're going to use one:
 
 ## Bottom line
 
-A marketplace skill is executable code plus model-steering instructions, running with whatever access your agent has. It *can* be used responsibly — source-reviewed, version-pinned, from a trusted publisher, sandboxed, least-privilege, with human approval on sensitive actions. But the default answer, straight from Anthropic's own docs, is: only trust skills you made or got from Anthropic, and audit anything else "like installing software."
+A marketplace skill is executable code plus model‑steering instructions. It runs with whatever access your agent has. It can be used responsibly if you review the source, pin the version, use a trusted publisher, sandbox it, give it least privilege, and keep a human in the loop. But Anthropic’s default advice is: only trust skills you made or got from Anthropic, and audit everything else like installing software.
 
 ## Sources
 
