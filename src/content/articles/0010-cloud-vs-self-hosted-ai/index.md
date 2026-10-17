@@ -9,7 +9,7 @@ changelog: []
 
 ![Cloud or your own box? — hand-drawn hero](./hero.png)
 
-Reach for ChatGPT or Claude, or run a model on your own hardware? For most tasks the cloud is the obvious default. But the moment you're handling client or regulated data — especially in Europe — the question stops being about capability and becomes about **where your data goes**.
+Reach for ChatGPT or Claude, or run a model on your own hardware? For most tasks the cloud is the obvious default. But the moment you're handling client or regulated data — especially in Europe — the question stops being about capability and becomes about **where your data goes**. (See my [GDPR-when-coding-with-AI](/articles/data-privacy-gdpr-in-ai/) piece for the details.)
 
 I've gone back and forth on this more than once, so this is where my thinking has landed for now, not a verdict I'd carve in stone.
 
@@ -26,7 +26,7 @@ I've gone back and forth on this more than once, so this is where my thinking ha
 
 ## The cloud's hidden cost: your data leaves
 
-With a cloud API you're almost always the **controller** and the provider a **processor** — so you need a **DPA** (GDPR Art. 28), and if the provider is US-based you're into **international transfers** (Chapter V). Post-*Schrems II*, Standard Contractual Clauses alone are shaky for US transfers; the EU–US Data Privacy Framework restores a mechanism but is under legal challenge. Add a chain of sub-processors, and every link is another exposure point. (See my [GDPR-when-coding-with-AI](/articles/data-privacy-gdpr-in-ai/) piece for the details.)
+With a cloud API you're almost always the **controller** and the provider a **processor** — so you need a **DPA** (GDPR Art. 28), and if the provider is US-based you're into **international transfers** (Chapter V). Post-*Schrems II*, Standard Contractual Clauses alone are shaky for US transfers; the EU–US Data Privacy Framework restores a mechanism but is under legal challenge. Add a chain of sub-processors, and every link is another exposure point. (See my [GDPR article](/articles/data-privacy-gdpr-in-ai/).)
 
 Local sidesteps all of that: no external processor, no transfer, no sub-processor chain. A clean privacy story **by design**.
 
@@ -34,9 +34,9 @@ Local sidesteps all of that: no external processor, no transfer, no sub-processo
 
 For years "run it locally" meant accepting a big quality drop. I'd tried it a few times and quietly gone back to the cloud each time. In 2026 that changed: open-weight models now deliver quasi-frontier quality on a workstation. A good concrete example is **DwarfStar (DS4)** by Salvatore Sanfilippo (antirez, the creator of Redis) — a small native inference engine that runs models like DeepSeek V4 Flash locally on Apple Silicon / CUDA / ROCm, using aggressive 2/8-bit quantization to fit a quasi-frontier model in roughly 96–128 GB of RAM. ([DS4 repo](https://github.com/antirez/ds4), [antirez — a few words on DS4](https://antirez.com/news/165))
 
-His framing is the interesting part: it's *"the first time … I find myself using a local model for serious stuff that I would normally ask to Claude / GPT,"* and — the deeper point — *"AI is too critical to be just a provided service."* Data sovereignty as a principle, not just a compliance checkbox.
+His framing is the interesting part: it's *"the first time … I find myself using a local model for serious stuff that I would normally ask to Claude / GPT,"* and the deeper point: *"AI is too critical to be just a provided service."* Data sovereignty as a principle, not just a compliance checkbox.
 
-That line is the one I keep chewing on. Is it a genuine shift, or is it easy to say when you've got 128 GB of RAM to spare? A bit of both, probably — but the fact that a "serious stuff" local model is even on the table is new, and it moves the question from *can* you self-host to *should* you.
+That line is the one I keep chewing on. Is it a genuine shift, or is it easy to say when you've got 128 GB of RAM to spare? A bit of both, probably. But the fact that a "serious stuff" local model is even on the table is new, and it moves the question from *can* you self-host to *should* you.
 
 ## When each actually wins
 
@@ -57,14 +57,14 @@ That line is the one I keep chewing on. Is it a genuine shift, or is it easy to 
 
 ## Two honest caveats
 
-- **Local isn't automatically GDPR-compliant.** Self-hosting removes the *transfer* and *processor* problems — not governance. You're still the controller: access control, retention, a lawful basis and security are all still on you. Anyone who can reach the box can reach the data unless you lock it down.
-- **There's still a capability gap** at the very top. The privacy win can cost you some quality; be honest about that trade for the task at hand. How big the gap is, and for how much longer, I genuinely can't call — it's been closing faster than I expected, and I've been wrong about the pace before.
+- **Local isn't automatically GDPR-compliant.** Self-hosting removes the *transfer* and *processor* problems, but not governance. You're still the controller: access control, retention, a lawful basis and security are all still on you. Anyone who can reach the box can reach the data unless you lock it down.
+- **There's still a capability gap** at the very top. The privacy win can cost you some quality; be honest about that trade for the task at hand. How big the gap is, and for how much longer, I genuinely can't call. It's been closing faster than I expected, and I've been wrong about the pace before.
 
 ## Takeaway
 
 The default reflex — open a cloud chat and paste — is fine for throwaway work. But for anything with real personal or client data, "run it on our own machine" has gone from a purist's stance to a genuinely practical, and cleaner, option. Pick per task: frontier capability from the cloud when you need it, your own hardware when the data shouldn't leave.
 
-Given how fast this is moving, though, the honest ending is: this is where I'd draw the line today. The hardware, the models and the legal ground under international transfers are all shifting — ask me again in a year and the balance may well have tipped.
+Given how fast this is moving, this is where I'd draw the line today. The hardware, the models and the legal ground under international transfers are all shifting. Ask me again in a year and the balance may well have tipped.
 
 ## Sources
 
