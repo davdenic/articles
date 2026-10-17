@@ -42,7 +42,7 @@ Obligations **phase in on a staggered timeline** — prohibitions first, then GP
 
 The AI Act isn't only a problem for big model labs. If your software uses or offers AI and reaches EU users, work out which tier you're in now — the expensive surprise is discovering you're "high-risk" late.
 
-The open question I keep coming back to: how much of this will feel like GDPR did — a scramble, then a settled routine — versus something that keeps shifting under us as the dates and definitions move? I don't know yet. For now I'm treating "figure out your tier early" as the one safe bet.
+The open question I keep coming back to: how much of this will feel like GDPR did — a scramble, then a settled routine — versus something that keeps shifting under us as the dates and definitions move? I don't know yet. For now, I'm treating "figure out your tier early" as the one safe bet.
 
 ## Sources
 
