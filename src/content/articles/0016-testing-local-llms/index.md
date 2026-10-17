@@ -32,7 +32,7 @@ Though I'll admit one test isn't a benchmark. Was it the model, the tooling, or 
 
 For fun I've been throwing my training routine at various models. Almost all of them struggle: even when the plan is written clearly, they **confuse the numbers** constantly. It's a neat reminder that LLMs are superb at *language* and weak at precise, literal reasoning.
 
-The best example: Gemma-4 (running free and fully on-device via Edge Gallery — genuinely awesome that this works on a phone) does not accept that **`90"` means 90 seconds**. I told it three times, with examples. It kept telling me to rest **nine minutes** between sets. So today's session ran a little long.
+The best example: Gemma-4 (running free and fully on-device via Edge Gallery — genuinely awesome that this works on a phone) does not accept that **`90"` means 90 seconds**. I told it three times, with examples. It kept telling me to rest **nine minutes** between sets. So today's session ran a little long. (Worth it for the lesson.)
 
 ## Takeaway
 
