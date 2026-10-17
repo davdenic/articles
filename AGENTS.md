@@ -49,6 +49,13 @@ Defined in `src/content.config.ts`. Fields: `title` (required), `description`, `
 - Mark uncertainty openly ("not sure", "to research"). Avoid "tbd".
 - **Voice: curious, not authoritative.** Write as someone researching and questioning, not teaching. Pose real questions in the text, admit what's still open, and show willingness to change opinion. The goal is a thoughtful person thinking out loud — never a lecture from someone who has it all figured out.
 - **Humour to break the rhythm.** Drop in 1–2 light, funny asides per article (scale to length) to break the rhythm. Sparing, not a comedy act — a wink, then back to the point.
+- **Sound like a person, not a model.** The human-voice essentials:
+  - Vary sentence length on purpose — follow a long one with a short one.
+  - Prefer plain words: "use" not "leverage", "is" not "serves as". Cut inflated vocabulary.
+  - No binary contrasts ("It's not X, it's Y"), faux-insight openers ("What nobody tells you"), or colon reveals for drama.
+  - Don't overuse em dashes. Roughly one per section, not one per paragraph.
+  - Be concrete, and react to the facts rather than neutrally reporting them. Real numbers and real symptoms beat abstract claims; state opinions and admit doubt in plain words.
+  - Full catalog and the audit-then-revise protocol: `humanize` skill.
 - Full spec: `backlog doc` **"Article writing style"**. These apply to *new/edited* articles only — leave published `0001` and `0002` as they are.
 
 ## Images & diagrams
