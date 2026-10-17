@@ -32,7 +32,7 @@ The open question I keep coming back to: who maintains it? Self-hosting moves th
 
 Sovereignty as a slogan is cheap; sovereignty as a decision is a series of small, concrete swaps. Analytics is the ideal starting point: high data-sensitivity, low switching cost, and a mature open-source option that does the job. Start there, and the principle becomes a habit instead of a talking point.
 
-At least, that's my current best guess. It's the swap I've made and would make again — but it's one step, not the whole journey. What's the next one? Ask me again in a year.
+At least, that's my current best guess. It's the swap I've made and would make again, but it's one step, not the whole journey. What's the next one? Ask me again in a year.
 
 ## Sources
 
