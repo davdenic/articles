@@ -100,14 +100,14 @@ Do not hand-edit files under `backlog/` — always go through the CLI so metadat
 **Task structure — always What / Why / AC.** Every task's description leads with a `**What:**` line and a `**Why:**` line; acceptance criteria go in the task's acceptance-criteria field (`--ac`). Create/edit accordingly, e.g. `backlog task create "Title" -d "**What:** …\n\n**Why:** …" --ac "…" --ac "…"`.
 
 <!-- BACKLOG.MD GUIDELINES START -->
-<!-- backlog.md-instructions-version: 1.48.0 -->
+<!-- backlog.md-instructions-version: 1.54.0 -->
 <CRITICAL_INSTRUCTION>
 
 ## Backlog.md Workflow
 
 This project uses Backlog.md for task and project management.
 
-**For every user request in this project, run `backlog instructions overview` before answering or taking action.**
+**At the beginning of each conversation in this project, run `backlog instructions overview` before answering or taking action. Re-read it only if you have not read it yet in the current conversation.**
 
 Use the overview to decide whether to search, read, create, or update Backlog tasks.
 
