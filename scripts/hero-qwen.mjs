@@ -14,7 +14,14 @@ const SD_HOST = process.env.SD_HOST || '127.0.0.1';
 const SD_PORT = process.env.SD_PORT || '7860';
 const GENERATE_URL = `http://${SD_HOST}:${SD_PORT}/sdapi/v1/txt2img`;
 
-const prompt = `Create a 1216×640 landscape illustration in colored-pencil style on plain white paper.
+// Generation size (multiples of 16). 1024×544 ≈ same aspect as 1200×630 and
+// ~2× faster per step than 1216×640; sharp upscales the last ~17% width.
+const WIDTH = Number(process.env.WIDTH) || 1024;
+const HEIGHT = Number(process.env.HEIGHT) || 544;
+// Output basename, so Q4/test renders don't clobber an accepted candidate.
+const OUT_NAME = process.env.HERO_NAME || 'hero-qwen';
+
+const prompt = `Create a ${WIDTH}×${HEIGHT} landscape illustration in colored-pencil style on plain white paper.
 Show a minimal hand (only the fingers, no wrist) holding a laptop and throwing a handful of three small papers toward a friendly robot on the right.
 Papers are in mid-flight, following a clear diagonal arc from left to right.
 Each paper carries a simple icon: an envelope for an email, a phone handset for a phone number, and a small square photo. No actual text labels.
@@ -26,8 +33,8 @@ async function generate() {
   const body = JSON.stringify({
     prompt,
     negative_prompt: '',
-    width: 1216,
-    height: 640,
+    width: WIDTH,
+    height: HEIGHT,
     steps: 30,
     cfg_scale: 2.5,
     sampler_name: 'Euler',
@@ -45,7 +52,7 @@ async function generate() {
         path: '/sdapi/v1/txt2img',
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(body) },
-        timeout: 45 * 60 * 1000 // 45 min: a 1216×640 render takes 15–25 min on this Mac
+        timeout: 45 * 60 * 1000 // 45 min: a full-res render takes 15–25 min on this Mac
       },
       (res) => {
         let buf = '';
@@ -59,7 +66,7 @@ async function generate() {
         });
       }
     );
-    req.on('timeout', () => req.destroy(new Error('sd-server request timed out (30 min)')));
+    req.on('timeout', () => req.destroy(new Error('sd-server request timed out (45 min)')));
     req.on('error', reject);
     req.write(body);
     req.end();
@@ -82,7 +89,7 @@ async function main() {
   try {
     console.log('Calling sd-server at', GENERATE_URL);
     const b64 = await generate();
-    await saveAndCrop(b64, 'hero-qwen');
+    await saveAndCrop(b64, OUT_NAME);
     console.log('Done. Review hero-qwen-1200x630.png, then replace hero.png if approved.');
   } catch (e) {
     console.error(e);
