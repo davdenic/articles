@@ -5,7 +5,9 @@ draft: false
 image: hero.png
 size: 2.5x1.5
 version: 8
+published: 2026-10-10
 changelog:
+  - "2026-10-10: first publish; added the published date to the frontmatter."
   - Simplified prose with short sentences and removed dash separators.
   - "Corrected source locations throughout: main examples use Public Sass and JavaScript; Private colocation is an optional proposal."
   - Reframed mirrored Public component sources as a reflection on maintaining duplicate directory hierarchies.
