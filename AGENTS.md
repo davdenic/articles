@@ -64,6 +64,25 @@ Defined in `src/content.config.ts`. Fields: `title` (required), `description`, `
 - **Any text inside an image uses a handwriting font**, not a system sans/serif. In SVG, embed the handwriting webfont (base64 `@font-face`) so it renders the same for every viewer — page fonts don't reach an `<img>`-embedded SVG.
 - **Wide enough for full width:** author at a wide aspect so they fill the content column — SVG `viewBox` width **≥ 1200** (raster ≥ 1200px wide). Landscape, not portrait.
 - Keep them light and legible in both light/dark themes (white bg reads fine on either); co-locate as `./name.svg`, reference relatively, always add alt text.
+
+### Art direction (what makes them look good)
+
+- **One idea per image.** 3–5 elements max, generous margins (≥8% padding), one clear focal point, slightly off-centre. If you need a legend to explain it, it's too busy.
+- **Consistent line weight.** One stroke width everywhere, slightly thicker on the focal element. Rounded caps and joins. Confident, slightly wobbly hand line — no hairlines, no doubled strokes, no ruler-straight rigidity.
+- **Simple figures.** Circle heads, single-stroke limbs, dot eyes, head ≈ 1/5 of the body. No clip-art proportions, no detailed faces.
+- **Black, white, and one accent.** White bg, black strokes, at most ONE accent colour used sparingly — one highlight, one prop. No grey boxes, no fills beyond small accent areas.
+- **Few words.** Max 4–6 words inside the image, handwriting font. The drawing carries the idea; the text never repeats the caption or title.
+- **Don't:** frames or borders, shadows, gradients, 3D, starbursts, confetti dots, emoji, clip art, decorative arrows, floating question marks.
+
+### Process (how to get there)
+
+- Plan before drawing: list the elements, place each on a rough grid, name the focal point.
+- Render at the final size and LOOK at the render (vision check). Ask: consistent strokes? balanced whitespace? still legible at small og:image size?
+- Iterate at least twice — first drafts of hand-drawn art are always stiff. Compare against a hero from this site you actually like.
+- When giving this work to a designer agent, paste the art-direction block verbatim into its brief.
+
+### Spec pointer
+
 - Full spec: `backlog` doc-2 "Article writing style" → Image style.
 
 ## Don't
