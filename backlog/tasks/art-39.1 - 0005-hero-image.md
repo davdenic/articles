@@ -1,10 +1,10 @@
 ---
 id: ART-39.1
 title: 0005 hero image
-status: Done
+status: In Progress
 assignee: []
 created_date: '2026-10-18 08:02'
-updated_date: '2026-10-18 08:09'
+updated_date: '2026-10-18 08:10'
 labels: []
 dependencies: []
 parent_task_id: ART-39
