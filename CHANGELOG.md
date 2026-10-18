@@ -7,6 +7,24 @@ The project version lives in `package.json` (`version`); each release below matc
 
 ## [Unreleased]
 
+## [1.7.0] - 2026-10-18
+
+### Added
+
+- **Published `0019-we-love-numbers`** — "We Love Numbers" (published 2026-10-03), with two rewrite passes on the finale.
+- **Published `0008-atomic-design`** — "Atomic design, and where it finally clicks in TYPO3 v14" (published 2026-10-10).
+- `.opencode` project agents **CODER** and **WRITER**, the `humanize` skill, and the human-voice writing rules in `AGENTS.md`.
+
+### Changed
+
+- Renamed `CLAUDE.md` to `AGENTS.md` — agent-generic project instructions; Backlog follows the new name.
+- Resized the `0008` home-mosaic tile.
+
+### Fixed
+
+- Restored the missing `published` date on `0008` (JSON-LD and OG `article:published_time` emit again).
+- QA pipeline: `qa:lint` and `qa:spell` pass for `0008`/`0019` (markdownlint + cspell fixes).
+
 ## [1.6.1] - 2026-08-17
 
 ### Changed
