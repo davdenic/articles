@@ -139,7 +139,21 @@
     "Calçado",
     "Karlton",
     "InnoDB",
-    "ondelete"
+    "ondelete",
+    "anonymisation",
+    "favourite",
+    "favourites",
+    "IAPP",
+    "Latombe",
+    "organise",
+    "organising",
+    "Powermail",
+    "pseudonymisation",
+    "pseudonymised",
+    "pseudonymising",
+    "recognise",
+    "Typolink",
+    "typolink"
   ],
   "ignorePaths": [
     "node_modules/**",
