@@ -1,67 +1,47 @@
 ---
 title: "The web after the website"
-description: "Exploring how the web is shifting from a static destination to a fluid interface of information, AI, and design principles.
-"
-draft: true
+description: "Exploring how the web is shifting from a static destination to a fluid interface of information, AI, and design principles."
+ draft: true
 ---
 
 # The web after the website
 
-## 1. Interface‑not‑destination
-- The web is no longer a place you go to; it’s a way you interact with data.
-- Think of it as a *tool* that surfaces content rather than a *building*.
-- Examples: search engines, AI assistants, embedded data widgets.
+The web has shifted from a place to a tool. Instead of navigating to a page, we now ask systems for the information we want and let them surface it. Think of search engines, AI assistants, and embedded widgets as new kinds of front‑end.
 
-## 2. Design object shift
-| Aspect | Old focus | New focus |
-|--------|-----------|-----------|
-| UX | How users *reach* content | How users *understand* and *reuse* content |
-| UI | Visual navigation | Interaction affordances for data manipulation |
-| IA | Hierarchical site maps | Contextual, semantic link graphs |
+## From information to experience
 
-## 3. Zero‑click economics
-- Users want instant answers; the cost of a click is increasingly high.
-- Strategies:
-  * inline answers in search results
-  * AI‑generated summaries
-  * progressive disclosure in UI
-- Trade‑off: more AI means more data pipelines to keep up.
+The goal is not to find data, but to turn it into something usable. We want to see insights, not just raw numbers. Design should help users understand and reuse what they discover.
 
-## 4. UX paradox
-- Simplicity is prized, yet the amount of information grows.
-- Two paths:
-  * filter and surface the right bits
-  * give users tools to sift themselves
-- Which is better? We don’t know yet.
+## The design object shift
 
-## 5. Universal vs medium‑bound principles
-- **Universal**: clarity, consistency, accessibility.
-- **Medium‑bound**: responsive design, touch gestures, voice input.
-- The future will mix both: a universal core that adapts to the medium.
+UX used to be about getting users to a page. Now it’s about giving them the means to grasp content quickly and keep it. UI design moves from navigation to interaction affordances that let people manipulate data. Information architecture goes from hierarchical maps to semantic link graphs that reveal context.
 
-## 6. Coexistence
-- Traditional static sites still serve niche audiences.
-- Dynamic, AI‑powered layers can sit on top without breaking the core.
-- Hybrid approaches: static‑first sites with API‑driven micro‑apps.
+## Zero‑click economics
 
-## 7. Site as curated content feed
-- Markdown, transcripts, structured data = raw material for LLMs.
-- APIs and structured APIs make the content machine‑readable.
-- Benefits:
-  * faster indexing
-  * richer AI interactions
-  * better traceability
+People expect instant answers. A click feels costly. Solutions appear inline in search results, AI‑generated summaries pop up, and UI layers show progressive disclosure. The trade‑off is that each new AI layer adds pipelines to keep the data fresh.
 
-## 8. Traceability & source integrity
-- Every piece of content should carry provenance.
-- Versioned markdown, signed hashes, and immutable storage.
-- This allows AI to cite sources accurately.
+## The UX paradox
 
-## 9. Sustainability
-- Less data transfer means lower carbon footprint.
-- Server‑less architectures and edge caches reduce energy use.
-- Design for longevity: avoid constant rewrites, favor modular components.
+Simplicity is prized, yet the amount of data grows. One path is to filter and surface the right bits. Another is to give users tools to sift themselves. We don’t yet know which is better.
 
-> *Humor aside*: If the web had a mood, it’d probably be a perpetual state of “just one more click.”
+## Universal vs medium‑bound principles
 
----
+There are universal rules—clarity, consistency, accessibility—that should apply everywhere. Medium‑bound rules—responsive design, touch gestures, voice input—adapt those universals to the device. The future will mix both, keeping a core that works for any medium.
+
+## Coexistence
+
+Static sites still serve niche audiences. AI‑powered layers can sit on top without breaking the core. Hybrid approaches combine static‑first sites with API‑driven micro‑apps, letting the best of both worlds coexist.
+
+## Site as curated content feed
+
+Raw material such as markdown, transcripts, and structured data feed large language models. Structured APIs make content machine‑readable, speeding indexing and enabling richer interactions. It also improves traceability.
+
+## Traceability & source integrity
+
+Every piece of content should carry provenance. Versioned markdown, signed hashes, and immutable storage let AI cite sources accurately.
+
+## Sustainability
+
+Less data transfer means lower carbon. Server‑less architectures and edge caches reduce energy use. Designing for longevity—avoiding constant rewrites and favoring modular components—also helps.
+
+> If the web had a mood, it’d probably be a perpetual state of “just one more click.”
