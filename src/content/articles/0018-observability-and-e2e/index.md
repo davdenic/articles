@@ -53,7 +53,7 @@ This is the part teams skip. Buy the dashboards, wire the alerts, and without so
 Observability needs an **owner** — someone who:
 
 - decides which alerts are **critical vs informational**, and tunes thresholds to kill noise;
-- **triages** each alert — fix now, schedule in the backlog, or just watch the trend;
+- **triages** each alert: fix now, schedule in the backlog, or just watch the trend;
 - maintains the dashboards and reports trends;
 - communicates impact and plans interventions with business and client.
 
