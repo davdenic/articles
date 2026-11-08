@@ -3,8 +3,8 @@ id: doc-2
 title: Article writing style
 type: other
 created_date: '2026-08-16 16:35'
+updated_date: '2026-11-08T08:06:00Z'
 ---
-
 David's articles are personal essays, not documentation. They should read like a
 curious engineer thinking out loud, occasionally cracking a joke. This doc is the
 full spec; `CLAUDE.md` carries the short operative version.
@@ -47,27 +47,30 @@ loosely.
 
 ## Image style
 
-Diagrams carry the same personality as the prose: hand-drawn, unfussy, a bit
+Images carry the same personality as the prose: hand-drawn, unfussy, a bit
 playful.
 
-- **Comic / hand-drawn look.** Simple line art, few elements, slightly loose
-  strokes. No gradients, no 3D, no stock-diagram polish.
-- **White background.** Always. It reads fine on both light and dark themes, so
-  no theme-specific variants are needed.
-- **Handwriting font for any text in the image.** Never a system sans/serif for
-  labels or captions inside a diagram — it must look handwritten. In an SVG the
-  font has to be **embedded** as a base64 `@font-face` (page fonts don't reach a
-  font used inside an `<img>`-loaded SVG), so pick an OFL handwriting/comic face
-  (e.g. Caveat, Comic Neue) and inline a subset. Alternatively convert the text
-  to paths.
-- **Wide by default.** Author landscape at a wide aspect so the diagram fills the
-  reading column — SVG `viewBox` width **≥ 1200** (raster ≥ 1200px wide).
-- Co-locate beside `index.md` as `./name.svg`, reference relatively, and always
-  write descriptive alt text.
-- Format: prefer **SVG** (crisp, tiny, scalable). Keep each diagram to one idea.
+- **Ink + colored pencil on white paper.** Dark charcoal ink outlines, slightly
+  wobbly. Colored-pencil hatching with visible strokes in light blue, green,
+  orange and yellow (pastel purple and pink for diagram boxes). No gradients,
+  no 3D, no shadows, no photorealism.
+- **Few elements.** 3–6 elements, one clear focal point, lots of white space.
+  Target density is the `0008-atomic-design` hero, not the busier `0019` hero.
+- **Handwritten text only**, at most about 6 words, never repeating the title.
+- **How they're made:** David generates illustrations and heroes in his own
+  image tool from a prompt written with the `article-images` skill, attaching
+  the reference images. No hand-drawn SVG illustrations (they never match the
+  style) and no external image connectors.
+- **SVG only for plain data charts.** Those embed the handwriting font as a
+  base64 `@font-face`, use a `viewBox` width of at least 1200, and stay white.
+- **Sizes:** hero 1200 × 630; inline images at least 1200 px wide, landscape.
+  Keep files under about 500 KB (convert to JPEG if needed).
+- Co-locate beside `index.md`, reference relatively, always write alt text
+  that describes the scene.
 
 ## Scope
 
 - Applies to **new articles and future edits** — prose and images alike.
 - **Do not retrofit** the published articles `0001-hello-world` and
   `0002-foundations-of-ai-assisted-software-development` — they stay as they are.
+
