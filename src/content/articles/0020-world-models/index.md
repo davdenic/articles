@@ -7,7 +7,7 @@ version: 1
 updated: 2026-11-08
 changelog:
   - "2026-11-08: new article"
-modified: 2026-11-08T15:30:17+01:00
+modified: 2026-11-08T16:39:59+01:00
 ---
 
 ![An orange tabby cat on a wooden table calmly pushes a glass of water over the edge, with a dashed line showing where it will land and splash on the floor](./hero.jpg)
@@ -48,9 +48,9 @@ The route matters in a new situation. If nobody ever wrote about it, there's not
 | Good at | Explaining, summarising, writing, code | Planning, physical tasks, "what if I do this?" |
 | Struggles with | Situations it hasn't read about, long chains of actions | Language, and so far most things outside the lab |
 
-An LLM can describe what happens when you place a prison next to a school. (GPT did exactly that in one episode.) It has read about zoning, about angry parents, probably about Cities: Skylines forums. Whether it can *simulate* the city, step by step, before choosing, is the open question. Another episode is titled "I Caught GPT-6 Save-Scumming", which means reloading a saved game to undo a bad move. If that title is anything to go by, it was sometimes using the game itself as its simulator. Try, look, reload.
+An LLM can describe what happens when you place a prison next to a school. (GPT did exactly that in one episode.) It has read about zoning, about angry parents, probably about Cities: Skylines forums. Whether it can *simulate* the city, step by step, before choosing, is the open question.
 
-To be fair, that's trial and error, which humans do too. It just gets expensive outside a game, where there's no reload button.
+Meanwhile, in a [2025 review](https://gizmodo.com/roborock-saros-z70-review-this-robovacs-robotic-arm-is-a-swing-and-a-miss-2000607909), a robot vacuum with an arm had a zero-percent success rate with slippers. Somehow I find that comforting.
 
 ## Pixels or ideas?
 
@@ -104,7 +104,7 @@ LLMs feel at home in software: text, code, documents, things that live on a scre
 
 Or maybe not. By the time world models are mature enough, LLMs may have moved so far that they already do some of what world models promise. The Opus video above is a small hint in that direction.
 
-Today's machines mostly do something simpler: they recognise things. A robot vacuum maps the flat with a laser and spots objects it was trained on. Roborock advertises that its vacuums recognise "up to 301 types of objects". iRobot taught the Roomba to avoid pet poop with a database built partly from "many, many thousands" of Play-Doh models. That works until something new shows up. A 2025 review of a Roborock with a robotic arm found it "pretty hit and miss when it came to avoiding power cords", and slippers had a "zero-percent success rate". It knows what a cable looks like. It doesn't predict what happens if it drives over one.
+Today's machines mostly do something simpler: they recognise things. A robot vacuum maps the flat with a laser and spots objects it was trained on. Roborock advertises that its vacuums recognise "up to 301 types of objects". iRobot taught the Roomba to avoid pet poop with a database built partly from "many, many thousands" of Play-Doh models. That works until something new shows up. A 2025 review of a Roborock with a robotic arm found it "pretty hit and miss when it came to avoiding power cords". It knows what a cable looks like. It doesn't predict what happens if it drives over one.
 
 Military drones went further, for grim reasons. In Ukraine, jamming cuts the link between pilot and drone, so AI flies "the last 100 to 1,000 meters" on its own. In 2024 that was still rare: of nearly 2 million drones contracted, only 10,000 "definitely used AI guidance", and a human picked the target ([CSIS](https://www.csis.org/analysis/ukraines-future-vision-and-current-capabilities-waging-ai-enabled-autonomous-warfare), via [Breaking Defense](https://breakingdefense.com/2025/03/trained-on-classified-battlefield-data-ai-multiplies-effectiveness-of-ukraines-drones-report/)). In July 2026, according to the [New York Times](https://www.bostonglobe.com/2026/08/24/world/drone-killed-three-ukrainians-it-was-guided-entirely-by-ai/), a Russian drone killed three civilians in Zaporizhzhia after choosing "its exact target" itself. That's still recognition and steering, not simulation. Spot the target, fly at it.
 
@@ -113,6 +113,10 @@ World models show up in this world mostly as training grounds. Waymo built one o
 So is any of this in the shops yet? Mostly not, and where it is, the claim is hard to check. NIO says its "NIO World Model" runs in over 460,000 cars in China and "can simulate 216 potential scenarios within 100 milliseconds to identify optimal decisions". That's exactly the planning idea from the start of this article. XPeng says the same about its 2026 driver assistance. Neither has published how it works, so for now these are claims, not proof. Tesla and Waymo describe theirs as simulators: they train and test the driving software, and the car doesn't run them.
 
 At home, Neo is the closest: 1X plans to deliver it to US homes "by the end of 2026", with remote help from a 1X expert at scheduled times. The world models anyone can try, like Marble, Google's Project Genie or Cosmos, are tools for creators and developers, not machines in the living room.
+
+Do you remember Terminator 2, when a new class of Terminator shows up? That's how this feels to me: LLMs are the T-800, world models the T-1000.
+
+![The orange tabby cat, half of its face a metal robot skull with a glowing red eye, raises a metal paw next to a glass of water. A handwritten menu next to its head reads: PUSH, PUSH, ALSO PUSH](./terminator-cat.jpg)
 
 In The Matrix, Morpheus offers Neo two pills. Blue: wake up in your bed and believe whatever you want. Red: see how deep the rabbit hole goes. Language models took the blue pill. They believe what they've read. World models go for the red one: build the simulation, run it, and see what actually happens.
 
