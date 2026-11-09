@@ -7,7 +7,7 @@ version: 1
 updated: 2026-11-08
 changelog:
   - "2026-11-08: new article"
-modified: 2026-11-09T09:58:08+01:00
+modified: 2026-11-09T10:09:54+01:00
 ---
 
 ![An orange tabby cat on a wooden table calmly pushes a glass of water over the edge, with a dashed line showing where it will land and splash on the floor](./hero.jpg)
@@ -114,7 +114,7 @@ So is any of this in the shops yet? Mostly not, and where it is, the claim is ha
 
 Do you remember Terminator 2, when a new class of Terminator shows up? That's how this feels to me: LLMs are the T-800, world models the T-1000.
 
-![The orange tabby cat, half of its face a metal robot skull with a glowing red eye, raises a metal paw next to a glass of water. A handwritten menu next to its head reads: PUSH, PUSH, ALSO PUSH](./terminator-cat.jpg)
+![A liquid-metal silver cat flows through the bars of a security gate, while the orange tabby cat with half a robot face, safe in a closing elevator, raises a rude paw at it](./t800-vs-t1000.jpg)
 
 ## Red pill or blue pill?
 
