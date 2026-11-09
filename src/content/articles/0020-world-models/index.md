@@ -1,12 +1,14 @@
 ---
 title: What is a world model?
 description: "Watching GPT play a city builder on YouTube got me thinking about two kinds of knowing: know-how from simulation and knowledge from reading. A look at world models, with a few real numbers."
-draft: true
+draft: false
 image: hero.jpg
+size: 2x1.5
 version: 1
-updated: 2026-11-08
+published: 2026-11-09
+updated: 2026-11-09
 changelog:
-  - "2026-11-08: new article"
+  - "2026-11-09: first publish."
 modified: 2026-11-09T11:53:26+01:00
 ---
 

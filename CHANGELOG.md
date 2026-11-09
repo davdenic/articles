@@ -9,7 +9,7 @@ The project version lives in `package.json` (`version`); each release below matc
 
 ### Added
 
-- Draft article `0020-world-models`: plain-language explainer on world models, starting from GPT playing Cities: Skylines 2, with hand-drawn illustrations.
+- Article `0020-world-models` published (2026-11-09, home tile `2x1.5`; 0008 tile set to `2x1.5`): plain-language explainer on world models, starting from GPT playing Cities: Skylines 2, with hand-drawn illustrations.
 - Draft article `0021-is-lecun-right`: LeCun's claim, JEPA results, critics, the 2026 funding wave and community reactions.
 - Proper names from `0020`/`0021` added to `cspell.json`.
 
