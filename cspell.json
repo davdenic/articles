@@ -195,7 +195,6 @@
     "Wayve",
     "Saros",
     "Gizmodo",
-    "Notebookcheck",
     "NIO",
     "XPeng",
     "CnEVPost",
@@ -203,7 +202,9 @@
     "aelluswamy",
     "xpeng",
     "cnevpost",
-    "Ashok"
+    "Ashok",
+    "RLHF",
+    "Qwen"
   ],
   "ignorePaths": [
     "node_modules/**",
