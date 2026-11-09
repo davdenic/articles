@@ -60,6 +60,10 @@ Tips for David's tool:
 - If the first result is busy, reply "same image, half the elements, more white space".
 - Generate 2 to 4 variants and pick one. Don't iterate more than 3 rounds on one idea; change the idea instead.
 
+## Examples and diagram template
+
+`examples.md` in this folder holds prompts that shipped, what had to change, and a separate template for diagrams (boxes and arrows). Read it before writing a new prompt, and add every new prompt that ships.
+
 ## Sizes
 
 | Use | Format | Size |
