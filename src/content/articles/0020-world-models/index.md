@@ -7,7 +7,7 @@ version: 1
 updated: 2026-11-08
 changelog:
   - "2026-11-08: new article"
-modified: 2026-11-09T10:09:54+01:00
+modified: 2026-11-09T11:32:11+01:00
 ---
 
 ![An orange tabby cat on a wooden table calmly pushes a glass of water over the edge, with a dashed line showing where it will land and splash on the floor](./hero.jpg)
@@ -20,7 +20,7 @@ Turns out the first one has a name in AI research: a **world model**.
 
 ## So what is a world model?
 
-In short, a world model is something that takes **the current state of the world** and **an action you're thinking about**, and predicts **what happens next**. An LLM, by contrast, predicts the next word of a text.
+In short, a world model is something that takes **the current state of the world** and **an action you're thinking about**, and predicts **what happens next**. An LLM, by contrast, predicts the next token, mostly of text.
 
 ![Two hand-drawn workflow graphs side by side. Left: two word boxes go into a gear box, which outputs a highlighted next word that loops back to the start. Right: a state grid with an orange circle and a blue square, plus an action arrow, go into a gear box that fans out to three possible next states; two are faint, one is highlighted as the next state and loops back](./next-word-vs-next-state.jpg)
 
@@ -32,7 +32,7 @@ The point is planning: trying things in your head first. Will this district fit 
 
 ## How is that different from an LLM?
 
-A language model like GPT or Claude also predicts what comes next. It predicts the next word, or more exactly the next token. That's a kind of world model too, but of a very specific world: text.
+A language model like GPT or Claude also predicts what comes next. It predicts the next word, or more exactly the next token. That's a kind of world model too, but of a very specific world: mostly text. Today's big LLMs also learn from images, audio and video; Google trained Gemini "jointly across image, audio, video, and text data". What they still don't do is predict what happens when they act.
 
 In one line:
 
@@ -45,7 +45,7 @@ The route matters in a new situation. If nobody ever wrote about it, there's not
 | | Large language model | World model |
 | --- | --- | --- |
 | Knows by | Reading | Simulating |
-| Learns from | Text (and images, for newer models) | Observations of the world: video, sensors, game states |
+| Learns from | Text, plus images, audio and video for the big ones | Observations of the world: video, sensors, game states |
 | Predicts | The next token | The next state of the world, given an action |
 | Good at | Explaining, summarising, writing, code | Planning, physical tasks, "what if I do this?" |
 | Struggles with | Situations it hasn't read about, long chains of actions | Language, and so far most things outside the lab |
@@ -146,6 +146,7 @@ LeCun took the red pill a long time ago. He says language models will never get 
 - [MIT Technology Review: Yann LeCun's new venture](https://www.technologyreview.com/2026/01/22/1131661/yann-lecuns-new-venture-ami-labs/) (January 2026) · [AMI Labs raises $1.03bn](https://tech.eu/2026/03/10/yann-lecun-s-paris-based-ai-world-model-startup-raises-more-than-1bn/) (Tech.eu, March 2026)
 - [A Path Towards Autonomous Machine Intelligence](https://openreview.net/forum?id=BZ5a1r-kVsf) (LeCun, 2022)
 - [V-JEPA 2 and IntPhys 2](https://ai.meta.com/blog/v-jepa-2-world-model-benchmarks/) (Meta, June 2025) · [V-JEPA 2 paper](https://arxiv.org/abs/2506.09985)
+- [Gemini technical report](https://arxiv.org/abs/2312.11805) (Google, December 2023)
 - [Llama 3.1 paper](https://arxiv.org/abs/2407.21783) (Meta, July 2024) · [What is a parameter?](https://www.technologyreview.com/2026/01/07/1130795/what-even-is-a-parameter/) (MIT Technology Review, January 2026) · [InstructGPT, the RLHF paper](https://arxiv.org/abs/2203.02155) (OpenAI, 2022) · [What is RAG?](https://blogs.nvidia.com/blog/what-is-retrieval-augmented-generation/) (NVIDIA)
 - [Gemma releases](https://ai.google.dev/gemma/docs/releases) (Google) · [Qwen3.8-2.4T-A95B](https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B) (Alibaba Qwen on Hugging Face, August 2026) · [Qwen-Image 2.1](https://huggingface.co/Qwen/Qwen-Image-2.1) (September 2026) · [Wan 2.2](https://huggingface.co/Wan-AI/Wan2.2-T2V-A14B) (July 2025)
 - [Genie, the 2024 paper](https://arxiv.org/abs/2402.15391) (DeepMind) · [Dreamer 4 paper](https://arxiv.org/abs/2509.24527) (2025)
