@@ -143,7 +143,7 @@ In The Matrix, Morpheus offers Neo two pills. Blue: wake up in your bed and beli
 
 ![Two orange tabby cat paws reach towards the reader, palms up: the left one holds a blue pill, the right one a red pill. Reading or simulating?](./two-pills.jpg)
 
-LeCun took the red pill a long time ago. He says language models will never get there on their own, and he raised over a billion dollars on that bet. Is he right? That's for the next article.
+LeCun took the red pill a long time ago. He says language models will never get there on their own, and he raised over a billion dollars on that bet. Is he right? I guess we'll see in the near future.
 
 ## Sources
 
