@@ -7,7 +7,7 @@ version: 1
 updated: 2026-11-08
 changelog:
   - "2026-11-08: new article"
-modified: 2026-11-09T11:47:03+01:00
+modified: 2026-11-09T11:53:26+01:00
 ---
 
 ![An orange tabby cat on a wooden table calmly pushes a glass of water over the edge, with a dashed line showing where it will land and splash on the floor](./hero.jpg)
@@ -108,7 +108,7 @@ And the honest counterpoint, from Meta's own announcement: on three new physics 
 
 ### What machines do today
 
-Today's machines mostly do something simpler. They recognise things. A robot vacuum maps the flat with a laser and spots objects it was trained on. Roborock advertises that its vacuums recognise "up to 301 types of objects". iRobot taught the Roomba to avoid pet poop with a database built partly from "many, many thousands" of Play-Doh models. That works until something new shows up. A 2025 review of a Roborock with a robotic arm found it "pretty hit and miss when it came to avoiding power cords". It knows what a cable looks like. It doesn't predict what happens if it drives over one.
+Today's machines mostly do something simpler. They recognise things. A robot vacuum maps the flat with a laser and spots objects it was trained on. Roborock advertises that its vacuums recognise "up to 301 types of objects". iRobot taught the Roomba to avoid pet poop with a database built partly from "many, many thousands" of fake clay poos. That works until something new shows up. A 2025 review of a Roborock with a robotic arm found it "pretty hit and miss when it came to avoiding power cords". It knows what a cable looks like. It doesn't predict what happens if it drives over one.
 
 Military drones went further, for grim reasons. In Ukraine, jamming cuts the link between pilot and drone, so AI flies "the last 100 to 1,000 meters" on its own. In 2024 that was still rare: of nearly 2 million drones contracted, only 10,000 "definitely used AI guidance", and a human picked the target ([Breaking Defense](https://breakingdefense.com/2025/03/trained-on-classified-battlefield-data-ai-multiplies-effectiveness-of-ukraines-drones-report/), summarising a [CSIS](https://www.csis.org/analysis/ukraines-future-vision-and-current-capabilities-waging-ai-enabled-autonomous-warfare) report). In July 2026, according to the [New York Times](https://www.bostonglobe.com/2026/08/24/world/drone-killed-three-ukrainians-it-was-guided-entirely-by-ai/), a Russian drone killed three civilians in Zaporizhzhia after choosing "its exact target" itself. That's still recognition and steering. The drone spots the target and flies at it, and nothing in the reports says it simulates what happens next.
 
@@ -116,9 +116,9 @@ World models show up in this world mostly as training grounds. Waymo built one o
 
 So is any of this in the shops yet? Mostly not, and where it is, the claim is hard to check. NIO says its "NIO World Model" runs in over 460,000 cars in China and "can simulate 216 potential scenarios within 100 milliseconds to identify optimal decisions". That's exactly the planning idea from the start of this article. XPeng says the same about its 2026 driver assistance. Neither has shown independently what actually runs in the car, so for now these are only claims. Tesla and Waymo describe theirs as simulators. They train and test the driving software, and the car doesn't run them.
 
-Do you remember Terminator 2, when a new class of Terminator shows up? That's how this feels to me: LLMs are the T-800, world models the T-1000.
-
 ![A liquid-metal silver cat flows through the bars of a security gate, while the orange tabby cat with half a robot face, safe in a closing elevator, raises a rude paw at it](./t800-vs-t1000.jpg)
+
+*Do you remember Terminator 2, when a new class of Terminator shows up? That's how this feels to me: LLMs are the T-800, world models the T-1000.*
 
 ## Red pill or blue pill?
 
