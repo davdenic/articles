@@ -1,10 +1,14 @@
 ---
 title: Data privacy and GDPR when you code with AI
 description: It's the content, not the tool, that triggers GDPR. What a dev team needs to know before pasting code, logs, or client data into an AI assistant.
-draft: true
+draft: false
 image: "hero.png"
-version: 1
-changelog: []
+size: 1.5x1.5
+version: 8
+published: 2026-11-15
+changelog:
+  - "2026-11-15: first publish; added the published date to the frontmatter."
+  - Article written 
 ---
 
 ![GDPR while you code — hand-drawn hero](./hero.png)
