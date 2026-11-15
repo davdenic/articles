@@ -28,7 +28,7 @@ Code itself usually isn't personal data. But dev artefacts quietly carry it all 
 
 So the question isn't "can I use AI?" — it's "what's *in* what I'm sending?" I keep coming back to that one, because it's the question I'm worst at answering in the moment: when you're mid-bug and paste a stack trace, are you actually thinking about whose email is buried in line 40? I'm not sure I always am.
 
-![Consumer chat apps vs API/enterprise tiers: training on your data and retention vs no-training, retention off, and a DPA.](./consumer-vs-api.svg)
+![Consumer chat apps vs API/enterprise tiers: training on your data and retention vs no-training, retention off, and a DPA.](./consumer-vs-api.png)
 
 ## Who's who: controller, processor, DPA
 
